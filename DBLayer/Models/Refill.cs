@@ -14,7 +14,7 @@ namespace DBLayer.Models
         public IEnumerable<Alert> Alerts { get; set; }
 
         public User User { get; set; }
-        public int UserID { get; set; }
+        public int UserId { get; set; }
 
     }
 }
