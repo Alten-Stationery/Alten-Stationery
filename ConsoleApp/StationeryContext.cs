@@ -23,20 +23,21 @@ namespace DBLayer
             //string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StationeryDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
             //Vittorio
-            string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StationeryDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Stationery;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
             optionsBuilder.UseSqlServer(connString);
             base.OnConfiguring(optionsBuilder);
         }
-        
+
         public DbSet<Item> Items { get; set; }
         public DbSet<Alert> Alerts { get; set; }
-
+        public DbSet<Alert> Refills { get; set; }
+       
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            #region Items
             modelBuilder.Entity<Item>(i =>
             {
-                #region Items
                 i.HasKey(c => c.ItemId);
                 i.Property(c => c.Name).HasColumnType("nvarchar").HasMaxLength(50);
                 i.Property(c => c.Description).HasColumnType("nvarchar(max)");
@@ -62,28 +63,14 @@ namespace DBLayer
             });
             #endregion
 
-            #region Items-Alerts
+            #region Items-Alerts(1-*)
             modelBuilder.Entity<Item>()
             .HasMany(o => o.Alerts)
             .WithOne(oi => oi.Item)
             .HasForeignKey(oi => oi.ItemId);
             #endregion
 
-            #region Refills
-            modelBuilder.Entity<Refill>(r =>
-            {
-                r.HasKey(c=>c.RefillId);
-                r.Property(c => c.RefillDate).HasColumnType("datetime");
-                r.ToTable("Refills");
-            });
-            #endregion
 
-            #region Refills-Alerts
-            modelBuilder.Entity<Refill>()
-                .HasMany(a => a.Alerts)
-                .WithOne(r => r.Refill)
-                .HasForeignKey(c => c.RefillId);
-            #endregion
         }
 
 
