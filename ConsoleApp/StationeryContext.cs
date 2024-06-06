@@ -63,12 +63,29 @@ namespace DBLayer
             });
             #endregion
 
+            #region Refills
+            modelBuilder.Entity<Refill>(r =>
+            {
+                r.HasKey(c => c.RefillId);
+                r.Property(c => c.RefillDate).HasColumnType("datetime");
+                r.ToTable("Refills");
+            });
+            #endregion
+
             #region Items-Alerts(1-*)
             modelBuilder.Entity<Item>()
             .HasMany(o => o.Alerts)
             .WithOne(oi => oi.Item)
             .HasForeignKey(oi => oi.ItemId);
             #endregion
+
+            #region Refills-Alerts(1-*)
+            modelBuilder.Entity<Refill>()
+                .HasMany(a => a.Alerts)
+                .WithOne(r => r.Refill)
+                .HasForeignKey(c => c.RefillId);
+            #endregion
+
 
 
         }
