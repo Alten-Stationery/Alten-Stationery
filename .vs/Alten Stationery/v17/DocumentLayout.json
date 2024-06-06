@@ -1,29 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\",
+  "WorkspaceRootPath": "C:\\Users\\acioce\\OneDrive - ALTEN Group\\Documents\\repos\\AltenStationery\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ConsoleApp\\Migrations\\20240605130804_CreateTableRefills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ConsoleApp\\Migrations\\20240605130804_CreateTableRefills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA3F3819-C9A6-40BF-BFD7-65BB0FB06FBF}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\consoleapp\\stationerycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BA3F3819-C9A6-40BF-BFD7-65BB0FB06FBF}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\acioce\\onedrive - alten group\\documents\\repos\\altenstationery\\consoleapp\\stationerycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA3F3819-C9A6-40BF-BFD7-65BB0FB06FBF}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\stationerycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ConsoleApp\\Migrations\\20240605125645_CreateTableAlerts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ConsoleApp\\Migrations\\20240605125645_CreateTableAlerts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\models\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\acioce\\onedrive - alten group\\documents\\repos\\altenstationery\\dblayer\\models\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\models\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\acioce\\onedrive - alten group\\documents\\repos\\altenstationery\\dblayer\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\models\\refill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\acioce\\onedrive - alten group\\documents\\repos\\altenstationery\\dblayer\\models\\refill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\models\\refill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 22,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,6 +43,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -101,82 +97,61 @@
               "Name": "ST:140:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20240605130804_CreateTableRefills.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ConsoleApp\\Migrations\\20240605130804_CreateTableRefills.cs",
-              "RelativeDocumentMoniker": "ConsoleApp\\Migrations\\20240605130804_CreateTableRefills.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ConsoleApp\\Migrations\\20240605130804_CreateTableRefills.cs",
-              "RelativeToolTip": "ConsoleApp\\Migrations\\20240605130804_CreateTableRefills.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAACUAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T13:08:04.625Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Item.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Item.cs",
+              "DocumentMoniker": "C:\\Users\\acioce\\OneDrive - ALTEN Group\\Documents\\repos\\AltenStationery\\DBLayer\\Models\\Item.cs",
               "RelativeDocumentMoniker": "DBLayer\\Models\\Item.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Item.cs",
+              "ToolTip": "C:\\Users\\acioce\\OneDrive - ALTEN Group\\Documents\\repos\\AltenStationery\\DBLayer\\Models\\Item.cs",
               "RelativeToolTip": "DBLayer\\Models\\Item.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAgwB4AAAAaAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAA1wB4AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T13:06:39.643Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Alert.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Alert.cs",
+              "DocumentMoniker": "C:\\Users\\acioce\\OneDrive - ALTEN Group\\Documents\\repos\\AltenStationery\\DBLayer\\Models\\Alert.cs",
               "RelativeDocumentMoniker": "DBLayer\\Models\\Alert.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Alert.cs",
+              "ToolTip": "C:\\Users\\acioce\\OneDrive - ALTEN Group\\Documents\\repos\\AltenStationery\\DBLayer\\Models\\Alert.cs",
               "RelativeToolTip": "DBLayer\\Models\\Alert.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T13:01:32.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T13:01:32.703Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Refill.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Refill.cs",
+              "DocumentMoniker": "C:\\Users\\acioce\\OneDrive - ALTEN Group\\Documents\\repos\\AltenStationery\\DBLayer\\Models\\Refill.cs",
               "RelativeDocumentMoniker": "DBLayer\\Models\\Refill.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Refill.cs",
+              "ToolTip": "C:\\Users\\acioce\\OneDrive - ALTEN Group\\Documents\\repos\\AltenStationery\\DBLayer\\Models\\Refill.cs",
               "RelativeToolTip": "DBLayer\\Models\\Refill.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T12:58:14.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T12:58:14.081Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20240605125645_CreateTableAlerts.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ConsoleApp\\Migrations\\20240605125645_CreateTableAlerts.cs",
-              "RelativeDocumentMoniker": "ConsoleApp\\Migrations\\20240605125645_CreateTableAlerts.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ConsoleApp\\Migrations\\20240605125645_CreateTableAlerts.cs",
-              "RelativeToolTip": "ConsoleApp\\Migrations\\20240605125645_CreateTableAlerts.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T12:56:45.985Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "StationeryContext.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ConsoleApp\\StationeryContext.cs",
+              "DocumentMoniker": "C:\\Users\\acioce\\OneDrive - ALTEN Group\\Documents\\repos\\AltenStationery\\ConsoleApp\\StationeryContext.cs",
               "RelativeDocumentMoniker": "ConsoleApp\\StationeryContext.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ConsoleApp\\StationeryContext.cs",
+              "ToolTip": "C:\\Users\\acioce\\OneDrive - ALTEN Group\\Documents\\repos\\AltenStationery\\ConsoleApp\\StationeryContext.cs",
               "RelativeToolTip": "ConsoleApp\\StationeryContext.cs",
               "ViewState": "AQIAAEwAAAAAAAAAAAAQwFQAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T12:52:44.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T12:52:44.373Z"
             }
           ]
         }
