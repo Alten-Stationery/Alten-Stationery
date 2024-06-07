@@ -28,7 +28,6 @@ namespace DBLayer.Repositories
         {
             _context.Items.Remove(entity);
             await _context.SaveChangesAsync();
-
         }
 
         public async Task<IEnumerable<Item>> GetAllAsync()
