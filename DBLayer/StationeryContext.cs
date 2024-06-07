@@ -31,7 +31,7 @@ namespace DBLayer
 
         public DbSet<Item> Items { get; set; }
         public DbSet<Alert> Alerts { get; set; }
-        public DbSet<Alert> Refills { get; set; }
+        public DbSet<Refill> Refills { get; set; }
         public DbSet<User> Users { get; set; }
        
         protected override void OnModelCreating(ModelBuilder modelBuilder)

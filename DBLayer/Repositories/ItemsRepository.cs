@@ -42,7 +42,7 @@ namespace DBLayer.Repositories
 
         public async Task UpdateAsync(Item entity)
         {
-             _context.Update(entity);
+             _context.Items.Update(entity);
             await _context.SaveChangesAsync();
         }
     }
