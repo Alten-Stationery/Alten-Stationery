@@ -23,7 +23,7 @@ namespace DBLayer
             //string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StationeryDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
             //Vittorio
-            string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Stationery;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StationaryDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
             optionsBuilder.UseSqlServer(connString);
             base.OnConfiguring(optionsBuilder);
