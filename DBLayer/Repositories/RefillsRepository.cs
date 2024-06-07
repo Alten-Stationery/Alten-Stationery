@@ -13,7 +13,9 @@ namespace DBLayer.Repositories
     {
         private readonly StationeryContext _context;
         public RefillsRepository(StationeryContext context)
-        {  _context = context; }
+        { 
+            _context = context; 
+        }
         public async Task CreateAsync(Refill entity)
         {
             await _context.Refills.AddAsync(entity);
