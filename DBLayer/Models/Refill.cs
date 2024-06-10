@@ -12,5 +12,9 @@ namespace DBLayer.Models
         public DateTime RefillDate { get; set; }
         public int Quantity { get; set; }
         public IEnumerable<Alert> Alerts { get; set; }
+
+        public User User { get; set; }
+        public int UserId { get; set; }
+
     }
 }

@@ -114,9 +114,47 @@ namespace ConsoleApp.Migrations
                     b.Property<DateTime>("RefillDate")
                         .HasColumnType("datetime");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("RefillId");
 
-                    b.ToTable("Refill");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Refills", (string)null);
+                });
+
+            modelBuilder.Entity("DBLayer.Models.User", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("DBLayer.Models.Alert", b =>
@@ -138,6 +176,17 @@ namespace ConsoleApp.Migrations
                     b.Navigation("Refill");
                 });
 
+            modelBuilder.Entity("DBLayer.Models.Refill", b =>
+                {
+                    b.HasOne("DBLayer.Models.User", "User")
+                        .WithMany("Refills")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("DBLayer.Models.Item", b =>
                 {
                     b.Navigation("Alerts");
@@ -146,6 +195,11 @@ namespace ConsoleApp.Migrations
             modelBuilder.Entity("DBLayer.Models.Refill", b =>
                 {
                     b.Navigation("Alerts");
+                });
+
+            modelBuilder.Entity("DBLayer.Models.User", b =>
+                {
+                    b.Navigation("Refills");
                 });
 #pragma warning restore 612, 618
         }

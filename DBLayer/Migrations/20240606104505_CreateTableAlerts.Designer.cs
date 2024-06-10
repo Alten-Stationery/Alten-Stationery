@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConsoleApp.Migrations
 {
     [DbContext(typeof(StationeryContext))]
-    [Migration("20240605130804_CreateTableRefills")]
-    partial class CreateTableRefills
+    [Migration("20240606104505_CreateTableAlerts")]
+    partial class CreateTableAlerts
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -115,7 +115,7 @@ namespace ConsoleApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("RefillDate")
-                        .HasColumnType("datetime");
+                        .HasColumnType("datetime2");
 
                     b.HasKey("RefillId");
 
