@@ -1,4 +1,5 @@
-﻿using DBLayer.IRepositories;
+﻿using Azure;
+using DBLayer.IRepositories;
 using DBLayer.Models;
 using DBLayer.UOW;
 using Microsoft.EntityFrameworkCore;
@@ -37,13 +38,18 @@ namespace DBLayer.Repositories
 
         }
 
-        public async Task<IEnumerable<User>> GetAllAsync()
+        public async Task<IEnumerable<User>> GetAllAsync(int page,int pageSize)
         {
 
             using (UnitOfWork u = new UnitOfWork(_context))
             {
+                if (page <= 1)
+                {
+                    page = 0;
+                }
+                int totalNumber = page * pageSize;
                 await u.CompleteAsync();
-                return await _context.Users.ToListAsync();
+                return await _context.Users.Skip(totalNumber).Take(pageSize).ToListAsync();
             }
 
         }

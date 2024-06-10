@@ -11,15 +11,6 @@ namespace DBLayer.IRepositories
     public interface IAlertsRepository : IRepository<Alert>
     {
 
-        Task CreateAsync(Alert entity);
-
-        Task DeleteAsync(Alert entity);
-
-        Task<IEnumerable<Alert>> GetAllAsync();
-
-        Task<Alert> GetByIdAsync(int id);
-
-        Task UpdateAsync(Alert entity);
 
     }
 }
