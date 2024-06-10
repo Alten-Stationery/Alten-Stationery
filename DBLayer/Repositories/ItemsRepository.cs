@@ -38,13 +38,18 @@ namespace DBLayer.Repositories
 
         }
 
-        public async Task<IEnumerable<Item>> GetAllAsync()
+        public async Task<IEnumerable<Item>> GetAllAsync(int page, int pageSize)
         {
 
             using (UnitOfWork u = new UnitOfWork(_context))
             {
+                if(page<=1)
+                {
+                    page = 0;
+                }
+                int totalNumber = page * pageSize;
                 await u.CompleteAsync();
-                return await _context.Items.ToListAsync();
+                return await _context.Items.Skip(totalNumber).Take(pageSize).ToListAsync();
             }
 
         }

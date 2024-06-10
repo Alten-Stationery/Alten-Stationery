@@ -12,6 +12,6 @@ namespace DBLayer.IRepositories
         public Task UpdateAsync(T entity);
         public Task DeleteAsync(T entity);
         public Task<T> GetByIdAsync(int id);
-        public Task<IEnumerable<T>> GetAllAsync();
+        public Task<IEnumerable<T>> GetAllAsync(int page, int pageSize);
     }
 }

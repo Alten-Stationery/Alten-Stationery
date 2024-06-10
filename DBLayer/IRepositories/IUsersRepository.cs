@@ -10,15 +10,7 @@ namespace DBLayer.IRepositories
     public interface IUsersRepository : IRepository<User>
     {
 
-        Task CreateAsync(User entity);
-
-        Task DeleteAsync(User entity);
-
-        Task<IEnumerable<User>> GetAllAsync();
-
-        Task<User> GetByIdAsync(int id);
-
-        Task UpdateAsync(User entity);
+        
 
     }
 }
