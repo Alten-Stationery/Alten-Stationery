@@ -1,5 +1,6 @@
 ﻿using DBLayer.IRepositories;
 using DBLayer.Models;
+using DBLayer.UOW;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -20,30 +21,53 @@ namespace DBLayer.Repositories
 
         public async Task CreateAsync(Alert entity)
         {
-            await _context.Alerts.AddAsync(entity);
-            await _context.SaveChangesAsync();
+            using (UnitOfWork u =new UnitOfWork(_context))
+            {
+                await _context.Alerts.AddAsync(entity);
+                await u.CompleteAsync();
+            }        
         }
 
         public async Task DeleteAsync(Alert entity)
         {
-            _context.Alerts.Remove(entity);
-            await _context.SaveChangesAsync();
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                _context.Alerts.Remove(entity);
+                await u.CompleteAsync();
+            }
+            
         }
 
         public async Task<IEnumerable<Alert>> GetAllAsync()
         {
-            return await _context.Alerts.ToListAsync();
+
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                await u.CompleteAsync();
+                return await _context.Alerts.ToListAsync();
+            }
+            
         }
 
         public async Task<Alert> GetByIdAsync(int id)
         {
-            return await _context.Alerts.FindAsync(id);
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                await u.CompleteAsync();
+                return await _context.Alerts.FindAsync(id);
+                
+            }
+            
         }
 
         public async Task UpdateAsync(Alert entity)
         {
-            _context.Alerts.Update(entity);
-            await _context.SaveChangesAsync();
+
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                _context.Alerts.Update(entity);
+                await u.CompleteAsync();
+            }
         }
 
     }
