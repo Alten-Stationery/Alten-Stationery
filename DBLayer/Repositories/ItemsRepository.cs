@@ -1,5 +1,6 @@
 ﻿using DBLayer.IRepositories;
 using DBLayer.Models;
+using DBLayer.UOW;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -20,30 +21,53 @@ namespace DBLayer.Repositories
 
         public async Task CreateAsync(Item entity)
         {
-            await _context.Items.AddAsync(entity);
-            await _context.SaveChangesAsync();
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                await _context.Items.AddAsync(entity);
+                await u.CompleteAsync();
+            }
         }
 
         public async Task DeleteAsync(Item entity)
         {
-            _context.Items.Remove(entity);
-            await _context.SaveChangesAsync();
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                _context.Items.Remove(entity);
+                await u.CompleteAsync();
+            }
+
         }
 
         public async Task<IEnumerable<Item>> GetAllAsync()
         {
-            return await _context.Items.ToListAsync();
+
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                await u.CompleteAsync();
+                return await _context.Items.ToListAsync();
+            }
+
         }
 
         public async Task<Item> GetByIdAsync(int id)
         {
-            return await _context.Items.FindAsync(id);
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                await u.CompleteAsync();
+                return await _context.Items.FindAsync(id);
+
+            }
+
         }
 
         public async Task UpdateAsync(Item entity)
         {
-             _context.Items.Update(entity);
-            await _context.SaveChangesAsync();
+
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                _context.Items.Update(entity);
+                await u.CompleteAsync();
+            }
         }
     }
 }

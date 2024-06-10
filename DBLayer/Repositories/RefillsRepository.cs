@@ -1,5 +1,6 @@
 ﻿using DBLayer.IRepositories;
 using DBLayer.Models;
+using DBLayer.UOW;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,35 +14,58 @@ namespace DBLayer.Repositories
     {
         private readonly StationeryContext _context;
         public RefillsRepository(StationeryContext context)
-        { 
-            _context = context; 
+        {
+            _context = context;
         }
         public async Task CreateAsync(Refill entity)
         {
-            await _context.Refills.AddAsync(entity);
-            await _context.SaveChangesAsync();
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                await _context.Refills.AddAsync(entity);
+                await u.CompleteAsync();
+            }
         }
 
         public async Task DeleteAsync(Refill entity)
         {
-            _context.Refills.Remove(entity);
-            await _context.SaveChangesAsync();
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                _context.Refills.Remove(entity);
+                await u.CompleteAsync();
+            }
+
         }
 
         public async Task<IEnumerable<Refill>> GetAllAsync()
         {
-            return await _context.Refills.ToListAsync();
+
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                await u.CompleteAsync();
+                return await _context.Refills.ToListAsync();
+            }
+
         }
 
         public async Task<Refill> GetByIdAsync(int id)
         {
-            return await _context.Refills.FindAsync(id);
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                await u.CompleteAsync();
+                return await _context.Refills.FindAsync(id);
+
+            }
+
         }
 
         public async Task UpdateAsync(Refill entity)
         {
-            _context.Refills.Update(entity);
-            await _context.SaveChangesAsync();
+
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                _context.Refills.Update(entity);
+                await u.CompleteAsync();
+            }
         }
     }
 }
