@@ -28,13 +28,13 @@ namespace ServiceLayer.Services.Validations
 
             RuleFor(x=>x.Type).NotEmpty();
 
-            RuleFor(x=>x.Threshold).NotNull().GreaterThan(0);
+            RuleFor(x=>x.Threshold).NotEmpty().GreaterThan(0);
 
             RuleFor(x => x.ExpirationDate)
                 .NotEmpty()
                 .Must(CheckDate).WithMessage("Expiration Date cannot be in the past");
 
-            RuleFor(x=>x.Quantity).NotNull(). GreaterThan(0);
+            RuleFor(x=>x.Quantity).NotEmpty(). GreaterThan(0);
 
             RuleFor(x => x.Location).NotEmpty();
 

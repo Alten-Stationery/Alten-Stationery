@@ -13,12 +13,11 @@ namespace ServiceLayer.Services.Classes
 {
     public class ItemsService : IItemsService
     {
-        private readonly ItemValidator _validator;
-        private readonly IItemsRepository _rep;
-        public ItemsService(ItemValidator validator, IItemsRepository rep)
+        private readonly ItemValidator _validator=new ItemValidator();
+        private readonly IUnitOfWork _unitOfWork;
+        public ItemsService( IUnitOfWork  unitOfWork)
         {
-            _validator = validator;
-            _rep = rep;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<bool> CreateAsync(Item entity)
@@ -30,7 +29,7 @@ namespace ServiceLayer.Services.Classes
                 {
                     return false;
                 }
-                await _rep.CreateAsync(entity);
+                await   _unitOfWork.Items.CreateAsync(entity);
                 return true;
             }catch (Exception ex)
             {
@@ -43,11 +42,11 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entity = await _rep.GetByIdAsync(id);
+                var entity = await _unitOfWork.Items.GetByIdAsync(id);
 
                 if (entity != null)
                 {
-                    await _rep.DeleteAsync(entity);
+                    await _unitOfWork.Items.DeleteAsync(entity);
                     check= true;
                 }          
                 return check;
@@ -62,7 +61,7 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 int pageSize = 4;
-                IEnumerable<Item> items= await _rep.GetAllAsync(page,pageSize);
+                IEnumerable<Item> items= await _unitOfWork.Items.GetAllAsync(page,pageSize);
                 return items;
             }
             catch(Exception ex)
@@ -77,7 +76,7 @@ namespace ServiceLayer.Services.Classes
         {
             try
             {
-               Item item= await _rep.GetByIdAsync(id);
+               Item item= await _unitOfWork.Items.GetByIdAsync(id);
                 return item;
             }catch(Exception e)
             {
@@ -90,7 +89,7 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entityToFind = await _rep.GetByIdAsync(entity.ItemId);
+                var entityToFind = await _unitOfWork.Items.GetByIdAsync(entity.ItemId);
 
                 if (entityToFind != null)
                 {
@@ -99,7 +98,7 @@ namespace ServiceLayer.Services.Classes
                     {
                         return check;
                     }                   
-                    await _rep.UpdateAsync(entity);
+                    await _unitOfWork.Items.UpdateAsync(entity);
                     return check= true;
                 }
                 return check;
