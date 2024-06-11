@@ -13,7 +13,7 @@ namespace ServiceLayer.Services.Validations
     public class ItemValidator:AbstractValidator<Item>
     {
 
-        public  bool GreaterThan(DateTime date)
+        public  bool CheckDate(DateTime date)
         {
             if (date > DateTime.Today)
                 return true;
@@ -22,25 +22,22 @@ namespace ServiceLayer.Services.Validations
 
         public ItemValidator() 
         {
-            RuleFor(x => x.ItemId).NotNull();
-
             RuleFor(x=>x.Name).NotEmpty();
 
             RuleFor(x=>x.Description).NotEmpty();
 
             RuleFor(x=>x.Type).NotEmpty();
 
-            RuleFor(x=>x.Threshold).GreaterThan(0);
+            RuleFor(x=>x.Threshold).NotNull().GreaterThan(0);
 
             RuleFor(x => x.ExpirationDate)
                 .NotEmpty()
-                .Must(GreaterThan).WithMessage("Expiration Date cannot be in the past");
+                .Must(CheckDate).WithMessage("Expiration Date cannot be in the past");
 
-            RuleFor(x=>x.Quantity).GreaterThan(0);
+            RuleFor(x=>x.Quantity).NotNull(). GreaterThan(0);
 
             RuleFor(x => x.Location).NotEmpty();
 
-                
         }
     }
 }
