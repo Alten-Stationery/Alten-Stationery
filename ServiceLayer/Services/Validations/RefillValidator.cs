@@ -8,26 +8,19 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer.Services.Validations
 {
-    public class AlertValidator : AbstractValidator<Alert>
+    public class RefillValidator:AbstractValidator<Refill>
     {
-
         public bool CheckDate(DateTime date)
         {
             if (date > DateTime.Today)
                 return true;
             return false;
         }
-
-        public AlertValidator()
+        public RefillValidator() 
         {
-
-            RuleFor(x => x.AlertDate).NotEmpty().Must(CheckDate);
-
-            RuleFor(x => x.Email).NotEmpty().EmailAddress().WithMessage("A valid Email is required!");
-
-            RuleFor(x => x.EmailBody).NotEmpty();
-
+            RuleFor(x=>x.UserId).NotEmpty();
+            RuleFor(x=>x.Quantity).NotEmpty().GreaterThan(0);
+            RuleFor(x=>x.RefillDate).NotEmpty().Must(CheckDate);
         }
-
     }
 }

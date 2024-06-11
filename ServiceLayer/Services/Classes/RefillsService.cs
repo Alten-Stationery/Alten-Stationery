@@ -11,17 +11,15 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer.Services.Classes
 {
-    public class AlertsService : IAlertsService
+    public class RefillsService : IRefillsService
     {
-
-        private readonly AlertValidator _validator = new AlertValidator();
         private readonly IUnitOfWork _unitOfWork;
-        public AlertsService(IUnitOfWork unitOfWork)
+        private readonly RefillValidator _validator= new RefillValidator();
+        public RefillsService(IUnitOfWork unitOfWork) 
         {
             _unitOfWork = unitOfWork;
         }
-
-        public async Task<bool> CreateAsync(Alert entity)
+        public async Task<bool> CreateAsync(Refill entity)
         {
             try
             {
@@ -30,7 +28,7 @@ namespace ServiceLayer.Services.Classes
                 {
                     return false;
                 }
-                await _unitOfWork.Alerts.CreateAsync(entity);
+                await _unitOfWork.Refills.CreateAsync(entity);
                 return true;
             }
             catch (Exception ex)
@@ -44,11 +42,11 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entity = await _unitOfWork.Alerts.GetByIdAsync(id);
+                var entity = await _unitOfWork.Refills.GetByIdAsync(id);
 
                 if (entity != null)
                 {
-                    await _unitOfWork.Alerts.DeleteAsync(entity);
+                    await _unitOfWork.Refills.DeleteAsync(entity);
                     check = true;
                 }
                 return check;
@@ -59,28 +57,26 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<IEnumerable<Alert>> GetAllAsync(int page)
+        public async Task<IEnumerable<Refill>> GetAllAsync(int page)
         {
             try
             {
                 int pageSize = 4;
-                IEnumerable<Alert> alerts = await _unitOfWork.Alerts.GetAllAsync(page, pageSize);
-                return alerts;
+                IEnumerable<Refill> refills = await _unitOfWork.Refills.GetAllAsync(page, pageSize);
+                return refills;
             }
             catch (Exception ex)
             {
                 return null;
             }
-
-
         }
 
-        public async Task<Alert> GetById(int id)
+        public async Task<Refill> GetById(int id)
         {
             try
             {
-                Alert alert = await _unitOfWork.Alerts.GetByIdAsync(id);
-                return alert;
+                Refill refill = await _unitOfWork.Refills.GetByIdAsync(id);
+                return refill;
             }
             catch (Exception e)
             {
@@ -88,12 +84,12 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<bool> UpdateAsync(Alert entity)
+        public async Task<bool> UpdateAsync(Refill entity)
         {
             try
             {
                 bool check = false;
-                var entityToFind = await _unitOfWork.Alerts.GetByIdAsync(entity.AlertId);
+                var entityToFind = await _unitOfWork.Refills.GetByIdAsync(entity.RefillId);
 
                 if (entityToFind != null)
                 {
@@ -102,7 +98,7 @@ namespace ServiceLayer.Services.Classes
                     {
                         return check;
                     }
-                    await _unitOfWork.Alerts.UpdateAsync(entity);
+                    await _unitOfWork.Refills.UpdateAsync(entity);
                     return check = true;
                 }
                 return check;
@@ -112,7 +108,5 @@ namespace ServiceLayer.Services.Classes
                 return false;
             }
         }
-
-
     }
 }
