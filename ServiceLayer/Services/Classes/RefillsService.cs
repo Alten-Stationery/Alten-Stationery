@@ -42,7 +42,7 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entity = await _unitOfWork.Refills.GetByIdAsync(id);
+                var entity = await GetById(id);
 
                 if (entity != null)
                 {
@@ -57,11 +57,10 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<IEnumerable<Refill>> GetAllAsync(int page)
+        public async Task<IEnumerable<Refill>> GetAllAsync(int page, int pageSize)
         {
             try
             {
-                int pageSize = 4;
                 IEnumerable<Refill> refills = await _unitOfWork.Refills.GetAllAsync(page, pageSize);
                 return refills;
             }
@@ -89,7 +88,7 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entityToFind = await _unitOfWork.Refills.GetByIdAsync(entity.RefillId);
+                var entityToFind = await GetById(entity.RefillId);
 
                 if (entityToFind != null)
                 {

@@ -11,69 +11,10 @@ using System.Threading.Tasks;
 
 namespace DBLayer.Repositories
 {
-    public class UsersRepository : IUsersRepository
+    public class UsersRepository : GenericRepository<User>, IUsersRepository
     {
-
-        private readonly StationeryContext _context;
-        public UsersRepository(StationeryContext context)
+        public UsersRepository(StationeryContext context) : base(context)
         {
-            _context = context;
         }
-        public async Task CreateAsync(User entity)
-        {
-            using (UnitOfWork u = new UnitOfWork(_context))
-            {
-                await _context.Users.AddAsync(entity);
-                await u.CompleteAsync();
-            }
-        }
-
-        public async Task DeleteAsync(User entity)
-        {
-            using (UnitOfWork u = new UnitOfWork(_context))
-            {
-                _context.Users.Remove(entity);
-                await u.CompleteAsync();
-            }
-
-        }
-
-        public async Task<IEnumerable<User>> GetAllAsync(int page,int pageSize)
-        {
-
-            using (UnitOfWork u = new UnitOfWork(_context))
-            {
-                if (page <= 1)
-                {
-                    page = 0;
-                }
-                int totalNumber = page * pageSize;
-                await u.CompleteAsync();
-                return await _context.Users.Skip(totalNumber).Take(pageSize).ToListAsync();
-            }
-
-        }
-
-        public async Task<User> GetByIdAsync(int id)
-        {
-            using (UnitOfWork u = new UnitOfWork(_context))
-            {
-                await u.CompleteAsync();
-                return await _context.Users.FindAsync(id);
-
-            }
-
-        }
-
-        public async Task UpdateAsync(User entity)
-        {
-
-            using (UnitOfWork u = new UnitOfWork(_context))
-            {
-                _context.Users.Update(entity);
-                await u.CompleteAsync();
-            }
-        }
-
     }
 }

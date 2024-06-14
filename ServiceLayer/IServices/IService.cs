@@ -12,7 +12,7 @@ namespace ServiceLayer.IServices
         Task<bool> CreateAsync(T entity);
         Task<bool> DeleteAsync(int id);
         Task<bool> UpdateAsync(T entity);
-        Task<IEnumerable<T>> GetAllAsync(int page);
+        Task<IEnumerable<T>> GetAllAsync(int page, int pageSize);
         Task<T> GetById(int id);
 
     }
