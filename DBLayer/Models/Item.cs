@@ -16,7 +16,7 @@ namespace DBLayer.Models
         public string Location { get; set; }
         public enum ItemType
         {
-            FirePreventionSupplies,
+            FirePreventionSupplies=1,
             FirstAidSupplies,
             OfficeSupplies
         } 

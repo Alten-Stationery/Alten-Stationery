@@ -26,12 +26,12 @@ namespace ServiceLayer.Services.Classes
                 var validationResult = await _validator.ValidateAsync(entity);
                 if (!validationResult.IsValid)
                 {
-                    return false;
+                    throw new ArgumentException(validationResult.ToString());
                 }
                 await _unitOfWork.Users.CreateAsync(entity);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return false;
             }
@@ -42,7 +42,7 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entity = await _unitOfWork.Users.GetByIdAsync(id);
+                var entity = await GetById(id);
 
                 if (entity != null)
                 {
@@ -57,11 +57,10 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<IEnumerable<User>> GetAllAsync(int page)
+        public async Task<IEnumerable<User>> GetAllAsync(int page,int pageSize)
         {
             try
             {
-                int pageSize = 4;
                 IEnumerable<User> users = await _unitOfWork.Users.GetAllAsync(page, pageSize);
                 return users;
             }
@@ -89,14 +88,14 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entityToFind = await _unitOfWork.Users.GetByIdAsync(entity.UserId);
+                var entityToFind = await GetById(entity.UserId);
 
                 if (entityToFind != null)
                 {
                     var validationResult = await _validator.ValidateAsync(entity);
                     if (!validationResult.IsValid)
                     {
-                        return check;
+                        throw new ArgumentException(validationResult.ToString());
                     }
                     await _unitOfWork.Users.UpdateAsync(entity);
                     return check = true;

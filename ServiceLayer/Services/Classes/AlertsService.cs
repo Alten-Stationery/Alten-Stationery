@@ -44,7 +44,7 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entity = await _unitOfWork.Alerts.GetByIdAsync(id);
+                var entity = await GetById(id);
 
                 if (entity != null)
                 {
@@ -59,11 +59,10 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<IEnumerable<Alert>> GetAllAsync(int page)
+        public async Task<IEnumerable<Alert>> GetAllAsync(int page, int pageSize)
         {
             try
             {
-                int pageSize = 4;
                 IEnumerable<Alert> alerts = await _unitOfWork.Alerts.GetAllAsync(page, pageSize);
                 return alerts;
             }
@@ -93,7 +92,7 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entityToFind = await _unitOfWork.Alerts.GetByIdAsync(entity.AlertId);
+                var entityToFind = await GetById(entity.AlertId);
 
                 if (entityToFind != null)
                 {
