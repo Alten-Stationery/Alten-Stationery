@@ -34,7 +34,14 @@ namespace DBLayer.Repositories
             }
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(int page, int pageSize)
+        public async Task<IEnumerable<T>> GetAllAsync()
+        {
+            using (UnitOfWork u = new UnitOfWork(_context))
+            {
+                return await _context.Set<T>().ToListAsync();
+            }
+        }
+        public async Task<IEnumerable<T>> GetAllAsyncPaginated(int page, int pageSize)
         {
             using (UnitOfWork u = new UnitOfWork(_context))
             {
