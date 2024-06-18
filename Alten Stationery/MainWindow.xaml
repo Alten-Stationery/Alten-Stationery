@@ -18,10 +18,11 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-
         <StackPanel Grid.Row="0" Background="#2E3B4E" Margin="5,48,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="2">
-            <!--<Image Source="/Images/grafico.jpg" VerticalAlignment="Center" HorizontalAlignment="Center" Height="200" Width="200" Margin="50,20,50,30"/>-->
-            <Image Source="/Images/icon_alten.jpg" VerticalAlignment="Center" HorizontalAlignment="Center" Height="200" Width="200" Margin="50,20,50,30"/>
+            <Grid>
+                <Image Source="/Images/grafico.jpg" Grid.ZIndex="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="280" Width="300" Margin="5,0,50,0"/>
+                <Image Source="/Images/icon_alten.jpg" Grid.ZIndex="2" VerticalAlignment="Center" HorizontalAlignment="Center" Height="200" Width="200" Margin="50,20,50,30"/>
+            </Grid>
         </StackPanel>
 
         <Border Grid.Column="2" CornerRadius="10" Background="White" Width="250" Height="320" VerticalAlignment="Center" HorizontalAlignment="Center">
