@@ -88,18 +88,18 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entityToFind = await GetById(entity.UserId);
+                //var entityToFind = await GetById(entity.UserId);
 
-                if (entityToFind != null)
-                {
-                    var validationResult = await _validator.ValidateAsync(entity);
-                    if (!validationResult.IsValid)
-                    {
-                        throw new ArgumentException(validationResult.ToString());
-                    }
-                    await _unitOfWork.Users.UpdateAsync(entity);
-                    return check = true;
-                }
+                //if (entityToFind != null)
+                //{
+                //    var validationResult = await _validator.ValidateAsync(entity);
+                //    if (!validationResult.IsValid)
+                //    {
+                //        throw new ArgumentException(validationResult.ToString());
+                //    }
+                //    await _unitOfWork.Users.UpdateAsync(entity);
+                //    return check = true;
+                //}
                 return check;
             }
             catch (Exception e)

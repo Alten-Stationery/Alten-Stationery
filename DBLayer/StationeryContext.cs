@@ -1,4 +1,6 @@
 ﻿using DBLayer.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Logging;
@@ -11,7 +13,7 @@ using static DBLayer.Models.Item;
 
 namespace DBLayer
 {
-    public class StationeryContext : DbContext
+    public class StationeryContext : IdentityDbContext<User>
     {
         public StationeryContext() { }
 
@@ -78,10 +80,9 @@ namespace DBLayer
             modelBuilder.Entity<User>(i =>
             {
                 i.HasKey(c => c.UserId);
-                i.Property(c => c.LastName).HasColumnType("nvarchar").HasMaxLength(50);
-                i.Property(c => c.FirstName).HasColumnType("nvarchar").HasMaxLength(50);
+                i.Property(c => c.UserName).HasColumnType("nvarchar").HasMaxLength(50);
                 i.Property(c => c.Email).HasColumnType("nvarchar").HasMaxLength(50);
-                i.Property(c => c.Password).HasColumnType("nvarchar").HasMaxLength(50);
+                i.Property(c => c.PasswordHash).HasColumnType("nvarchar").HasMaxLength(50);
                 i.ToTable("Users");
             });
             #endregion
@@ -107,6 +108,13 @@ namespace DBLayer
             .HasForeignKey(oi => oi.UserId);
             #endregion
 
+            modelBuilder.HasDefaultSchema("identity");
+
+            modelBuilder.Entity<IdentityUserLogin<string>>().HasNoKey();
+            modelBuilder.Entity<IdentityUserRole<string>>().HasNoKey();
+            modelBuilder.Entity<IdentityUserToken<string>>().HasNoKey();
+
+            
         }
 
 

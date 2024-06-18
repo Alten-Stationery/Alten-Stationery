@@ -3,50 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA3F3819-C9A6-40BF-BFD7-65BB0FB06FBF}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA3F3819-C9A6-40BF-BFD7-65BB0FB06FBF}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\servicelayer\\services\\classes\\alertsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\services\\classes\\alertsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Migrations\\20240618102910_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DBLayer\\Migrations\\20240618102910_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\stationerycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\stationerycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\models\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\models\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\models\\refill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\models\\refill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\afanelli\\source\\repos\\CinemaWebApp\\CinemaWebApp\\Repositories\\Repository_A.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4139F035-0AF8-427D-9D3C-F84BEDE07496}|WebApplication1\\WebApplication1.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4139F035-0AF8-427D-9D3C-F84BEDE07496}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\servicelayer\\services\\classes\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\services\\classes\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\servicelayer\\iservices\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\iservices\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\afanelli\\source\\repos\\EntityFrameworkProject1\\EntityFrameworkProject1\\GestioneVoliContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\servicelayer\\services\\validations\\uservalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\services\\validations\\uservalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\afanelli\\source\\repos\\CinemaWebApp\\CinemaWebApp\\Repositories\\Repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -56,7 +37,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 25,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -124,179 +105,94 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Repositories\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "DBLayer\\Repositories\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Repositories\\GenericRepository.cs",
-              "RelativeToolTip": "DBLayer\\Repositories\\GenericRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAIAAAA",
+              "DocumentIndex": 0,
+              "Title": "20240618102910_test.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Migrations\\20240618102910_test.cs",
+              "RelativeDocumentMoniker": "DBLayer\\Migrations\\20240618102910_test.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Migrations\\20240618102910_test.cs",
+              "RelativeToolTip": "DBLayer\\Migrations\\20240618102910_test.cs",
+              "ViewState": "AQIAAPQAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T09:58:19.469Z",
+              "WhenOpened": "2024-06-18T10:29:10.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "StationeryContext.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\StationeryContext.cs",
-              "RelativeDocumentMoniker": "DBLayer\\StationeryContext.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\StationeryContext.cs",
-              "RelativeToolTip": "DBLayer\\StationeryContext.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAgwBAAAAAAAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "WebApplication1\\Program.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAawB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T12:34:21.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AlertsService.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\AlertsService.cs",
-              "RelativeDocumentMoniker": "ServiceLayer\\Services\\Classes\\AlertsService.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\AlertsService.cs",
-              "RelativeToolTip": "ServiceLayer\\Services\\Classes\\AlertsService.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAA6wFAAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T12:34:27.631Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Alert.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Alert.cs",
-              "RelativeDocumentMoniker": "DBLayer\\Models\\Alert.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Alert.cs",
-              "RelativeToolTip": "DBLayer\\Models\\Alert.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T12:23:22.108Z",
+              "WhenOpened": "2024-06-18T09:51:11.409Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Item.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Item.cs",
-              "RelativeDocumentMoniker": "DBLayer\\Models\\Item.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Item.cs",
-              "RelativeToolTip": "DBLayer\\Models\\Item.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAA1wAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T12:23:21.215Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Refill.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Refill.cs",
-              "RelativeDocumentMoniker": "DBLayer\\Models\\Refill.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\Refill.cs",
-              "RelativeToolTip": "DBLayer\\Models\\Refill.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T12:21:48.75Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserValidator.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Validations\\UserValidator.cs",
-              "RelativeDocumentMoniker": "ServiceLayer\\Services\\Validations\\UserValidator.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Validations\\UserValidator.cs",
-              "RelativeToolTip": "ServiceLayer\\Services\\Validations\\UserValidator.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T10:06:58.068Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IService.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\IServices\\IService.cs",
-              "RelativeDocumentMoniker": "ServiceLayer\\IServices\\IService.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\IServices\\IService.cs",
-              "RelativeToolTip": "ServiceLayer\\IServices\\IService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T09:59:49.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "UsersService.cs",
               "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
               "RelativeDocumentMoniker": "ServiceLayer\\Services\\Classes\\UsersService.cs",
               "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
               "RelativeToolTip": "ServiceLayer\\Services\\Classes\\UsersService.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAuwCoAAAAMAAAA",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAnwGUAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T09:56:17.374Z",
+              "WhenOpened": "2024-06-18T09:08:18.981Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ConsoleApp\\Program.cs",
-              "RelativeDocumentMoniker": "ConsoleApp\\Program.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ConsoleApp\\Program.cs",
-              "RelativeToolTip": "ConsoleApp\\Program.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAqwFQAAAA1AAAA",
+              "DocumentIndex": 6,
+              "Title": "UserValidator.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Validations\\UserValidator.cs",
+              "RelativeDocumentMoniker": "ServiceLayer\\Services\\Validations\\UserValidator.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Validations\\UserValidator.cs",
+              "RelativeToolTip": "ServiceLayer\\Services\\Validations\\UserValidator.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAjwA4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T08:44:41.399Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "d100e9ca-5179-45e0-ac85-ffa18359b89d",
-        "Display": 0,
-        "X": 286,
-        "Y": 0,
-        "Width": 1254,
-        "Height": 626,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Repository_A.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\CinemaWebApp\\CinemaWebApp\\Repositories\\Repository_A.cs",
-              "RelativeDocumentMoniker": "..\\CinemaWebApp\\CinemaWebApp\\Repositories\\Repository_A.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\CinemaWebApp\\CinemaWebApp\\Repositories\\Repository_A.cs",
-              "RelativeToolTip": "..\\CinemaWebApp\\CinemaWebApp\\Repositories\\Repository_A.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T11:09:31.39Z",
+              "WhenOpened": "2024-06-18T09:08:15.334Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\CinemaWebApp\\CinemaWebApp\\Repositories\\Repository.cs",
-              "RelativeDocumentMoniker": "..\\CinemaWebApp\\CinemaWebApp\\Repositories\\Repository.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\CinemaWebApp\\CinemaWebApp\\Repositories\\Repository.cs",
-              "RelativeToolTip": "..\\CinemaWebApp\\CinemaWebApp\\Repositories\\Repository.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAAD0AAABDAAAA",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\User.cs",
+              "RelativeDocumentMoniker": "DBLayer\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\User.cs",
+              "RelativeToolTip": "DBLayer\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T10:18:38.765Z"
+              "WhenOpened": "2024-06-18T08:35:34.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StationeryContext.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\StationeryContext.cs",
+              "RelativeDocumentMoniker": "DBLayer\\StationeryContext.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\StationeryContext.cs",
+              "RelativeToolTip": "DBLayer\\StationeryContext.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAWwFEAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T08:28:37.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GestioneVoliContext.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\EntityFrameworkProject1\\EntityFrameworkProject1\\GestioneVoliContext.cs",
+              "RelativeDocumentMoniker": "..\\EntityFrameworkProject1\\EntityFrameworkProject1\\GestioneVoliContext.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\EntityFrameworkProject1\\EntityFrameworkProject1\\GestioneVoliContext.cs",
+              "RelativeToolTip": "..\\EntityFrameworkProject1\\EntityFrameworkProject1\\GestioneVoliContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T08:26:17.923Z",
+              "EditorCaption": ""
             }
           ]
         }
