@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using DBLayer.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +14,7 @@ namespace ServiceLayer.IServices
         Task<bool> CreateAsync(T entity);
         Task<bool> DeleteAsync(int id);
         Task<bool> UpdateAsync(T entity);
-        Task<IEnumerable<T>> GetAllAsync(int page, int pageSize);
+        Task<IEnumerable<T>> GetAllAsync();
         Task<T> GetById(int id);
-
     }
 }

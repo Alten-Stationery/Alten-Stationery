@@ -1,6 +1,8 @@
-﻿using DBLayer.IRepositories;
+﻿using DBLayer;
+using DBLayer.IRepositories;
 using DBLayer.Models;
 using DBLayer.UOW;
+using Microsoft.EntityFrameworkCore;
 using ServiceLayer.IServices;
 using ServiceLayer.Services.Validations;
 using System;
@@ -29,7 +31,8 @@ namespace ServiceLayer.Services.Classes
                 {
                     return false;
                 }
-                await   _unitOfWork.Items.CreateAsync(entity);
+                await _unitOfWork.Items.CreateAsync(entity);
+                await _unitOfWork.SaveAsync();
                 return true;
             }catch (Exception ex)
             {
@@ -56,19 +59,29 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<IEnumerable<Item>> GetAllAsync(int page, int pageSize)
+        public async Task<IEnumerable<Item>> GetAllAsync()
         {
             try
             {
-                IEnumerable<Item> items= await _unitOfWork.Items.GetAllAsync(page,pageSize);
+                IEnumerable<Item> items = await _unitOfWork.Items.GetAllAsync();
                 return items;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
             }
-           
-            
+        }
+        public async Task<IEnumerable<Item>> GetAllAsyncPaginated(int page, int pageSize)
+        {
+            try
+            {
+                IEnumerable<Item> items = await _unitOfWork.Items.GetAllAsyncPaginated(page, pageSize);
+                return items;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         public async Task<Item> GetById(int id)
@@ -98,6 +111,7 @@ namespace ServiceLayer.Services.Classes
                         return check;
                     }                   
                     await _unitOfWork.Items.UpdateAsync(entity);
+                    await _unitOfWork.SaveAsync();
                     return check= true;
                 }
                 return check;

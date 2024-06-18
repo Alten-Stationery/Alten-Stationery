@@ -12,8 +12,7 @@ namespace DBLayer.UOW
         IAlertsRepository Alerts { get; }
         IItemsRepository Items { get; }
         IRefillsRepository Refills { get; }
-        IUsersRepository Users { get; }  
-        Task<int> CompleteAsync();
-        
+        IUsersRepository Users { get; }
+        Task<int> SaveAsync();
     }
 }

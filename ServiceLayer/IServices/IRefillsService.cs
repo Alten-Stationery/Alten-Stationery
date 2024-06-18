@@ -9,5 +9,6 @@ namespace ServiceLayer.IServices
 {
     public interface IRefillsService:IService<Refill>
     {
+        Task<IEnumerable<Refill>> GetAllAsyncPaginated(int page, int pageSize);
     }
 }
