@@ -9,6 +9,6 @@ namespace ServiceLayer.IServices
 {
     public interface IAlertsService : IService<Alert>
     {
-
+        Task<IEnumerable<Alert>> GetAllAsyncPaginated(int page, int pageSize);
     }
 }

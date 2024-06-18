@@ -9,6 +9,6 @@ namespace ServiceLayer.IServices
 {
     public interface IItemsService:IService<Item>
     {
-       
+        Task<IEnumerable<Item>> GetAllAsyncPaginated(int page, int pageSize);
     }
 }
