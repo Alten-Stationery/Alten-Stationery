@@ -9,6 +9,5 @@ namespace ServiceLayer.IServices
 {
     public interface IUsersService : IService<User>
     {
-        Task<IEnumerable<User>> GetAllAsyncPaginated(int page, int pageSize);
     }
 }

@@ -15,6 +15,7 @@ namespace ServiceLayer.IServices
         Task<bool> DeleteAsync(int id);
         Task<bool> UpdateAsync(T entity);
         Task<IEnumerable<T>> GetAllAsync();
+        Task<IEnumerable<T>> GetAllAsyncPaginated(int page, int pageSize);
         Task<T> GetById(int id);
     }
 }
