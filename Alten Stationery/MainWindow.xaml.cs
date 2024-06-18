@@ -20,5 +20,15 @@ namespace Alten_Stationery
         {
             InitializeComponent();
         }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Link_ResetPassword(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -14,7 +14,8 @@ using ServiceLayer.Services.Classes;
 
 HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 
-
+var app = builder.Build();
+app.Run();
 
 //builder.Services.AddDbContext<StationeryContext>(options => 
 //    options.UseSqlServer("name=ConnectionStrings:StationeryDB"));
