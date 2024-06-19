@@ -49,7 +49,7 @@ namespace ServiceLayer.Services.Classes
 
                 if (entity != null)
                 {
-                    await _unitOfWork.Refills.DeleteAsync(entity);
+                    _unitOfWork.Refills.Delete(entity);
                     await _unitOfWork.SaveAsync();
                     check = true;
                 }
@@ -113,7 +113,7 @@ namespace ServiceLayer.Services.Classes
                     {
                         return check;
                     }
-                    await _unitOfWork.Refills.UpdateAsync(entity);
+                    _unitOfWork.Refills.Delete(entity);
                     await _unitOfWork.SaveAsync();
                     return check = true;
                 }
