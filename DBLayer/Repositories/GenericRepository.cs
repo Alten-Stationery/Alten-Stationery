@@ -20,7 +20,7 @@ namespace DBLayer.Repositories
         {
             await _context.Set<T>().AddAsync(entity);
         }
-        public async Task DeleteAsync(T entity)
+        public  void Delete(T entity)
         {
             _context.Set<T>().Remove(entity);
         }
@@ -30,10 +30,6 @@ namespace DBLayer.Repositories
         }
         public async Task<IEnumerable<T>> GetAllAsyncPaginated(int page, int pageSize)
         {
-            if (page <= 1)
-            {
-                page = 0;
-            }
             int totalNumber = page * pageSize;
             return await _context.Set<T>().Skip(totalNumber).Take(pageSize).ToListAsync();
         }
@@ -43,7 +39,7 @@ namespace DBLayer.Repositories
             T result = await _context.Set<T>().FindAsync(id);
             return result;
         }
-        public async Task UpdateAsync(T entity)
+        public void Update(T entity)
         {
             _context.Set<T>().Update(entity);
         }
