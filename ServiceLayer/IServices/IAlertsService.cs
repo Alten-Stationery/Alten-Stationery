@@ -9,6 +9,5 @@ namespace ServiceLayer.IServices
 {
     public interface IAlertsService : IService<Alert>
     {
-
     }
 }

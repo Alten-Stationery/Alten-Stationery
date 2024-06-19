@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\servicelayer\\services\\classes\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\services\\classes\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,7 +25,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -84,25 +92,46 @@
               "Name": "ST:140:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Wpf-Stationery\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\MainWindow.xaml",
+              "RelativeToolTip": "Wpf-Stationery\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-19T12:41:02.526Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Wpf-Stationery\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Wpf-Stationery\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T12:41:02.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UsersService.cs",
               "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
               "RelativeDocumentMoniker": "ServiceLayer\\Services\\Classes\\UsersService.cs",
               "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
               "RelativeToolTip": "ServiceLayer\\Services\\Classes\\UsersService.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-19T09:58:32.969Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "UsersService.cs",
               "DocumentMoniker": "C:\\Users\\afanelli\\Documents\\GitHub\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Documents\\GitHub\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
@@ -110,8 +139,7 @@
               "RelativeToolTip": "..\\..\\..\\Documents\\GitHub\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T09:31:08.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T09:31:08.141Z"
             }
           ]
         }

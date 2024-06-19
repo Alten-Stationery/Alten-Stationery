@@ -18,52 +18,34 @@ namespace DBLayer.Repositories
         }
         public async Task CreateAsync(T entity)
         {
-            using (UnitOfWork u = new UnitOfWork(_context))
-            {
-                await _context.Set<T>().AddAsync(entity);
-                await u.CompleteAsync();
-            }
+            await _context.Set<T>().AddAsync(entity);
         }
-
         public async Task DeleteAsync(T entity)
         {
-            using (UnitOfWork u = new UnitOfWork(_context))
-            {
-                _context.Set<T>().Remove(entity);
-                await u.CompleteAsync();
-            }
+            _context.Set<T>().Remove(entity);
         }
-
-        public async Task<IEnumerable<T>> GetAllAsync(int page, int pageSize)
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            using (UnitOfWork u = new UnitOfWork(_context))
-            {
-                if (page <= 1)
-                {
-                    page = 0;
-                }
-                int totalNumber = page * pageSize;
-                await u.CompleteAsync();
-                return await _context.Set<T>().Skip(totalNumber).Take(pageSize).ToListAsync();
-            }
+            return await _context.Set<T>().ToListAsync();
         }
-
+        public async Task<IEnumerable<T>> GetAllAsyncPaginated(int page, int pageSize)
+        {
+            if (page <= 1)
+            {
+                page = 0;
+            }
+            int totalNumber = page * pageSize;
+            return await _context.Set<T>().Skip(totalNumber).Take(pageSize).ToListAsync();
+        }
         public async Task<T> GetByIdAsync(int id)
         {
-
             _context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             T result = await _context.Set<T>().FindAsync(id);
             return result;
-
         }
-
         public async Task UpdateAsync(T entity)
         {
-            using (UnitOfWork u = new UnitOfWork(_context))
-            {
-                _context.Set<T>().Update(entity);
-                await u.CompleteAsync();
-            }
+            _context.Set<T>().Update(entity);
         }
     }
 }

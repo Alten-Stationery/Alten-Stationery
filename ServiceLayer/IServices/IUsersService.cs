@@ -9,6 +9,5 @@ namespace ServiceLayer.IServices
 {
     public interface IUsersService : IService<User>
     {
-
     }
 }

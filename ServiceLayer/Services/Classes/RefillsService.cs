@@ -1,6 +1,8 @@
-﻿using DBLayer.IRepositories;
+﻿using DBLayer;
+using DBLayer.IRepositories;
 using DBLayer.Models;
 using DBLayer.UOW;
+using Microsoft.EntityFrameworkCore;
 using ServiceLayer.IServices;
 using ServiceLayer.Services.Validations;
 using System;
@@ -29,6 +31,7 @@ namespace ServiceLayer.Services.Classes
                     return false;
                 }
                 await _unitOfWork.Refills.CreateAsync(entity);
+                await _unitOfWork.SaveAsync();
                 return true;
             }
             catch (Exception ex)
@@ -47,6 +50,7 @@ namespace ServiceLayer.Services.Classes
                 if (entity != null)
                 {
                     await _unitOfWork.Refills.DeleteAsync(entity);
+                    await _unitOfWork.SaveAsync();
                     check = true;
                 }
                 return check;
@@ -57,11 +61,23 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<IEnumerable<Refill>> GetAllAsync(int page, int pageSize)
+        public async Task<IEnumerable<Refill>> GetAllAsync()
         {
             try
             {
-                IEnumerable<Refill> refills = await _unitOfWork.Refills.GetAllAsync(page, pageSize);
+                IEnumerable<Refill> refills = await _unitOfWork.Refills.GetAllAsync();
+                return refills;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public async Task<IEnumerable<Refill>> GetAllAsyncPaginated(int page, int pageSize)
+        {
+            try
+            {
+                IEnumerable<Refill> refills = await _unitOfWork.Refills.GetAllAsyncPaginated(page, pageSize);
                 return refills;
             }
             catch (Exception ex)
@@ -98,6 +114,7 @@ namespace ServiceLayer.Services.Classes
                         return check;
                     }
                     await _unitOfWork.Refills.UpdateAsync(entity);
+                    await _unitOfWork.SaveAsync();
                     return check = true;
                 }
                 return check;

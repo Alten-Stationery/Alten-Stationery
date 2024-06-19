@@ -9,6 +9,5 @@ namespace ServiceLayer.IServices
 {
     public interface IItemsService:IService<Item>
     {
-       
     }
 }

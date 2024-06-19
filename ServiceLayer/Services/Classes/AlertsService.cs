@@ -1,6 +1,8 @@
-﻿using DBLayer.IRepositories;
+﻿using DBLayer;
+using DBLayer.IRepositories;
 using DBLayer.Models;
 using DBLayer.UOW;
+using Microsoft.EntityFrameworkCore;
 using ServiceLayer.IServices;
 using ServiceLayer.Services.Validations;
 using System;
@@ -13,7 +15,6 @@ namespace ServiceLayer.Services.Classes
 {
     public class AlertsService : IAlertsService
     {
-
         private readonly AlertValidator _validator = new AlertValidator();
         private readonly IUnitOfWork _unitOfWork;
         public AlertsService(IUnitOfWork unitOfWork)
@@ -31,6 +32,7 @@ namespace ServiceLayer.Services.Classes
                     return false;
                 }
                 await _unitOfWork.Alerts.CreateAsync(entity);
+                await _unitOfWork.SaveAsync();
                 return true;
             }
             catch (Exception ex)
@@ -49,6 +51,7 @@ namespace ServiceLayer.Services.Classes
                 if (entity != null)
                 {
                     await _unitOfWork.Alerts.DeleteAsync(entity);
+                    await _unitOfWork.SaveAsync();
                     check = true;
                 }
                 return check;
@@ -59,19 +62,29 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<IEnumerable<Alert>> GetAllAsync(int page, int pageSize)
+        public async Task<IEnumerable<Alert>> GetAllAsync()
         {
             try
             {
-                IEnumerable<Alert> alerts = await _unitOfWork.Alerts.GetAllAsync(page, pageSize);
+                IEnumerable<Alert> alerts = await _unitOfWork.Alerts.GetAllAsync();
                 return alerts;
             }
             catch (Exception ex)
             {
                 return null;
             }
-
-
+        }
+        public async Task<IEnumerable<Alert>> GetAllAsyncPaginated(int page, int pageSize)
+        {
+            try
+            {
+                IEnumerable<Alert> alerts = await _unitOfWork.Alerts.GetAllAsyncPaginated(page, pageSize);
+                return alerts;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         public async Task<Alert> GetById(int id)
@@ -102,6 +115,7 @@ namespace ServiceLayer.Services.Classes
                         return check;
                     }
                     await _unitOfWork.Alerts.UpdateAsync(entity);
+                    await _unitOfWork.SaveAsync();
                     return check = true;
                 }
                 return check;
@@ -111,7 +125,6 @@ namespace ServiceLayer.Services.Classes
                 return false;
             }
         }
-
 
     }
 }

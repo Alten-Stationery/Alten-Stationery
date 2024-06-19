@@ -1,5 +1,7 @@
-﻿using DBLayer.Models;
+﻿using DBLayer;
+using DBLayer.Models;
 using DBLayer.UOW;
+using Microsoft.EntityFrameworkCore;
 using ServiceLayer.IServices;
 using ServiceLayer.Services.Validations;
 using System;
@@ -12,7 +14,6 @@ namespace ServiceLayer.Services.Classes
 {
     public class UsersService : IUsersService
     {
-
         private readonly IUnitOfWork _unitOfWork;
         private readonly UserValidator _validator = new UserValidator();
         public UsersService(IUnitOfWork unitOfWork)
@@ -29,6 +30,7 @@ namespace ServiceLayer.Services.Classes
                     throw new ArgumentException(validationResult.ToString());
                 }
                 await _unitOfWork.Users.CreateAsync(entity);
+                await _unitOfWork.SaveAsync();
                 return true;
             }
             catch (Exception )
@@ -36,7 +38,6 @@ namespace ServiceLayer.Services.Classes
                 return false;
             }
         }
-
         public async Task<bool> DeleteAsync(int id)
         {
             try
@@ -47,6 +48,7 @@ namespace ServiceLayer.Services.Classes
                 if (entity != null)
                 {
                     await _unitOfWork.Users.DeleteAsync(entity);
+                    await _unitOfWork.SaveAsync();
                     check = true;
                 }
                 return check;
@@ -56,12 +58,11 @@ namespace ServiceLayer.Services.Classes
                 return false;
             }
         }
-
-        public async Task<IEnumerable<User>> GetAllAsync(int page,int pageSize)
+        public async Task<IEnumerable<User>> GetAllAsync()
         {
             try
             {
-                IEnumerable<User> users = await _unitOfWork.Users.GetAllAsync(page, pageSize);
+                IEnumerable<User> users = await _unitOfWork.Users.GetAllAsync();
                 return users;
             }
             catch (Exception ex)
@@ -69,7 +70,18 @@ namespace ServiceLayer.Services.Classes
                 return null;
             }
         }
-
+        public async Task<IEnumerable<User>> GetAllAsyncPaginated(int page, int pageSize)
+        {
+            try
+            {
+                IEnumerable<User> users = await _unitOfWork.Users.GetAllAsyncPaginated(page, pageSize);
+                return users;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public async Task<User> GetById(int id)
         {
             try
@@ -82,24 +94,24 @@ namespace ServiceLayer.Services.Classes
                 return null;
             }
         }
-
         public async Task<bool> UpdateAsync(User entity)
         {
             try
             {
                 bool check = false;
-                //var entityToFind = await GetById(entity.UserId);
+                var entityToFind = await GetById(entity.UserId);
 
-                //if (entityToFind != null)
-                //{
-                //    var validationResult = await _validator.ValidateAsync(entity);
-                //    if (!validationResult.IsValid)
-                //    {
-                //        throw new ArgumentException(validationResult.ToString());
-                //    }
-                //    await _unitOfWork.Users.UpdateAsync(entity);
-                //    return check = true;
-                //}
+                if (entityToFind != null)
+                {
+                    var validationResult = await _validator.ValidateAsync(entity);
+                    if (!validationResult.IsValid)
+                    {
+                        throw new ArgumentException(validationResult.ToString());
+                    }
+                    await _unitOfWork.Users.UpdateAsync(entity);
+                    await _unitOfWork.SaveAsync();
+                    return check = true;
+                }
                 return check;
             }
             catch (Exception e)
