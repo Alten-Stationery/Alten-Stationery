@@ -3,31 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Migrations\\20240618102910_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DBLayer\\Migrations\\20240618102910_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\stationerycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\stationerycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4139F035-0AF8-427D-9D3C-F84BEDE07496}|WebApplication1\\WebApplication1.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4139F035-0AF8-427D-9D3C-F84BEDE07496}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\servicelayer\\services\\classes\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\services\\classes\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\afanelli\\source\\repos\\EntityFrameworkProject1\\EntityFrameworkProject1\\GestioneVoliContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\servicelayer\\services\\validations\\uservalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\services\\validations\\uservalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\afanelli\\Documents\\GitHub\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,7 +17,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Bookmark",
@@ -104,94 +84,33 @@
               "Name": "ST:140:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20240618102910_test.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Migrations\\20240618102910_test.cs",
-              "RelativeDocumentMoniker": "DBLayer\\Migrations\\20240618102910_test.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Migrations\\20240618102910_test.cs",
-              "RelativeToolTip": "DBLayer\\Migrations\\20240618102910_test.cs",
-              "ViewState": "AQIAAPQAAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T10:29:10.537Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\WebApplication1\\Program.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\WebApplication1\\Program.cs",
-              "RelativeToolTip": "WebApplication1\\Program.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAawB0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T09:51:11.409Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "UsersService.cs",
               "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
               "RelativeDocumentMoniker": "ServiceLayer\\Services\\Classes\\UsersService.cs",
               "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
               "RelativeToolTip": "ServiceLayer\\Services\\Classes\\UsersService.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAnwGUAAAATAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T09:08:18.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserValidator.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Validations\\UserValidator.cs",
-              "RelativeDocumentMoniker": "ServiceLayer\\Services\\Validations\\UserValidator.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Validations\\UserValidator.cs",
-              "RelativeToolTip": "ServiceLayer\\Services\\Validations\\UserValidator.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAjwA4AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T09:08:15.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\User.cs",
-              "RelativeDocumentMoniker": "DBLayer\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\User.cs",
-              "RelativeToolTip": "DBLayer\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T08:35:34.192Z",
+              "WhenOpened": "2024-06-19T09:58:32.969Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StationeryContext.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\StationeryContext.cs",
-              "RelativeDocumentMoniker": "DBLayer\\StationeryContext.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\StationeryContext.cs",
-              "RelativeToolTip": "DBLayer\\StationeryContext.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAWwFEAAAAmAAAA",
+              "Title": "UsersService.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\Documents\\GitHub\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Documents\\GitHub\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
+              "ToolTip": "C:\\Users\\afanelli\\Documents\\GitHub\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
+              "RelativeToolTip": "..\\..\\..\\Documents\\GitHub\\Alten-Stationery\\ServiceLayer\\Services\\Classes\\UsersService.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T08:28:37.954Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GestioneVoliContext.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\EntityFrameworkProject1\\EntityFrameworkProject1\\GestioneVoliContext.cs",
-              "RelativeDocumentMoniker": "..\\EntityFrameworkProject1\\EntityFrameworkProject1\\GestioneVoliContext.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\EntityFrameworkProject1\\EntityFrameworkProject1\\GestioneVoliContext.cs",
-              "RelativeToolTip": "..\\EntityFrameworkProject1\\EntityFrameworkProject1\\GestioneVoliContext.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T08:26:17.923Z",
+              "WhenOpened": "2024-06-19T09:31:08.141Z",
               "EditorCaption": ""
             }
           ]
