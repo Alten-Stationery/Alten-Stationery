@@ -42,4 +42,5 @@ builder.Services.AddScoped<IUsersService, UsersService>();
 // Registrazione dei controller
 //builder.Services.AddControllers();
 var app = builder.Build();
+
 app.Run();

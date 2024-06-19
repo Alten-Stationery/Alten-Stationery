@@ -48,6 +48,7 @@ namespace ServiceLayer.Services.Classes
                 if (entity != null)
                 {
                     await _unitOfWork.Users.DeleteAsync(entity);
+                    await _unitOfWork.SaveAsync();
                     check = true;
                 }
                 return check;
