@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Alten Stationery")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20d315b22638961a4076c8a9ef800d5555819e59")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cba9abec5b33acb981a8c3beb35b4e36ddd29bc5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Alten Stationery")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Alten Stationery")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
