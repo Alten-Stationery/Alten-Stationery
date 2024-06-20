@@ -1,0 +1,80 @@
+﻿<Window x:Class="Alten_Stationery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Alten_Stationery"
+        mc:Ignorable="d"
+        Title="Items" Height="350" Width="780" WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize" Icon="Images/icon_alten.jpg">
+
+    <Grid Name="gridItems">
+        <GroupBox Header="Dati Items" Style="{StaticResource groupBoxStyle}" Margin="80,5,5,5" Grid.Row="0" Grid.RowSpan="8" Grid.Column="0" Grid.ColumnSpan="6">
+            <StackPanel Name="panelItems" Grid.Row="1" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="8" Margin="0,0,114,0">
+                <!--<Label Style="{StaticResource labelStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="labelTitolo" Content="Dati curva" />-->
+                <StackPanel Orientation="Horizontal" Name="panelPrimoTab" Grid.Row="1" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="6">
+                    <Grid x:Name="GridPanel" Grid.Row="1" Grid.RowSpan="8" Grid.Column="0" Grid.ColumnSpan="8">
+                        <Label Style="{StaticResource labelStyle}" FontWeight="Bold" Grid.Column="0" x:Name="labelBoxName" Content="Name:" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="3" Width="90" Height="26" Margin="5"/>
+                        <TextBox Grid.Column="1" x:Name="textBoxName" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Height="20" Margin="5"/>
+
+                        <Label Style="{StaticResource labelStyle}" FontWeight="Bold" Grid.Column="3" x:Name="labelThreshold" Content="Threshold:" VerticalAlignment="Center" HorizontalAlignment="Left" Height="26" Width="110" />
+                        <TextBox Grid.Column="4" x:Name="textBoxThreshold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Height="20" Margin="5"  />
+
+                        <Label Style="{StaticResource labelStyle}" FontWeight="Bold" Grid.Column="0" Grid.Row="1" x:Name="labelDescription" Content="Description:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="90" Height="26" Margin="5"/>
+                        <TextBox Grid.Column="1" Grid.Row="1" x:Name="textBoxDescription" HorizontalAlignment="Left" Width="120" Height="20" Margin="5"/>
+
+                        <Label Style="{StaticResource labelStyle}" FontWeight="Bold" Grid.Column="3" Grid.Row="1" x:Name="labeLocation" Content="Location:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="90" Height="26" Margin="5"/>
+                        <TextBox Grid.Column="4" Grid.Row="1" x:Name="textBoxLocation" HorizontalAlignment="Left" Width="120" Height="20" Margin="5"/>
+
+                        <Label Style="{StaticResource labelStyle}" FontWeight="Bold" Grid.Column="0" Grid.Row="2" x:Name="labeType" Content="Type:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="90" Height="26" Margin="5"/>
+                        <TextBox Grid.Column="1" Grid.Row="2" x:Name="textBoxType" HorizontalAlignment="Left" Width="120" Height="20" Margin="5"/>
+
+                        <Label Style="{StaticResource labelStyle}" FontWeight="Bold" Grid.Column="3" Grid.Row="2" x:Name="labeQuantity" Content="Quantity:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="90" Height="26" Margin="5"/>
+                        <TextBox Grid.Column="4" Grid.Row="2" x:Name="textBoxQuantity" HorizontalAlignment="Left" Width="120" Height="20" Margin="5"/>
+
+                        <Label Style="{StaticResource labelStyle}" FontWeight="Bold" Grid.Column="0" Grid.Row="3" x:Name="labelExpirationDate" Content="ExpirationDate:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" Height="26" Margin="5"/>
+                        <TextBox Grid.Column="1" Grid.Row="3" x:Name="textBoxExpirationDate" HorizontalAlignment="Left" Width="120" Height="20" Margin="5"/>
+
+                        <Label Style="{StaticResource labelStyle}" FontWeight="Bold" Grid.Column="3" Grid.Row="3" x:Name="labelExpireFEDate" Content="ExpireFEDate:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="90" Height="26" Margin="5"/>
+                        <TextBox Grid.Column="4" Grid.Row="3" x:Name="textBoxExpireFEDate" HorizontalAlignment="Left" Width="120" Height="20" Margin="5"/>
+
+                        <Button Grid.Column="4" Grid.Row="4" Content="ADD ITEM" Click="AddItemsButton_Click" Background="#2E3B4E" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="40" Margin="5"/>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="200"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="140"/>
+                            <!--<ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="100"/>-->
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </StackPanel>
+
+            </StackPanel>
+        </GroupBox>
+
+        <!--SFONDO NERO-->
+        <StackPanel Background="Black" VerticalAlignment="Center" HorizontalAlignment="Left" Height="328" Width="55" Grid.ColumnSpan="2" Margin="6,0,0,0">
+            <Grid Height="80" Width="50"/>
+        </StackPanel>
+
+        <!--ICONA ALTEN-->
+        <StackPanel Grid.Row="0" Background="#2E3B4E" Margin="10,17,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="58" Width="45" Grid.ColumnSpan="2">
+            <Grid Height="60" Width="50">
+                <Image Source="/Images/icon_alten.jpg" Panel.ZIndex="2" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="41" Margin="7,3,0,0"/>
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</Window>
