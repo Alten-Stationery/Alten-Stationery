@@ -23,5 +23,14 @@ namespace Wpf_Stationery
         {
             InitializeComponent();
         }
+
+
+        private void AddItemsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+
     }
 }

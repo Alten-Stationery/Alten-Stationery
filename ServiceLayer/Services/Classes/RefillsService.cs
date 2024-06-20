@@ -99,7 +99,7 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<bool> UpdateAsync(Refill entity)
+        public async Task<bool> Update(Refill entity)
         {
             try
             {
@@ -113,7 +113,7 @@ namespace ServiceLayer.Services.Classes
                     {
                         return check;
                     }
-                    _unitOfWork.Refills.Delete(entity);
+                    _unitOfWork.Refills.Update(entity);
                     await _unitOfWork.SaveAsync();
                     return check = true;
                 }

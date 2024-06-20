@@ -38,7 +38,7 @@ namespace ServiceLayer.Services.Classes
                 return false;
             }
         }
-        public async Task<bool> DeleteAsync(int id)
+        public Task<bool> Delete(int id)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace ServiceLayer.Services.Classes
                 return null;
             }
         }
-        public async Task<bool> UpdateAsync(User entity)
+        public Task<bool> Update(User entity)
         {
             try
             {
@@ -108,7 +108,7 @@ namespace ServiceLayer.Services.Classes
                     {
                         throw new ArgumentException(validationResult.ToString());
                     }
-                    _unitOfWork.Users.Delete(entity);
+                    _unitOfWork.Users.Update(entity);
                     await _unitOfWork.SaveAsync();
                     return check = true;
                 }

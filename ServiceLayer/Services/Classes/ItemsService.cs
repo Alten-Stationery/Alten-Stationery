@@ -40,7 +40,7 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> Delete(int id)
         {
             try
             {
@@ -97,7 +97,7 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<bool> UpdateAsync(Item entity)
+        public Task<bool> Update(Item entity)
         {
             try
             {
@@ -111,7 +111,7 @@ namespace ServiceLayer.Services.Classes
                     {
                         return check;
                     }                   
-                    _unitOfWork.Items.Delete(entity);
+                    _unitOfWork.Items.Update(entity);
                     await _unitOfWork.SaveAsync();
                     return check= true;
                 }
