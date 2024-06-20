@@ -14,8 +14,6 @@ using ServiceLayer.Services.Classes;
 
 HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 
-
-
 //builder.Services.AddDbContext<StationeryContext>(options => 
 //    options.UseSqlServer("name=ConnectionStrings:StationeryDB"));
 
@@ -44,4 +42,5 @@ builder.Services.AddScoped<IUsersService, UsersService>();
 // Registrazione dei controller
 //builder.Services.AddControllers();
 var app = builder.Build();
+
 app.Run();

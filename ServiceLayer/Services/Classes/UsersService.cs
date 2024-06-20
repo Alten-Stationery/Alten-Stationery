@@ -47,7 +47,8 @@ namespace ServiceLayer.Services.Classes
 
                 if (entity != null)
                 {
-                    await _unitOfWork.Users.DeleteAsync(entity);
+                     _unitOfWork.Users.Delete(entity);
+                    await _unitOfWork.SaveAsync();
                     check = true;
                 }
                 return check;
@@ -107,7 +108,7 @@ namespace ServiceLayer.Services.Classes
                     {
                         throw new ArgumentException(validationResult.ToString());
                     }
-                    await _unitOfWork.Users.UpdateAsync(entity);
+                    _unitOfWork.Users.Delete(entity);
                     await _unitOfWork.SaveAsync();
                     return check = true;
                 }
