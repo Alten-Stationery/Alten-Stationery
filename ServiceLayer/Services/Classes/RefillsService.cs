@@ -39,18 +39,17 @@ namespace ServiceLayer.Services.Classes
                 return false;
             }
         }
-
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> Delete(int id)
         {
             try
             {
                 bool check = false;
-                var entity = await GetById(id);
+                var entity = GetById(id);
 
                 if (entity != null)
                 {
                     _unitOfWork.Refills.Delete(entity);
-                    await _unitOfWork.SaveAsync();
+                    _unitOfWork.SaveAsync();
                     check = true;
                 }
                 return check;
@@ -60,6 +59,26 @@ namespace ServiceLayer.Services.Classes
                 return false;
             }
         }
+        //public async Task<bool> DeleteAsync(int id)
+        //{
+        //    try
+        //    {
+        //        bool check = false;
+        //        var entity = await GetById(id);
+
+        //        if (entity != null)
+        //        {
+        //            _unitOfWork.Refills.Delete(entity);
+        //            await _unitOfWork.SaveAsync();
+        //            check = true;
+        //        }
+        //        return check;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return false;
+        //    }
+        //}
 
         public async Task<IEnumerable<Refill>> GetAllAsync()
         {

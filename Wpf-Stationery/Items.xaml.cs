@@ -21,7 +21,7 @@ namespace Wpf_Stationery
     {
         public Items()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {

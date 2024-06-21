@@ -105,17 +105,17 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entityToFind = await GetById(entity.AlertId);
+                var entityToFind = GetById(entity.AlertId);
 
                 if (entityToFind != null)
                 {
-                    var validationResult = await _validator.ValidateAsync(entity);
+                    var validationResult = _validator.ValidateAsync(entity);
                     if (!validationResult.IsValid)
                     {
                         return check;
                     }
                     _unitOfWork.Alerts.Update(entity);
-                    await _unitOfWork.SaveAsync();
+                    _unitOfWork.SaveAsync();
                     return check = true;
                 }
                 return check;

@@ -43,12 +43,12 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entity = await GetById(id);
+                var entity = GetById(id);
 
                 if (entity != null)
                 {
                      _unitOfWork.Users.Delete(entity);
-                    await _unitOfWork.SaveAsync();
+                     _unitOfWork.SaveAsync();
                     check = true;
                 }
                 return check;
@@ -58,6 +58,26 @@ namespace ServiceLayer.Services.Classes
                 return false;
             }
         }
+        //public Task<bool> Delete(int id)
+        //{
+        //    try
+        //    {
+        //        bool check = false;
+        //        var entity = await GetById(id);
+
+        //        if (entity != null)
+        //        {
+        //            _unitOfWork.Users.Delete(entity);
+        //            await _unitOfWork.SaveAsync();
+        //            check = true;
+        //        }
+        //        return check;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return false;
+        //    }
+        //}
         public async Task<IEnumerable<User>> GetAllAsync()
         {
             try
@@ -99,17 +119,17 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entityToFind = await GetById(entity.UserId);
+                var entityToFind = GetById(entity.UserId);
 
                 if (entityToFind != null)
                 {
-                    var validationResult = await _validator.ValidateAsync(entity);
+                    var validationResult = _validator.ValidateAsync(entity);
                     if (!validationResult.IsValid)
                     {
                         throw new ArgumentException(validationResult.ToString());
                     }
                     _unitOfWork.Users.Update(entity);
-                    await _unitOfWork.SaveAsync();
+                    _unitOfWork.SaveAsync();
                     return check = true;
                 }
                 return check;

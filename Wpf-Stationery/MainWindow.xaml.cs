@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Alten_Stationery
+namespace Wpf_Stationery
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

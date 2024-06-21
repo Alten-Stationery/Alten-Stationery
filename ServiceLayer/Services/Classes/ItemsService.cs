@@ -102,17 +102,17 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entityToFind = await GetById(entity.ItemId);
+                var entityToFind = GetById(entity.ItemId);
 
                 if (entityToFind != null)
                 {
-                    var validationResult = await _validator.ValidateAsync(entity);
+                    var validationResult = _validator.ValidateAsync(entity);
                     if (!validationResult.IsValid)
                     {
                         return check;
                     }                   
                     _unitOfWork.Items.Update(entity);
-                    await _unitOfWork.SaveAsync();
+                    _unitOfWork.SaveAsync();
                     return check= true;
                 }
                 return check;
