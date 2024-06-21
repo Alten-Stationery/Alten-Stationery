@@ -19,7 +19,7 @@
             <!--<Setter Property="Label.FontFamily" Value="Trebuchet MS"></Setter>-->
             <!--<Setter Property="Label.FontWeight" Value="Bold"></Setter>-->
             <Setter Property="Label.FontSize" Value="15"></Setter>
-            <Setter Property="Label.Foreground" Value="Black"></Setter>
+            <Setter Property="Label.Foreground" Value="#2E3B4E"></Setter>
         </Style>
 
         <!-- Label style -->
@@ -27,7 +27,7 @@
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="HorizontalAlignment" Value="Left" />
             <!--<Setter Property="FontWeight" Value="Bold" />-->
-            <Setter Property="Label.Foreground" Value="Black"></Setter>
+            <Setter Property="Label.Foreground" Value="#2E3B4E"></Setter>
             <Setter Property="Margin" Value="0,0,0,5" />
         </Style>
 
@@ -36,7 +36,7 @@
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="HorizontalAlignment" Value="Left" />
             <!--<Setter Property="FontWeight" Value="Bold" />-->
-            <Setter Property="Label.Foreground" Value="Black"></Setter>
+            <Setter Property="Label.Foreground" Value="#2E3B4E"></Setter>
             <Setter Property="Margin" Value="0,0,0,5" />
         </Style>
 
@@ -77,7 +77,7 @@
             <Setter Property="HeaderTemplate">
                 <Setter.Value>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding}" FontWeight="Bold" Foreground="#2E3B4E"/>
                     </DataTemplate>
                 </Setter.Value>
             </Setter>

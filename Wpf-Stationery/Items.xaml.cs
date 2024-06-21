@@ -23,9 +23,15 @@ namespace Wpf_Stationery
         {
             InitializeComponent();
         }
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
 
-        private void AddItemsButton_Click(object sender, RoutedEventArgs e)
+        }
+        private void SaveESubmitButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
