@@ -5,12 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Wpf_Stationery"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="350" d:DesignWidth="550"
       Title="OfficeSupplies">
 
     <Grid Name="gridItems">
         <GroupBox Header="Office supplies:" Style="{StaticResource groupBoxStyle}" Margin="5,5,5,5" Grid.Row="0" Grid.RowSpan="8" Grid.Column="0" Grid.ColumnSpan="6">
-            <StackPanel Name="panelItems" Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="8" Margin="0,0,114,0">
+            <StackPanel Name="panelItems" Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="8" Margin="5,5,5,5">
                 <!--<Label Style="{StaticResource labelStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="labelTitolo" Content="Dati curva" />-->
                 <StackPanel Orientation="Horizontal" Name="panelPrimoTab" Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="6">
                     <Grid x:Name="GridPanel" Grid.Row="0" Grid.RowSpan="8" Grid.Column="0" Grid.ColumnSpan="8">
