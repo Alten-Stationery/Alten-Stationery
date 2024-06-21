@@ -17,11 +17,11 @@ namespace Wpf_Stationery
     /// <summary>
     /// Interaction logic for Items.xaml
     /// </summary>
-    public partial class Items : Page
+    public partial class Items : Window
     {
         public Items()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {

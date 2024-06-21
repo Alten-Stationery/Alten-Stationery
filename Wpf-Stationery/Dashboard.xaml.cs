@@ -10,33 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Wpf_Stationery
 {
     /// <summary>
-    /// Interaction logic for Items.xaml
+    /// Interaction logic for Dashboard.xaml
     /// </summary>
-    public partial class Items : Page
+    public partial class Dashboard : NavigationWindow
     {
-        public Items()
+        public Dashboard()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void SaveESubmitButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-
     }
 }
