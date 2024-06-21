@@ -23,7 +23,7 @@ namespace Alten_Stationery
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void Link_ResetPassword(object sender, RoutedEventArgs e)
