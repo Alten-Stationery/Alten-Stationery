@@ -18,11 +18,27 @@ namespace Wpf_Stationery
     /// <summary>
     /// Interaction logic for Menu.xaml
     /// </summary>
-    public partial class Menu : NavigationWindow
+    public partial class Menu : Page
     {
         public Menu()
         {
             InitializeComponent();
+            
+            //OfficeSupplies officeSupplies = new OfficeSupplies();
+            //this.NavigationService.Navigate(officeSupplies);
+
+            #region Navigation
+            //Create a NavigationWindow
+            //NavigationWindow navWindow = new NavigationWindow();
+            Dashboard dashboard = new Dashboard();
+            //Navigate to Menu.xaml
+            //dashboard.Navigate(new Uri("Menu.xaml", UriKind.Relative));
+
+            //Navigate to Page2.xaml
+            dashboard.Navigate(new Uri("OfficeSupplies.xaml", UriKind.Relative));
+            #endregion
+
+
         }
 
         private void Link_Dashboard(object sender, RoutedEventArgs e)

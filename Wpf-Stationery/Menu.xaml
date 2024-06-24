@@ -46,7 +46,7 @@
             </TextBlock>
 
             <Image Source="/Images/icon_alten.jpg" Panel.ZIndex="2" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="41" Margin="10,5,5,5"/>
-            <!--<Image Source="/Images/icon_menu.jpg" Panel.ZIndex="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="50" Width="41" Margin="7,3,0,0"/>-->
+            <!--<Image Source="/Images/icon_alten.jpg" Panel.ZIndex="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="50" Width="41" Margin="7,3,0,0"/>-->
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"/>
