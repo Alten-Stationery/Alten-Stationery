@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Wpf_Stationery"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="550"
+      d:DesignHeight="350" d:DesignWidth="600"
       Title="OfficeSupplies">
 
     <Grid Name="gridItems">
@@ -18,10 +18,15 @@
 
                         <Image Source="/Images/icon_lens.jpg" Panel.ZIndex="2" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="20" Margin="7,3,0,0"/>
                         <TextBox Grid.Column="0" x:Name="textBoxName" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="20" Margin="5"/>
-                        <Button Grid.Column="1" Grid.Row="0" Content="Filter" Click="BackToHomeButton_Click" Background="White"  Foreground="#2E3B4E" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Height="30" Margin="5"/>
 
-                        <Button Grid.Column="3" Grid.Row="0" Content="Refresh" Click="RefreshButton_Click" Background="White" Foreground="#2E3B4E" VerticalAlignment="Center" HorizontalAlignment="Left" Width="60" Height="30" Margin="5"/>
-                        <Button Grid.Column="4" Grid.Row="0" Content="Export" Click="ExportButton_Click" Background="White" Foreground="#2E3B4E" VerticalAlignment="Center" HorizontalAlignment="Right" Width="60" Height="30" Margin="5"/>
+                        <Image Grid.Column="1" Grid.Row="0" Source="/Images/icon_filter.jpg" Panel.ZIndex="2" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Width="18" Margin="7,3,0,0"/>
+                        <Button Grid.Column="1" Grid.Row="0" Content="Filter" Click="BackToHomeButton_Click" Background="White" Foreground="#2E3B4E" VerticalAlignment="Center" HorizontalAlignment="Left" Width="80" Height="25" Margin="5,5,5,5"/>
+
+                        <Image Grid.Column="3" Grid.Row="0" Source="/Images/icon_refresh.jpg" Panel.ZIndex="2" VerticalAlignment="Center" HorizontalAlignment="Left" Height="18" Width="18" Margin="10,5,5,5"/>
+                        <Button Grid.Column="3" Grid.Row="0" Content="       Refresh" Click="RefreshButton_Click" Background="White" Foreground="#2E3B4E" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Height="25" Margin="5"/>
+
+                        <Image Grid.Column="3" Grid.Row="0" Source="/Images/icon_download.jpg" Panel.ZIndex="2" VerticalAlignment="Center" HorizontalAlignment="Left" Height="18" Width="18" Margin="90,5,5,5"/>
+                        <Button Grid.Column="4" Grid.Row="0" Content="      Export" Click="ExportButton_Click" Background="White" Foreground="#2E3B4E" VerticalAlignment="Center" HorizontalAlignment="Right" Width="70" Height="25" Margin="5,5,5,5"/>
 
                         <!--GET ALL ITEMS-->
                         <!--<ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Height="400" Width="Auto" Margin="5" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
@@ -103,7 +108,7 @@
                             <ColumnDefinition Width="140"/>
                             <!--<ColumnDefinition Width="40"/>-->
                             <ColumnDefinition Width="120"/>
-                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="160"/>
                         </Grid.ColumnDefinitions>
                     </Grid>
                 </StackPanel>

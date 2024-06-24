@@ -10,6 +10,15 @@
     <!--ICONA ALTEN-->
     <StackPanel Grid.Row="0" Background="#2E3B4E" Margin="5, 5, 5, 5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="320" Width="70" Grid.RowSpan="7" Grid.ColumnSpan="2">
         <Grid>
+
+            <!--<Label Style="{StaticResource labelStyle}" FontWeight="Bold" Grid.Row="0" Grid.Column="3" x:Name="labelBoxName" Content="vit91@gmail.com" VerticalAlignment="Center" HorizontalAlignment="Left" Width="90" Height="26"/>-->
+            <!--<TextBox Grid.Row="0" Grid.Column="3" x:Name="textBoxUserLoggato" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Height="20" Margin="5"/>-->
+            <TextBox Grid.Row="0" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" x:Name="UserNameTextBox" Text="Username" Style="{StaticResource textStyle}" Width="150" Height="40" Margin="5,5,5,5" />
+
+            <!--<TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource CustomTextBlockStyle}">
+                <Hyperlink Click="Link_Allerts">vit91@gmail.com</Hyperlink>
+            </TextBlock>-->
+
             <!--Link_Menu-->
             <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
                 <Hyperlink Click="Link_Dashboard">Dashboard</Hyperlink>
@@ -20,7 +29,7 @@
             </TextBlock>
 
             <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
-                <Hyperlink Click="Link_AddItem">Add Items</Hyperlink>
+                <Hyperlink Click="Link_AddItem">Add Item</Hyperlink>
             </TextBlock>
 
             <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">

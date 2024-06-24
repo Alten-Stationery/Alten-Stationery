@@ -31,12 +31,12 @@
                 <TextBlock Text="WELCOME" FontSize="15" FontWeight="Bold" Foreground="#2E3B4E" HorizontalAlignment="Center" Margin="40,0,0,20"/>
 
                 <Image Source="/Images/user.jpg" HorizontalAlignment="Left" Height="29" Width="30" Margin="10,5,5,5"/>
-                <TextBox x:Name="UserNameTextBox" Width="150" Height="40" Margin="40,-40,0,10" local:PlaceholderBehavior.Placeholder="UserName"/>
-                <!--<TextBox x:Name="UserNameTextBox" Width="150" Height="40" Margin="40,-40,0,10" />-->
+                <!--<TextBox x:Name="UserNameTextBox" Width="150" Height="40" Margin="40,-40,0,10" local:PlaceholderBehavior.Placeholder="UserName"/>-->
+                <TextBox x:Name="UserNameTextBox" Text="Username" Style="{StaticResource textStyle}" Width="150" Height="40" Margin="40,-40,0,10" />
 
                 <Image Source="/Images/icon_password.jpg" HorizontalAlignment="Left" Height="29" Width="30" Margin="10,5,5,5"/>
-                <TextBox x:Name="PasswordTextBox" Width="150" Height="40" Margin="40,-40,0,10" local:PlaceholderBehavior.Placeholder="Password"/>
-                <!--<TextBox x:Name="PasswordTextBox" Width="150" Height="40" Margin="40,-40,0,10"/>-->
+                <!--<TextBox x:Name="PasswordTextBox" Width="150" Height="40" Margin="40,-40,0,10" local:PlaceholderBehavior.Placeholder="Password"/>-->
+                <TextBox x:Name="PasswordTextBox" Text="Password" Style="{StaticResource textStyle}" Width="150" Height="40" Margin="40,-40,0,10"/>
 
                 <!--Link -->
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0">
