@@ -23,6 +23,10 @@ namespace Wpf_Stationery
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            OfficeSupplies officeSupplies = new OfficeSupplies();
+            //officeSupplies.Show  ShowsNavigationUI();
+            //ShowDialog();
+
 
         }
 

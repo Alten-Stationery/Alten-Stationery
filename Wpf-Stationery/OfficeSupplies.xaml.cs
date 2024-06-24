@@ -485,14 +485,28 @@ namespace Wpf_Stationery
         {
             // Creazione di un DataTable con alcune colonne
             DataTable dataTable = new DataTable();
+
+            #region Column DataTable 
             dataTable.Columns.Add("ID", typeof(int));
             dataTable.Columns.Add("Name", typeof(string));
-            dataTable.Columns.Add("Age", typeof(int));
+            dataTable.Columns.Add("Quantity", typeof(int));
+            dataTable.Columns.Add("Categories", typeof(string));
+            dataTable.Columns.Add("Description", typeof(string));
+            dataTable.Columns.Add("Location", typeof(string));
+            dataTable.Columns.Add("Threshold", typeof(string));
+            dataTable.Columns.Add("Action", typeof(int));
+            dataTable.Columns.Add("Deleted", typeof(int));
 
             // Aggiunta di alcune righe di esempio
-            dataTable.Rows.Add(1, "Alice", 30);
-            dataTable.Rows.Add(2, "Bob", 25);
-            dataTable.Rows.Add(3, "Charlie", 35);
+            dataTable.Rows.Add(1, "Post-it", 30);
+            dataTable.Rows.Add(2, "10", 25);
+            dataTable.Rows.Add(3, "Internet Bill", 35);
+            dataTable.Rows.Add(4, "Post-it", 35);
+            dataTable.Rows.Add(5, "First locker", 35);
+            dataTable.Rows.Add(6, "500/-", 35);
+            dataTable.Rows.Add(7, "Modify", 35);
+            dataTable.Rows.Add(8, "Deleted", 35);
+            #endregion
 
             // Imposta la proprietà ItemsSource della DataGrid
             dataGrid.ItemsSource = dataTable.DefaultView;
@@ -517,5 +531,12 @@ namespace Wpf_Stationery
         {
 
         }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
     }
 }
