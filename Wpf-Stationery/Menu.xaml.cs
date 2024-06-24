@@ -29,5 +29,30 @@ namespace Wpf_Stationery
         {
 
         }
+
+        private void Link_Logout(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Link_Users(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Link_AddItem(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Link_Orders(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Link_Allerts(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
