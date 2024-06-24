@@ -19,16 +19,18 @@
                 <Hyperlink Click="Link_Logout">Logout</Hyperlink>
             </TextBlock>
 
-            <Image Grid.Row="1" Grid.Column="0" Source="/Images/user.jpg" Panel.ZIndex="2" HorizontalAlignment="Left" Height="10" Width="10" Margin="2,5,5,5"/>
+            <Image Grid.Row="1" Grid.Column="0" Source="/Images/icon_menu.jpg" Panel.ZIndex="2" HorizontalAlignment="Left" Height="10" Width="10" Margin="2,5,5,5"/>
             <!--Link_Menu-->
             <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
                 <Hyperlink Click="Link_Dashboard">Dashboard</Hyperlink>
             </TextBlock>
 
+            <Image Grid.Row="2" Grid.Column="0" Source="/Images/user.jpg" Panel.ZIndex="2" HorizontalAlignment="Left" Height="10" Width="10" Margin="2,5,5,5"/>
             <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
                 <Hyperlink Click="Link_Users">Users</Hyperlink>
             </TextBlock>
 
+            <Image Grid.Row="3" Grid.Column="0" Source="/Images/icon_additem.jpg" Panel.ZIndex="2" HorizontalAlignment="Left" Height="10" Width="10" Margin="2,5,5,5"/>
             <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
                 <Hyperlink Click="Link_AddItem">Add Item</Hyperlink>
             </TextBlock>

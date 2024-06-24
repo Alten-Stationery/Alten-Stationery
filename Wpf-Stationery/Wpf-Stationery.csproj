@@ -131,7 +131,9 @@
     <Resource Include="Images\user.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\icon_menu.jpg" />
+    <Resource Include="Images\icon_menuall.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icon_lens.jpg">
@@ -150,6 +152,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icon_filter.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_menu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_additem.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
