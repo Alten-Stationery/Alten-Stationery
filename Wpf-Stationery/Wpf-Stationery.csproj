@@ -125,7 +125,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\grafico.jpg" />
-    <Resource Include="Images\icon_alten.jpg" />
     <Resource Include="Images\icon_password.jpg" />
     <Resource Include="Images\office.jpg" />
     <Resource Include="Images\user.jpg" />
@@ -160,6 +159,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icon_additem.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_order.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_alert.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

@@ -35,10 +35,12 @@
                 <Hyperlink Click="Link_AddItem">Add Item</Hyperlink>
             </TextBlock>
 
+            <Image Grid.Row="4" Grid.Column="0" Source="/Images/icon_order.jpg" Panel.ZIndex="2" HorizontalAlignment="Left" Height="10" Width="10" Margin="2,5,5,5"/>
             <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
                 <Hyperlink Click="Link_Orders">Orders</Hyperlink>
             </TextBlock>
 
+            <Image Grid.Row="5" Grid.Column="0" Source="/Images/icon_alert.jpg" Panel.ZIndex="2" HorizontalAlignment="Left" Height="10" Width="10" Margin="2,5,5,5"/>
             <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
                 <Hyperlink Click="Link_Allerts">Allerts</Hyperlink>
             </TextBlock>
