@@ -15,7 +15,9 @@
                 <StackPanel Orientation="Horizontal" Name="panelPrimoTab" Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="6">
                     <Grid x:Name="GridPanel" Grid.Row="0" Grid.RowSpan="8" Grid.Column="0" Grid.ColumnSpan="8">
                         <!--<Label Style="{StaticResource labelStyle}" Foreground="#2E3B4E" FontWeight="Bold" Grid.Column="0" x:Name="labelBoxName" Content="Name" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="3" Width="90" Height="26" Margin="5"/>-->
-                        <TextBox Grid.Column="0" x:Name="textBoxName" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Height="20" Margin="5"/>
+
+                        <Image Source="/Images/icon_lens.jpg" Panel.ZIndex="2" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="20" Margin="7,3,0,0"/>
+                        <TextBox Grid.Column="0" x:Name="textBoxName" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="20" Margin="5"/>
                         <Button Grid.Column="1" Grid.Row="0" Content="Filter" Click="BackToHomeButton_Click" Background="White"  Foreground="#2E3B4E" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Height="30" Margin="5"/>
 
                         <Button Grid.Column="3" Grid.Row="0" Content="Refresh" Click="RefreshButton_Click" Background="White" Foreground="#2E3B4E" VerticalAlignment="Center" HorizontalAlignment="Left" Width="60" Height="30" Margin="5"/>

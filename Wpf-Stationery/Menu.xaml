@@ -1,0 +1,55 @@
+﻿<Page x:Class="Wpf_Stationery.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_Stationery"
+        mc:Ignorable="d"
+        Title="Menu" Height="350" Width="600">
+
+    <!--ICONA ALTEN-->
+    <StackPanel Grid.Row="0" Background="#2E3B4E" Margin="5, 5, 5, 5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="320" Width="70" Grid.RowSpan="7" Grid.ColumnSpan="2">
+        <Grid>
+            <!--Link_Menu-->
+            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
+                <Hyperlink Click="Link_Dashboard">Dashboard</Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
+                <Hyperlink Click="Link_Users">Users</Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
+                <Hyperlink Click="Link_AddItem">Add Items</Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
+                <Hyperlink Click="Link_Orders">Orders</Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource CustomTextBlockStyle}">
+                <Hyperlink Click="Link_Allerts">Allerts</Hyperlink>
+            </TextBlock>
+
+            <Image Source="/Images/icon_alten.jpg" Panel.ZIndex="2" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="41" Margin="10,5,5,5"/>
+            <!--<Image Source="/Images/icon_menu.jpg" Panel.ZIndex="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="50" Width="41" Margin="7,3,0,0"/>-->
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </StackPanel>
+
+</Page>
