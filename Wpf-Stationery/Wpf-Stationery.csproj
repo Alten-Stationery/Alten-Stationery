@@ -172,5 +172,11 @@
   <ItemGroup>
     <Resource Include="Images\icon_order.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj">
+      <Project>{76237a00-4db5-4503-954e-cd4ce7e39a9e}</Project>
+      <Name>ServiceLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,76 +41,7 @@
                         <Image Grid.Column="3" Grid.Row="0" Source="/Images/icon_download.jpg" Panel.ZIndex="2" VerticalAlignment="Center" HorizontalAlignment="Left" Height="18" Width="18" Margin="90,5,5,5"/>
                         <Button Grid.Column="4" Grid.Row="0" Content="      Export" Click="ExportButton_Click" Background="White" Foreground="#2E3B4E" VerticalAlignment="Center" HorizontalAlignment="Right" Width="70" Height="25" Margin="5,5,5,5"/>
 
-                        <!--GET ALL ITEMS-->
-                        <!--<ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Height="400" Width="Auto" Margin="5" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    -->
-                        <!--<RowDefinition Height="*"></RowDefinition>-->
-                        <!--
-                                    <RowDefinition Height="400"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-
-                                <GroupBox Name="GroupBox1" BorderBrush="Black" Grid.Row="1" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="5" Margin="5" FontSize="13" FontWeight="Normal" Background="Transparent" Header="All Items">
-                                    <Grid Name="Grid1" Margin="5,5,5,5">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-
-                                        -->
-                        <!--Visibility="Collapsed"-->
-                        <!--
-                                        <DataGrid Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="1" IsReadOnly="True" x:Name="CustomerGrid" ItemsSource="{Binding}" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="CustomerGrid_SelectionChanged" >
-
-                                            -->
-                        <!-- CheckBox DataLettura-1 -->
-                        <!--<DataGrid.Columns>
-                                                <DataGridCheckBoxColumn Visibility="Collapsed"/>
-                                                <DataGridTemplateColumn>
-                                                    <DataGridTemplateColumn.HeaderTemplate>
-                                                        <DataTemplate>
-                                                            <CheckBox Content="DL-1" Name="CheckBoxAll" Click="CheckUnCheckAll" />
-                                                        </DataTemplate>
-                                                    </DataGridTemplateColumn.HeaderTemplate>
-                                                    <DataGridTemplateColumn.CellTemplate>
-                                                        <DataTemplate>
-                                                            <CheckBox Name="CheckBoxRow" Click="CheckUnCheckRow"/>
-                                                        </DataTemplate>
-                                                    </DataGridTemplateColumn.CellTemplate>
-                                                </DataGridTemplateColumn>
-                                            </DataGrid.Columns>-->
-                        <!--
-
-                                        </DataGrid>
-
-                                    </Grid>
-                                </GroupBox>
-
-                                -->
-                        <!--<Button  Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="150" Margin="5" x:Name="ButtonCaricaFile" Content="Carica File" Click="ButtonCaricaFile_Click" />-->
-                        <!--<TextBox Visibility="Collapsed" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Name="TxtPercorsoFile" Height="50" Margin="5"></TextBox>-->
-                        <!--
-
-                            </Grid>
-
-                        </ScrollViewer>-->
-
-                        <DataGrid Name="dataGrid" AutoGenerateColumns="True" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Height="400" Width="Auto" Margin="5" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" SelectionChanged="dataGrid_SelectionChanged"/>
+                        <DataGrid Name="dataGridItems" AutoGenerateColumns="True" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Height="400" Width="Auto" Margin="5" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" SelectionChanged="dataGrid_SelectionChanged"/>
 
                         <Button Grid.Column="2" Grid.Row="4" Content="Add Items" Click="AddItemButton_Click" Background="Green" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Height="40" Margin="5"/>
                         <Button Grid.Column="4" Grid.Row="4" Content="Back to Home" Click="BackToHomeButton_Click"  Background="#2E3B4E" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Height="40" Margin="5"/>

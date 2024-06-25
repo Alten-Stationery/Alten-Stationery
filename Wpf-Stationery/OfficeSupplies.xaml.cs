@@ -23,8 +23,7 @@ namespace Wpf_Stationery
     /// </summary>
     public partial class OfficeSupplies : Window
     {
-
-        DataTable dtExcel = new DataTable();
+        DataTable dataTable = new DataTable();
         DataRow dr = null;
 
         public OfficeSupplies()
@@ -484,32 +483,78 @@ namespace Wpf_Stationery
         private void LoadData()
         {
             // Creazione di un DataTable con alcune colonne
-            DataTable dataTable = new DataTable();
+            dataTable = new DataTable();
+            dataTable = MakeTableWithAutoIncrement();
+            dr = null;
+
+            int countRowsdt = dataTable.Rows.Count;
+
+            //ItemsService itemsService = new ItemsService();
+            //IService<T> iService = new Service<T>();
+            //var items = itemsService.GetAllAsync();
+
+            foreach (var f in items)
+            {
+
+                #region mapping data table visivo
+                //A o R
+                rowArray[0] = f.tipoConsumo;
+                rowArray[1] = f.codiceLettura;
+                rowArray[2] = f.periodoDataCEO;
+                rowArray[3] = f.dataLettura;
+                rowArray[4] = f.attivaF1;
+                rowArray[5] = f.attivaF2;
+                rowArray[6] = f.attivaF3;
+                rowArray[7] = f.reattivaF1;
+                rowArray[8] = f.reattivaF2;
+                rowArray[9] = f.reattivaF3;
+                rowArray[10] = f.potenzaF1;
+                rowArray[11] = f.potenzaF2;
+                rowArray[12] = f.potenzaF3;
+                rowArray[13] = f.matricolaMisuratore;
+                rowArray[14] = f.codiceMisuratore;
+                #endregion
+
+                dr = dtExcel.NewRow();
+                dr.ItemArray = rowArray;
+                dtExcel.Rows.Add(dr);
+
+            }
+
 
             #region Column DataTable 
-            dataTable.Columns.Add("ID", typeof(int));
-            dataTable.Columns.Add("Name", typeof(string));
-            dataTable.Columns.Add("Quantity", typeof(int));
-            dataTable.Columns.Add("Categories", typeof(string));
-            dataTable.Columns.Add("Description", typeof(string));
-            dataTable.Columns.Add("Location", typeof(string));
-            dataTable.Columns.Add("Threshold", typeof(string));
-            dataTable.Columns.Add("Action", typeof(int));
-            dataTable.Columns.Add("Deleted", typeof(int));
+            //dataTable.Columns.Add("ID", typeof(int));
+            //dataTable.Columns.Add("Name", typeof(string));
+            //dataTable.Columns.Add("Quantity", typeof(int));
+            //dataTable.Columns.Add("Categories", typeof(string));
+            //dataTable.Columns.Add("Description", typeof(string));
+            //dataTable.Columns.Add("Location", typeof(string));
+            //dataTable.Columns.Add("Threshold", typeof(string));
+            //dataTable.Columns.Add("Action", typeof(int));
+            //dataTable.Columns.Add("Deleted", typeof(int));
 
-            // Aggiunta di alcune righe di esempio
-            dataTable.Rows.Add(1, "Post-it", 30);
-            dataTable.Rows.Add(2, "10", 25);
-            dataTable.Rows.Add(3, "Internet Bill", 35);
-            dataTable.Rows.Add(4, "Post-it", 35);
-            dataTable.Rows.Add(5, "First locker", 35);
-            dataTable.Rows.Add(6, "500/-", 35);
-            dataTable.Rows.Add(7, "Modify", 35);
-            dataTable.Rows.Add(8, "Deleted", 35);
-            #endregion
+            //// Aggiunta di alcune righe di esempio
+            //dataTable.Rows.Add(1, "Post-it", 30);
+            //dataTable.Rows.Add(2, "10", 25);
+            //dataTable.Rows.Add(3, "Internet Bill", 35);
+            //dataTable.Rows.Add(4, "Post-it", 35);
+            //dataTable.Rows.Add(5, "First locker", 35);
+            //dataTable.Rows.Add(6, "500/-", 35);
+            //dataTable.Rows.Add(7, "Modify", 35);
+            //dataTable.Rows.Add(8, "Deleted", 35);
 
             // Imposta la proprietà ItemsSource della DataGrid
-            dataGrid.ItemsSource = dataTable.DefaultView;
+            //dataGridItems.ItemsSource = dataTable.DefaultView;
+            #endregion
+
+            if (dataTable != null)
+            {
+                Ridimensiona();
+
+                //Set the DataGrid's DataContext to be a filled DataTable
+                dataGridItems.DataContext = dataTable;
+            }
+
         }
 
         private void Resetta()
@@ -534,8 +579,39 @@ namespace Wpf_Stationery
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //dataGrid = ;
+
+
 
         }
+
+        private DataTable MakeTableWithAutoIncrement()
+        {
+            // Make a table with one AutoIncrement column.
+            DataTable table = new DataTable("table");
+
+            DataColumn name = new DataColumn("Name", Type.GetType("System.String"));
+            DataColumn quantity = new DataColumn("Quantity", Type.GetType("System.String"));
+            DataColumn categories = new DataColumn("Categories", Type.GetType("System.String"));
+            DataColumn description = new DataColumn("Description", Type.GetType("System.String"));
+            DataColumn location = new DataColumn("Location", Type.GetType("System.String"));
+            DataColumn threshold = new DataColumn("Threshold", Type.GetType("System.String"));
+            DataColumn action = new DataColumn("Action", Type.GetType("System.String"));
+            DataColumn deleted = new DataColumn("Deleted", Type.GetType("System.String"));
+
+            table.Columns.Add(name);
+            table.Columns.Add(quantity);
+            table.Columns.Add(categories);
+            table.Columns.Add(description);
+            table.Columns.Add(location);
+            table.Columns.Add(threshold);
+            table.Columns.Add(action);
+            table.Columns.Add(deleted);
+
+            return table;
+        }
+
+
 
 
     }
