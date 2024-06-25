@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Alten_Stationery"
         mc:Ignorable="d"
-        Title="Login" Height="350" Width="600" WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResize" Icon="Images/icon_alten.jpg">
+        Title="Login" 
+        ResizeMode="CanResize" Icon="Images/icon_alten.jpg"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        Height="Auto" Width="Auto"
+        WindowState="Maximized">
+
+    <!--Height="350" Width="600"-->
 
     <Grid Name="gridLogin">
         <Grid.RowDefinitions>
@@ -51,7 +57,5 @@
         </Border>
 
     </Grid>
-
-
 
 </Window>

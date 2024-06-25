@@ -134,13 +134,21 @@
 
             <!--DA SISTEMARE-->
             <GroupBox Header="Logout" Style="{StaticResource groupBoxStyle}" Margin="5,5,10,10" Grid.Row="0" Grid.RowSpan="2" Grid.Column="5" Grid.ColumnSpan="1">
-                <StackPanel Name="panelLogout" Grid.Row="0" Background="#2E3B4E" Margin="5, 5, 5, 5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="Auto" Width="Auto" Grid.RowSpan="7" Grid.ColumnSpan="4">
-                    <Label Style="{StaticResource labelStyle}" Grid.Row="0" Grid.Column="3" Foreground="#2E3B4E" Background="White" HorizontalAlignment="Left" Content="vit91@gmail.com" x:Name="labelBoxName"  Width="180" Height="25"/>
-                    <!--<TextBox Grid.Row="0" Grid.Column="3" Foreground="#2E3B4E" Background="Black" VerticalAlignment="Top" HorizontalAlignment="Right" x:Name="UserNameTextBox" Text="vit91@gmail.com" Style="{StaticResource textStyle}" Width="140" Height="20" Margin="5,5,5,5" />-->
-                    <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource CustomTextBlockStyle}" Width="35" Height="15" HorizontalAlignment="Right" >
-                <Hyperlink Click="Link_Logout">Logout</Hyperlink>
-                    </TextBlock>
-                </StackPanel>
+                <Grid>
+                    <StackPanel Name="panelLogout" Grid.Row="0" Background="#2E3B4E" VerticalAlignment="Top" HorizontalAlignment="Center" Height="62" Width="136" Grid.RowSpan="2" Grid.ColumnSpan="4">
+                        <Label Style="{StaticResource labelStyle}" Grid.Row="0" Grid.Column="3" Foreground="#2E3B4E" Background="White" HorizontalAlignment="Right" Content="vit91@gmail.com" x:Name="labelBoxName"  Width="120" Height="25"/>
+                        <!--<TextBox Grid.Row="0" Grid.Column="3" Foreground="#2E3B4E" Background="Black" VerticalAlignment="Top" HorizontalAlignment="Right" x:Name="UserNameTextBox" Text="vit91@gmail.com" Style="{StaticResource textStyle}" Width="140" Height="20" Margin="5,5,5,5" />-->
+                        <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource CustomTextBlockStyle}" Width="35" Height="15" HorizontalAlignment="Right" ><Hyperlink Click="Link_Logout"><Run Text="Logout"/></Hyperlink></TextBlock>
+                    </StackPanel>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
             </GroupBox>
 
             <!--<StackPanel Name="panelLogout" Grid.Row="0" Background="#2E3B4E" Margin="5, 5, 5, 5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="Auto" Width="Auto" Grid.RowSpan="7" Grid.ColumnSpan="4">
