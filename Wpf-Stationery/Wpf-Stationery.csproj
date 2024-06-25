@@ -127,12 +127,6 @@
     <Resource Include="Images\grafico.jpg" />
     <Resource Include="Images\icon_password.jpg" />
     <Resource Include="Images\office.jpg" />
-    <Resource Include="Images\user.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\icon_menuall.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icon_lens.jpg">
@@ -160,17 +154,7 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\icon_order.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\icon_alert.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\icon_menu.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
@@ -178,6 +162,15 @@
     <Resource Include="Images\icon_alten.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_dashboard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_users.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_order.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

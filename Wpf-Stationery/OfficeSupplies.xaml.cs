@@ -21,7 +21,7 @@ namespace Wpf_Stationery
     /// <summary>
     /// Interaction logic for OfficeSupplies.xaml
     /// </summary>
-    public partial class OfficeSupplies : Page
+    public partial class OfficeSupplies : Window
     {
 
         DataTable dtExcel = new DataTable();

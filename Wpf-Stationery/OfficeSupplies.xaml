@@ -1,4 +1,4 @@
-﻿<Page x:Class="Wpf_Stationery.OfficeSupplies"
+﻿<Window x:Class="Wpf_Stationery.OfficeSupplies"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,6 +7,19 @@
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="600"
       Title="OfficeSupplies">
+    
+    <!--<Page.Resources>
+        <Style x:Key="MouseStyle" TargetType="Rectangle">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Width" Value="20" />
+        </Style>
+        <Style x:Key="TouchPenStyle" TargetType="Rectangle">
+            <Setter Property="Margin" Value="15" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Width" Value="40" />
+        </Style>
+    </Page.Resources>-->
 
     <Grid Name="gridItems">
         <GroupBox Header="Office supplies:" Style="{StaticResource groupBoxStyle}" Margin="5,5,5,5" Grid.Row="0" Grid.RowSpan="8" Grid.Column="0" Grid.ColumnSpan="6">
@@ -33,7 +46,9 @@
 
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    --><!--<RowDefinition Height="*"></RowDefinition>--><!--
+                                    -->
+                        <!--<RowDefinition Height="*"></RowDefinition>-->
+                        <!--
                                     <RowDefinition Height="400"></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
@@ -57,11 +72,14 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
 
-                                        --><!--Visibility="Collapsed"--><!--
+                                        -->
+                        <!--Visibility="Collapsed"-->
+                        <!--
                                         <DataGrid Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="1" IsReadOnly="True" x:Name="CustomerGrid" ItemsSource="{Binding}" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="CustomerGrid_SelectionChanged" >
 
-                                            --><!-- CheckBox DataLettura-1 -->
-                                            <!--<DataGrid.Columns>
+                                            -->
+                        <!-- CheckBox DataLettura-1 -->
+                        <!--<DataGrid.Columns>
                                                 <DataGridCheckBoxColumn Visibility="Collapsed"/>
                                                 <DataGridTemplateColumn>
                                                     <DataGridTemplateColumn.HeaderTemplate>
@@ -75,15 +93,18 @@
                                                         </DataTemplate>
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
-                                            </DataGrid.Columns>--><!--
+                                            </DataGrid.Columns>-->
+                        <!--
 
                                         </DataGrid>
 
                                     </Grid>
                                 </GroupBox>
 
-                                --><!--<Button  Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="150" Margin="5" x:Name="ButtonCaricaFile" Content="Carica File" Click="ButtonCaricaFile_Click" />-->
-                                <!--<TextBox Visibility="Collapsed" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Name="TxtPercorsoFile" Height="50" Margin="5"></TextBox>--><!--
+                                -->
+                        <!--<Button  Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="150" Margin="5" x:Name="ButtonCaricaFile" Content="Carica File" Click="ButtonCaricaFile_Click" />-->
+                        <!--<TextBox Visibility="Collapsed" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Name="TxtPercorsoFile" Height="50" Margin="5"></TextBox>-->
+                        <!--
 
                             </Grid>
 
@@ -117,5 +138,6 @@
         </GroupBox>
 
     </Grid>
-    
-</Page>
+
+
+</Window>

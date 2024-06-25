@@ -18,7 +18,7 @@ namespace Wpf_Stationery
     /// <summary>
     /// Interaction logic for Menu.xaml
     /// </summary>
-    public partial class Menu : Page
+    public partial class Menu : Window
     {
         public Menu()
         {
