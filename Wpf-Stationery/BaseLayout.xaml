@@ -1,0 +1,135 @@
+﻿<Page x:Class="Wpf_Stationery.BaseLayout"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+       xmlns:local="clr-namespace:Wpf_Stationery"
+      
+  
+     
+      
+      mc:Ignorable="d"
+      Title="BaseLayout" Height="700" Width="1350" MinWidth="428" >
+
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Page.Resources>
+
+
+
+    <Grid Background="White" Name="Page">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="337*"/>
+            <RowDefinition Height="113*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions  >
+            <ColumnDefinition Width="784.8"></ColumnDefinition>
+            <ColumnDefinition Width="5.355"/>
+            <ColumnDefinition Width="103*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="4" Margin="178,2,4,472" Grid.RowSpan="2">
+            <TextBlock  FontWeight="Bold" FontFamily="Bahnschrift" Foreground="#275879" FontSize="14" Height="28" VerticalAlignment="Top" Margin="996,17,-25,0" >Smith, John</TextBlock>
+        </Grid>
+        <Border BorderThickness="1" CornerRadius="8" Background="#003d63" Margin="-1,0,614,0" Grid.RowSpan="3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="46*"/>
+                    <RowDefinition Height="63*"/>
+                </Grid.RowDefinitions>
+                <Image Source="/Images/icon_alten.jpg"
+       Height="74"
+       VerticalAlignment="Top"
+       Stretch="Fill" Margin="46,39,79,0" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.182"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <Button BorderThickness="0" Background="Transparent"  Margin="0,159,0,85" Click="Button_Click_3">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  FontSize="15" VerticalAlignment="Center" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="White"><Run Text="grip"/></TextBlock>
+                        <TextBlock FontSize="15" FontFamily="Bahnschrift" Foreground="White" Width="82" Padding="10"><Run Text="Dashboard"/></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button BorderThickness="0" Background="Transparent" Margin="0,210,0,34" Click="Button_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  FontSize="15" VerticalAlignment="Center" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="White"><Run Text="&#xf2bd;"/></TextBlock>
+                        <TextBlock FontSize="15" FontFamily="Bahnschrift" Foreground="White" Width="82" Padding="10"><Run Text="Users"/></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button BorderThickness="0" Background="Transparent" Margin="0,260,0,388" Grid.RowSpan="2" Click="Button_Click_1">
+                    <StackPanel Orientation="Horizontal" Width="168" RenderTransformOrigin="0.5,0.5">
+                        <StackPanel.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="-0.088"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-0.098"/>
+                            </TransformGroup>
+                        </StackPanel.RenderTransform>
+                        <TextBlock  FontSize="15" VerticalAlignment="Center" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Padding="35,0,0,0"  Foreground="White"><Run Text="Cube" /></TextBlock>
+                        <TextBlock FontSize="15" FontFamily="Bahnschrift" Foreground="White" Width="56"  Padding="10"><Run Text="Items"/></TextBlock>
+                        <TextBlock FontSize="11" VerticalAlignment="Center" FontFamily="{StaticResource FaFreeSolid}" Padding="5,0,0,0" Foreground="White" RenderTransformOrigin="0.5,0.5" Width="56"  >
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform><Run Text="&#xf078;"/></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Margin="0,16,0,337" Background="Transparent"  Grid.Row="1" BorderThickness="0" Click="Button_Click_2">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  FontSize="15" VerticalAlignment="Center" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="White"><Run Text="dolly"/></TextBlock>
+                        <TextBlock FontSize="15" FontFamily="Bahnschrift" Foreground="White" Width="82" Padding="10"><Run Text="Orders"/></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Margin="0,67,0,286" Grid.Row="1" Background="Transparent" BorderThickness="0" Click="Button_Click_4">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  FontSize="15" VerticalAlignment="Center" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="White"><Run Text="&#xf071;"/></TextBlock>
+                        <TextBlock FontSize="15" FontFamily="Bahnschrift" Foreground="White" Width="82" Padding="10"><Run Text="Alerts"/></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Margin="0,118,0,235" Grid.Row="1" Background="Transparent" BorderThickness="0" Click="Button_Click_5">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  FontSize="15" VerticalAlignment="Center" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="White"><Run Text="&#xf055;"/></TextBlock>
+                        <TextBlock FontSize="15" FontFamily="Bahnschrift" Foreground="White" Width="82" Padding="10"><Run Text="Refill"/></TextBlock>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Border>
+        <Grid Margin="184,81,2,15" Grid.Row="1" Grid.ColumnSpan="4" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="258.4"></ColumnDefinition>
+                <ColumnDefinition Width="529.39"/>
+                <ColumnDefinition Width="14*"/>
+                <ColumnDefinition Width="363*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions >
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Margin="2,483,2,-157" Grid.ColumnSpan="4">
+                
+            </Grid>
+
+
+        </Grid>
+        <Grid Grid.ColumnSpan="4" Margin="181,10,8,15" Grid.Row="2"/>
+    </Grid>
+</Page>
+ 
