@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wpf_Stationery;
 
 namespace Alten_Stationery
 {
@@ -23,7 +24,10 @@ namespace Alten_Stationery
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow main= new MainWindow();
+            BaseLayout home= new BaseLayout();
+            main.Content = home;
+            main.Show();
         }
 
         private void Link_ResetPassword(object sender, RoutedEventArgs e)
