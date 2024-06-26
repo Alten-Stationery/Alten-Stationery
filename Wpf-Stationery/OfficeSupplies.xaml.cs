@@ -3,6 +3,7 @@ using ServiceLayer.IServices;
 using ServiceLayer.Services.Classes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -24,12 +25,16 @@ namespace Wpf_Stationery
     /// </summary>
     public partial class OfficeSupplies : Page
     {
+        //public ObservableCollection<Item> YourItemsSource { get; set; }
+        public ICommand YourCommand { get; set; }
+
         private readonly IUnitOfWork _unitOfWork;
+
 
         DataTable dataTable = new DataTable();
         DataRow dr = null;
         // Declare the array variable.
-        object[] rowArray = new object[8];
+        object[] rowArray = new object[6];
 
         public OfficeSupplies()
         {
@@ -176,8 +181,8 @@ namespace Wpf_Stationery
             DataColumn description = new DataColumn("Description", Type.GetType("System.String"));
             DataColumn location = new DataColumn("Location", Type.GetType("System.String"));
             DataColumn threshold = new DataColumn("Threshold", Type.GetType("System.String"));
-            DataColumn action = new DataColumn("Action", Type.GetType("System.String"));
-            DataColumn deleted = new DataColumn("Deleted", Type.GetType("System.String"));
+            //DataColumn action = new DataColumn("Action", Type.GetType("System.String"));
+            //DataColumn deleted = new DataColumn("Deleted", Type.GetType("System.String"));
 
             table.Columns.Add(name);
             table.Columns.Add(quantity);
@@ -185,8 +190,8 @@ namespace Wpf_Stationery
             table.Columns.Add(description);
             table.Columns.Add(location);
             table.Columns.Add(threshold);
-            table.Columns.Add(action);
-            table.Columns.Add(deleted);
+            //table.Columns.Add(action);
+            //table.Columns.Add(deleted);
 
             return table;
         }
@@ -205,10 +210,21 @@ namespace Wpf_Stationery
         {
 
         }
-
         private void ButtonDownload_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+        private void ButtonModify_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonDeleted_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

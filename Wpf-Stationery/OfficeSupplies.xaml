@@ -134,7 +134,9 @@
             <Button Margin="210,120,50,300" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="#275879" FontSize="17" Grid.Column="3" Grid.Row="0" Content="Refresh" Click="ButtonRefresh_Click" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40" Height="26"/>
             <Button Margin="120,120,55,300" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="#275879" FontSize="17" Grid.Column="3" Grid.Row="0" Content="Download" Click="ButtonDownload_Click" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right" Width="40" Height="26"/>
 
-            <DataGrid Margin="120,180,54,240" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="3" IsReadOnly="True" x:Name="CustomerGrid" ItemsSource="{Binding}" AlternationCount="2"  >
+            <!--<ScrollViewer Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" Height="450" Width="1000"  Margin="10 20 10 10" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">-->
+
+                <DataGrid Margin="120,180,54,240" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="3" IsReadOnly="True" x:Name="CustomerGrid" ItemsSource="{Binding}" AlternationCount="2" Width="980" Height="220">
                 <DataGrid.Columns>
 
                     <DataGridTemplateColumn>
@@ -144,14 +146,24 @@
                         </DataGridTemplateColumn.HeaderTemplate>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <!--<Button FontFamily="{StaticResource FaFreeSolid}" Content="&#xf044;" FontSize="16" 
+                                        Command="{Binding DataContext.YourModifyCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                        CommandParameter="{Binding}" Margin="5,0" />
+                                    <Button FontFamily="{StaticResource FaFreeSolid}" Content="&#xf1f8;" FontSize="16" 
+                                        Command="{Binding DataContext.YourDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                        CommandParameter="{Binding}" Margin="5,0" />-->
+                                    <Button FontFamily="{StaticResource FaFreeSolid}" Content="&#xf044;" FontSize="16" Click="ButtonModify_Click" Margin="5,0"/>
+                                    <Button FontFamily="{StaticResource FaFreeSolid}" Content="&#xf1f8;" FontSize="16" Click="ButtonDeleted_Click" Margin="5,0"/>
+                                </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <!--<DataGridCheckBoxColumn Binding="{Binding IsChecked}"/>-->
-
                 </DataGrid.Columns>
             </DataGrid>
+
+            <!--</ScrollViewer>-->
 
         </Grid>
         <Grid Grid.ColumnSpan="4" Margin="181,10,8,15" Grid.Row="2">
