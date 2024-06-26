@@ -1,9 +1,8 @@
-﻿using DBLayer.UOW;
-using ServiceLayer.IServices;
-using ServiceLayer.Services.Classes;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,14 +15,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Collections.Specialized.BitVector32;
+using System.Xml.Linq;
+using ServiceLayer.Services.Classes;
+using DBLayer.UOW;
+using DBLayer.Models;
+using ServiceLayer.IServices;
 
 namespace Wpf_Stationery
 {
     /// <summary>
-    /// Interaction logic for OfficeSupplies.xaml
+    /// Interaction logic for OfficeSupplies_old.xaml
     /// </summary>
-    public partial class OfficeSupplies : Page
+    public partial class OfficeSupplies_old : Window
     {
+
         private readonly IUnitOfWork _unitOfWork;
 
         DataTable dataTable = new DataTable();
@@ -31,32 +37,48 @@ namespace Wpf_Stationery
         // Declare the array variable.
         object[] rowArray = new object[8];
 
-        public OfficeSupplies()
+        public OfficeSupplies_old()
         {
             InitializeComponent();
             LoadData();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void CustomerGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file  
+
+            //#region Load - GetAll
+            //try
+            //{
+            //    //DataTable dtExcel = new DataTable();
+            //    dataTable = new DataTable();
+
+            //    dataTable = ReadExcelDataTable(filePath, fileExt); //read excel file  
+
+            //    if (dataTable != null)
+            //    {
+            //        //Ridimensiona();
+            //        CustomerGrid.Visibility = Visibility.Visible;
+
+            //        //Set the DataGrid's DataContext to be a filled DataTable
+            //        CustomerGrid.DataContext = dataTable;
+            //    }
+            //    //webBrowser.NavigateToString(dataTable.ToString());
+            //}catch
+            //{
+
+            //}       
+            //#endregion
+
+        }
+
+
+        private void AddItemButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
 
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_BackToHome(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_AddItem(object sender, RoutedEventArgs e)
+        private void BackToHomeButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -165,6 +187,24 @@ namespace Wpf_Stationery
             this.Height = 900;
         }
 
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExportButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //dataGrid = ;
+
+
+
+        }
+
         private DataTable MakeTableWithAutoIncrement()
         {
             // Make a table with one AutoIncrement column.
@@ -192,21 +232,6 @@ namespace Wpf_Stationery
         }
 
         private void Find_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonFilter_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonRefresh_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonDownload_Click(object sender, RoutedEventArgs e)
         {
 
         }
