@@ -50,7 +50,7 @@ namespace Wpf_Stationery
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             serviceCollection.AddDbContext<StationeryContext>(options =>
                                             options.UseSqlServer(
-                                                Configuration.GetConnectionString("StationaryDB")));
+                                                Configuration.GetConnectionString("StationeryDB")));
                                                
 
             ConfigureServices(serviceCollection);
