@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,21 +16,16 @@ using static DBLayer.Models.Item;
 namespace DBLayer
 {
     public class StationeryContext : IdentityDbContext<User>
-    {
-        public StationeryContext() { }
+    {        
+        public StationeryContext() {
+        }
 
-        public StationeryContext(DbContextOptions<StationeryContext> options) : base(options) { }
+        public StationeryContext(DbContextOptions<StationeryContext> options) : base(options) {
+        }
 
-      
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //Alessandro
-            //string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StationeryDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-
-            //Vittorio
-            string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StationaryDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-
-            optionsBuilder.UseSqlServer(connString);
         }
 
 
@@ -108,7 +105,7 @@ namespace DBLayer
             .HasForeignKey(oi => oi.UserId);
             #endregion
 
-            modelBuilder.HasDefaultSchema("identity");
+            //modelBuilder.HasDefaultSchema("identity");
 
             modelBuilder.Entity<IdentityUserLogin<string>>().HasNoKey();
             modelBuilder.Entity<IdentityUserRole<string>>().HasNoKey();

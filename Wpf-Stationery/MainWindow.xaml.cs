@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System.Runtime;
+using System;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,10 +26,12 @@ namespace Alten_Stationery
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
+        {           
             MainWindow main= new MainWindow();
-            BaseLayout home= new BaseLayout();
-            main.Content = home;
+            OfficeSupplies officeSupplies = new OfficeSupplies();
+
+            //main.Content = home;
+            main.Content = officeSupplies;
             main.Show();
         }
 

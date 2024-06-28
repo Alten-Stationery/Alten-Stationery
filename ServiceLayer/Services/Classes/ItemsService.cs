@@ -17,7 +17,7 @@ namespace ServiceLayer.Services.Classes
     {
         private readonly ItemValidator _validator=new ItemValidator();
         private readonly IUnitOfWork _unitOfWork;
-        public ItemsService( IUnitOfWork  unitOfWork)
+        public ItemsService(IUnitOfWork  unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
