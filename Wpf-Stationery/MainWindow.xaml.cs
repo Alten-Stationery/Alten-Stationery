@@ -1,14 +1,10 @@
-﻿using System.Text;
+﻿
+using DBLayer.Models;
+using Microsoft.AspNetCore.Identity;
+using ServiceLayer.IServices;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Wpf_Stationery;
+using Wpf_Stationery.Properties;
 
 namespace Alten_Stationery
 {
@@ -17,22 +13,67 @@ namespace Alten_Stationery
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        IUsersService _service;
+        User user;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
+     
+
+        public MainWindow(IUsersService service, UserManager<User> userManager,SignInManager<User> signInManager)
         {
+            _service = service;
             InitializeComponent();
+            _userManager = userManager;
+            _signInManager = signInManager;
+            this.DataContext = user;
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow main= new MainWindow();
-            BaseLayout home= new BaseLayout();
-            main.Content = home;
-            main.Show();
-        }
+
 
         private void Link_ResetPassword(object sender, RoutedEventArgs e)
         {
 
         }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            
+            Settings.Default.Save();
+
+
+            MainWindow main = new MainWindow(_service, _userManager,_signInManager) ;
+
+            User user = new User()
+            {
+                Email = email.Text,
+
+            };
+            var check = _signInManager.PasswordSignInAsync(user, password.Text, false, false);
+            if (check.IsCompletedSuccessfully)
+            {
+                UserPage userPage = new UserPage(_service);
+                main.Content = userPage;
+            }
+
+
+
+            main.Show();
+
+
+        }
+
+        private void password_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            
+        }
+
+        //private void CheckBox_CheckedChanged(object sender, RoutedEventArgs e)
+        //{
+        //    if(check.Checked)
+        //    {
+
+        //    }
+        //}
     }
 }

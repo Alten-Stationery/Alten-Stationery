@@ -82,6 +82,9 @@ namespace ServiceLayer.Services.Classes
                 return null;
             }
         }
+
+
+
         public async Task<User> GetById(int id)
         {
             try
@@ -99,7 +102,7 @@ namespace ServiceLayer.Services.Classes
             try
             {
                 bool check = false;
-                var entityToFind = await GetById(entity.UserId);
+                var entityToFind = await GetById(entity.Id);
 
                 if (entityToFind != null)
                 {

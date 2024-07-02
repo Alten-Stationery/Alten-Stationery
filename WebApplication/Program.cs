@@ -1,5 +1,6 @@
 using DBLayer;
 using DBLayer.Models;
+using DBLayer.UOW;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ServiceLayer.IServices;
@@ -17,18 +18,22 @@ builder.Services.AddSwaggerGen();
 
 //builder.Services.AddDbContext<StationeryContext>(options =>options.UseSqlServer("name=ConnectionStrings:StationeryDB"));
 
+
 builder.Services.AddIdentityCore<User>()
+
+    .AddRoles<IdentityRole<int>>() 
     .AddEntityFrameworkStores<StationeryContext>()
     .AddApiEndpoints();
 
+
 //builder.Services.AddDbContext<StationeryContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("StationaryDB")));
 
-//builder.Services.AddScoped<IAlertsService, AlertsService>();
-//builder.Services.AddScoped<IRefillsService, RefillsService>();
-//builder.Services.AddScoped<IItemsService, ItemsService>();
-//builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<IAlertsService, AlertsService>();
+builder.Services.AddScoped<IRefillsService, RefillsService>();
+builder.Services.AddScoped<IItemsService, ItemsService>();
+builder.Services.AddScoped<IUsersService, UsersService>();
 
-
+builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
 
 var app = builder.Build();
 

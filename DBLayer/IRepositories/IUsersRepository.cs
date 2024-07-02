@@ -9,7 +9,6 @@ namespace DBLayer.IRepositories
 {
     public interface IUsersRepository : IRepository<User>
     {
-
         
 
     }

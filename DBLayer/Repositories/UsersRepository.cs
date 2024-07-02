@@ -13,8 +13,12 @@ namespace DBLayer.Repositories
 {
     public class UsersRepository : GenericRepository<User>, IUsersRepository
     {
+        private StationeryContext _context;
         public UsersRepository(StationeryContext context) : base(context)
         {
+            _context = context;
         }
+
+        
     }
 }
