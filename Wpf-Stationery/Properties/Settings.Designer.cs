@@ -22,5 +22,17 @@ namespace Wpf_Stationery.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TextBoxValue {
+            get {
+                return ((string)(this["TextBoxValue"]));
+            }
+            set {
+                this["TextBoxValue"] = value;
+            }
+        }
     }
 }
