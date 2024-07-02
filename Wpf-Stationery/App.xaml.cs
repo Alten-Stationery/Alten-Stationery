@@ -1,70 +1,63 @@
 ﻿using Alten_Stationery;
 using DBLayer;
 using DBLayer.UOW;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.VisualBasic.ApplicationServices;
 using ServiceLayer.IServices;
 using ServiceLayer.Services.Classes;
-using System;
 using System.Configuration;
 using System.Data;
-using System.IO;
-using System.Runtime;
-using System.Text;
 using System.Windows;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Wpf_Stationery
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
+
     public partial class App : Application
     {
-        public static IServiceProvider ServiceProvider { get; private set; }
-        public static IConfiguration Configuration { get; private set; }
-
-
-
-        protected override void OnStartup(StartupEventArgs startupEventArgs)
+          public static IHost? AppHost { get; private set; }
+        public App()
         {
-            base.OnStartup(startupEventArgs);
-            var builder = new ConfigurationBuilder()
-                              .SetBasePath(Directory.GetCurrentDirectory())
-                              .AddJsonFile(path: "appsettings.json", optional: false, reloadOnChange: true);
+           
+            AppHost = Host.CreateDefaultBuilder()
+                .ConfigureAppConfiguration(c =>
+                {
+                    c.AddJsonFile("appsettings.json");
+                })
+                .ConfigureServices((hostContext, services) =>
+                {
+                    string connString = hostContext.Configuration.GetConnectionString("StationeryDB");
+                    services.AddSingleton<MainWindow>();
+                    services.AddScoped<IUnitOfWork,UnitOfWork>();
+                    services.AddDbContext<StationeryContext>(options => options.UseSqlServer(connString));
 
-            Configuration = builder.Build();
-
-            var serviceCollection = new ServiceCollection();
-
-            serviceCollection.AddScoped<MainWindow>();
-            serviceCollection.AddScoped<OfficeSupplies>();
-
-            serviceCollection.AddScoped<IItemsService, ItemsService>();
-            serviceCollection.AddScoped<IAlertsService, AlertsService>();
-            serviceCollection.AddScoped<IRefillsService, RefillsService>();
-            serviceCollection.AddScoped<IUsersService, UsersService>();
-
-            serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
-            serviceCollection.AddDbContext<StationeryContext>(options =>
-                                            options.UseSqlServer(
-                                                Configuration.GetConnectionString("StationeryDB")));
-                                               
-
-            ConfigureServices(serviceCollection);
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            ServiceProvider = serviceCollection.BuildServiceProvider();
-            var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();            
-
-            mainWindow.Show();
+                    services.AddIdentity<DBLayer.Models.User,IdentityRole<int>>()
+                        .AddEntityFrameworkStores<StationeryContext>();
+                    services.AddTransient<IAlertsService, AlertsService>();
+                    services.AddTransient<IItemsService, ItemsService>();
+                    services.AddTransient<IRefillsService, RefillsService>();
+                    services.AddTransient<IUsersService, UsersService>();
+                }).Build();
         }
 
-
-        private void ConfigureServices(ServiceCollection serviceCollection)
+        protected override async void OnStartup(System.Windows.StartupEventArgs e)
         {
-            serviceCollection.AddTransient(typeof(MainWindow));
+            await AppHost!.StartAsync();
+
+            var startUpForm = AppHost.Services.GetRequiredService<MainWindow>() ;
+
+            startUpForm.Show();
+
+            base.OnStartup(e);
+        }
+
+        protected override async void OnExit(ExitEventArgs e)
+        {
+            await AppHost?.StopAsync();
+            base.OnExit(e);
         }
     }
 

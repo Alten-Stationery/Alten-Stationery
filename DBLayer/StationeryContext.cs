@@ -3,9 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,17 +13,22 @@ using static DBLayer.Models.Item;
 
 namespace DBLayer
 {
-    public class StationeryContext : IdentityDbContext<User>
-    {        
-        public StationeryContext() {
-        }
+    public class StationeryContext : IdentityDbContext<User, IdentityRole<int>, int>
+    {
+        public StationeryContext() { }
 
-        public StationeryContext(DbContextOptions<StationeryContext> options) : base(options) {
-        }
+        public StationeryContext(DbContextOptions<StationeryContext> options) : base(options) { }
 
-
+      
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //Alessandro
+            //string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StationeryDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+
+            //Vittorio
+            string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StationeryDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+
+            optionsBuilder.UseSqlServer(connString);
         }
 
 
@@ -36,6 +39,7 @@ namespace DBLayer
        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             #region Items
             modelBuilder.Entity<Item>(i =>
             {
@@ -76,10 +80,9 @@ namespace DBLayer
             #region Users
             modelBuilder.Entity<User>(i =>
             {
-                i.HasKey(c => c.UserId);
+                i.HasKey(c => c.Id);
                 i.Property(c => c.UserName).HasColumnType("nvarchar").HasMaxLength(50);
                 i.Property(c => c.Email).HasColumnType("nvarchar").HasMaxLength(50);
-                i.Property(c => c.PasswordHash).HasColumnType("nvarchar").HasMaxLength(50);
                 i.ToTable("Users");
             });
             #endregion
@@ -105,13 +108,24 @@ namespace DBLayer
             .HasForeignKey(oi => oi.UserId);
             #endregion
 
+
             //modelBuilder.HasDefaultSchema("identity");
 
-            modelBuilder.Entity<IdentityUserLogin<string>>().HasNoKey();
-            modelBuilder.Entity<IdentityUserRole<string>>().HasNoKey();
-            modelBuilder.Entity<IdentityUserToken<string>>().HasNoKey();
+            modelBuilder.Entity<IdentityUserLogin<int>>().HasNoKey();
+            modelBuilder.Entity<IdentityUserRole<int>>().HasNoKey();
+            modelBuilder.Entity<IdentityUserToken<int>>().HasNoKey();
+
+
+            modelBuilder.Entity<User>().ToTable("Users", "myschema");
+            modelBuilder.Entity<IdentityRole>().ToTable("Roles", "myschema");
+            modelBuilder.Entity<IdentityUserToken<int>>().ToTable("user_token", "myschema");
+            modelBuilder.Entity<IdentityUserRole<int>>().ToTable("user_role", "myschema");
+            modelBuilder.Entity<IdentityRoleClaim<int>>().ToTable("role_claim", "myschema");
+            modelBuilder.Entity<IdentityUserClaim<int>>().ToTable("user_claim", "myschema");
+            modelBuilder.Entity<IdentityUserLogin<int>>().ToTable("user_login", "myschema");
 
             
+            base.OnModelCreating(modelBuilder);
         }
 
 

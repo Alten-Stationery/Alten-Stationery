@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DBLayer.Models.Item;
 
 namespace ServiceLayer.Services.Classes
 {
@@ -72,6 +73,20 @@ namespace ServiceLayer.Services.Classes
                 return null;
             }
         }
+
+        public async  Task<IEnumerable<Item>> GetAllAsyncByType(ItemType category)
+        {
+            try
+            {
+                IEnumerable<Item> items = await _unitOfWork.Items.GetAllAsyncByType(category);
+                return items;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public async Task<IEnumerable<Item>> GetAllAsyncPaginated(int page, int pageSize)
         {
             try
