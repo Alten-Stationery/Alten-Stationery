@@ -1,4 +1,4 @@
-﻿<Page x:Class="Wpf_Stationery.OfficeSupplies"
+﻿<Window x:Class="Wpf_Stationery.OfficeSupplies"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,12 +9,15 @@
      
       
       mc:Ignorable="d"
-      Title="UsePage" Height="700" Width="1350" MinWidth="428" >
+      Title="UsePage" Height="700" Width="1350"  >
 
-    <Page.Resources>
+    <!--<Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
-    </Page.Resources>
+    </Page.Resources>-->
 
+    <!--<DockPanel >
+        <Frame x:Name="_NavigationFrame" NavigationUIVisibility="Hidden" />
+    </DockPanel>-->
 
 
     <Grid Background="White" Name="Page">
@@ -183,5 +186,5 @@
             </Button>
         </Grid>
     </Grid>
-</Page>
+</Window>
  

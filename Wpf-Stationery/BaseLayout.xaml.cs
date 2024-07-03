@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceLayer.IServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,9 @@ namespace Wpf_Stationery
     /// </summary>
     public partial class BaseLayout : Page
     {
+
+        private IItemsService _service;
+
         public BaseLayout()
         {
             InitializeComponent();
@@ -37,7 +41,8 @@ namespace Wpf_Stationery
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            OfficeSupplies officeSupplies = new OfficeSupplies();
+            officeSupplies.Content = officeSupplies;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

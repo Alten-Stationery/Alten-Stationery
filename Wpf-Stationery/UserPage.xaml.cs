@@ -1,4 +1,6 @@
-﻿using ServiceLayer.IServices;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
+using ServiceLayer.IServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,16 +20,24 @@ using System.Windows.Shapes;
 namespace Wpf_Stationery
 {
     
-    public partial class UserPage : Page
+    public partial class UserPage : Window
     {
-        private IUsersService _service;
-        public UserPage(IUsersService service)
+        //private IUsersService _serviceUser;
+        //private IItemsService _serviceItem;
+        private IService<IItemsService> _service;
+
+        public UserPage(IService<IItemsService> service)
         {
-            InitializeComponent();
             _service = service;
+            //_serviceItem = serviceItem;
+            //_serviceUser = serviceUser;
+            InitializeComponent();
         }
 
-        
+        public UserPage()
+        {
+            InitializeComponent();
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -56,7 +66,12 @@ namespace Wpf_Stationery
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
+            //MainWindow main = new MainWindow(_service, _userManager, _signInManager);
+            //UserPage userPage = new UserPage(_service);
+            UserPage userPage = new UserPage();
 
+            OfficeSupplies officeSupplies = new OfficeSupplies();
+            officeSupplies.Show();
         }
     }
 }

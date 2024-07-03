@@ -6,7 +6,7 @@ using System.Windows;
 using Wpf_Stationery;
 using Wpf_Stationery.Properties;
 
-namespace Alten_Stationery
+namespace Wpf_Stationery
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -15,17 +15,17 @@ namespace Alten_Stationery
     {
         IUsersService _service;
         User user;
-        private readonly UserManager<User> _userManager;
-        private readonly SignInManager<User> _signInManager;
+        //private readonly UserManager<User> _userManager;
+        //private readonly SignInManager<User> _signInManager;
      
 
-        public MainWindow(IUsersService service, UserManager<User> userManager,SignInManager<User> signInManager)
+        public MainWindow(IUsersService service/*UserManager<User> userManager,SignInManager<User> signInManager*/)
         {
             _service = service;
             InitializeComponent();
-            _userManager = userManager;
-            _signInManager = signInManager;
-            this.DataContext = user;
+            //_userManager = userManager;
+            //_signInManager = signInManager;
+            //this.DataContext = user;
         }
 
 
@@ -38,27 +38,26 @@ namespace Alten_Stationery
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.Save();
-
-
-            MainWindow main = new MainWindow(_service, _userManager,_signInManager) ;
+            
+            MainWindow main = new MainWindow(_service/* _userManager,_signInManager*/) ;
 
             User user = new User()
             {
                 Email = email.Text,
 
             };
-            var check = _signInManager.PasswordSignInAsync(user, password.Text, false, false);
-            if (check.IsCompletedSuccessfully)
-            {
-                UserPage userPage = new UserPage(_service);
-                main.Content = userPage;
-            }
+            //var check = _signInManager.PasswordSignInAsync(user, password.Text, false, false);
+            //if (check.IsCompletedSuccessfully)
+            //{
+                //UserPage userPage = new UserPage(_service);
+                UserPage userPage = new UserPage();
+                userPage.Show();
+            //main.Content = userPage;
+            // }
 
-
-
-            main.Show();
-
-
+            //main.Show();
+            //main.Hide();
+            main.Close();
         }
 
         private void password_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)

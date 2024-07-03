@@ -32,24 +32,25 @@ namespace Wpf_Stationery
     /// <summary>
     /// Interaction logic for OfficeSupplies.xaml
     /// </summary>
-    public partial class OfficeSupplies : Page
+    public partial class OfficeSupplies : Window
     {
         public ICommand YourCommand { get; set; }
-        public IItemsService _service { get; set; }
+        //public IItemsService _service { get; set; }
 
         DataTable dataTable = new DataTable();
         DataRow dr = null;
         // Declare the array variable.
         object[] rowArray = new object[7];
 
+        private IItemsService _serviceItem;
         public OfficeSupplies()
         {
-            _service = App.ServiceProvider.GetRequiredService<IItemsService>();
+            _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
             
             InitializeComponent();
             LoadData();
         }
-        
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -85,7 +86,7 @@ namespace Wpf_Stationery
                 dataTable = MakeTableWithAutoIncrement();
                 dr = null;
 
-                items = await _service.GetAllAsync();
+                items = await _serviceItem.GetAllAsync();
 
                 #region GetAllDB
                 foreach (var item in items)
@@ -121,8 +122,8 @@ namespace Wpf_Stationery
             {
                 throw;
             }
-           
-            return items; 
+
+            return items;
         }
 
         private void Resetta()

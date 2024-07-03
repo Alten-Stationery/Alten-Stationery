@@ -82,9 +82,6 @@ namespace ServiceLayer.Services.Classes
                 return null;
             }
         }
-
-
-
         public async Task<User> GetById(int id)
         {
             try
