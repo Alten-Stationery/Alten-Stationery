@@ -8,8 +8,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceLayer", "ServiceLaye
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf-Stationery", "Wpf-Stationery\Wpf-Stationery.csproj", "{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication", "WebApplication\WebApplication.csproj", "{FF667F49-E24C-4612-A1D8-6D6E37457D1F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,10 +26,6 @@ Global
 		{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF667F49-E24C-4612-A1D8-6D6E37457D1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF667F49-E24C-4612-A1D8-6D6E37457D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF667F49-E24C-4612-A1D8-6D6E37457D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF667F49-E24C-4612-A1D8-6D6E37457D1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,7 +18,7 @@ namespace Wpf_Stationery
     /// <summary>
     /// Interaction logic for BaseLayout.xaml
     /// </summary>
-    public partial class BaseLayout : Page
+    public partial class BaseLayout : Window   
     {
         public BaseLayout()
         {

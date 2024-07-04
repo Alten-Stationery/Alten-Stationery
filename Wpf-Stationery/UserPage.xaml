@@ -1,4 +1,4 @@
-﻿<Page x:Class="Wpf_Stationery.UserPage"
+﻿<Window x:Class="Wpf_Stationery.UserPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,11 +9,9 @@
      
       
       mc:Ignorable="d"
-      Title="UserPage" Height="700" Width="1350" MinWidth="428" >
+      Title="UserPage" Height="700" Width="1350" MinWidth="428"  WindowStartupLocation="CenterScreen" WindowStyle="None"
+        ResizeMode="CanResize" >
 
-    <Page.Resources>
-        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
-    </Page.Resources>
 
 
 
@@ -212,5 +210,4 @@
             </Button>
         </Grid>
     </Grid>
-</Page>
- 
+</Window>
