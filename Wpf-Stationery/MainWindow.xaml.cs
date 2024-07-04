@@ -1,8 +1,14 @@
 ﻿
 using DBLayer.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 using ServiceLayer.IServices;
+using System;
+using System.Runtime;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Threading;
 using Wpf_Stationery;
 using Wpf_Stationery.Properties;
 
@@ -14,51 +20,55 @@ namespace Alten_Stationery
     public partial class MainWindow : Window
     {
         IUsersService _service;
-        User user;
+
         private readonly UserManager<User> _userManager;
-        private readonly SignInManager<User> _signInManager;
-     
+        private  SignInManager<User> _signInManager;
 
-        public MainWindow(IUsersService service, UserManager<User> userManager,SignInManager<User> signInManager)
+        
+        public MainWindow()
         {
-            _service = service;
             InitializeComponent();
-            _userManager = userManager;
-            _signInManager = signInManager;
-            this.DataContext = user;
+            _service =App.ServiceProvider.GetService<IUsersService>();
+            _userManager = App.ServiceProvider.GetRequiredService<UserManager<User>>() ;
+            _signInManager = App.ServiceProvider.GetRequiredService<SignInManager<User>>();
+            _signInManager.Context = new DefaultHttpContext { RequestServices = App.ServiceProvider };
+            this.DataContext = new User();
         }
 
-
-
-        private void Link_ResetPassword(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            
+
             Settings.Default.Save();
 
-
-            MainWindow main = new MainWindow(_service, _userManager,_signInManager) ;
-
-            User user = new User()
+            try
             {
-                Email = email.Text,
+                var user = await _userManager.FindByEmailAsync(email.Text);
+                if (user == null)
+                {
+                    MessageBox.Show("User not found.");
+                    return;
+                }
 
-            };
-            var check = _signInManager.PasswordSignInAsync(user, password.Text, false, false);
-            if (check.IsCompletedSuccessfully)
+                //var check = await _signInManager.PasswordSignInAsync(user, password.Text, false, false);
+                var check = await _userManager.CheckPasswordAsync(user,password.Text);
+                if (check==true)
+                {
+                    var newWindow = new UserPage(_service);
+                    this.Close();
+                    newWindow.Show();   
+                }
+                else
+                {
+                    MessageBox.Show("Invalid login attempt.");
+                }
+            }
+            catch (Exception ex)
             {
-                UserPage userPage = new UserPage(_service);
-                main.Content = userPage;
+                MessageBox.Show($"An error occurred: {ex.Message}");
             }
 
-
-
-            main.Show();
 
 
         }
