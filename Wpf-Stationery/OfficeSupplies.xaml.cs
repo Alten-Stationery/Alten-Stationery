@@ -41,6 +41,8 @@ namespace Wpf_Stationery
         DataTable dataTable;
         DataRow dr;
         private IItemsService _serviceItem;
+        Items items;
+        Item item;
 
         public string NewName;
         public int NewThreshold;
@@ -56,6 +58,7 @@ namespace Wpf_Stationery
             dataTable = new DataTable();
             // Declare the array variable.
             rowArray = new object[8];
+            items = new Items();
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
             InitializeComponent();
@@ -83,7 +86,7 @@ namespace Wpf_Stationery
 
         private void Button_AddItem(object sender, RoutedEventArgs e)
         {
-            Items items = new Items();
+            items = new Items();
             items.Show();
 
 
@@ -204,11 +207,14 @@ namespace Wpf_Stationery
             //Modificol'Item
             var selectedItem = ((System.Data.DataRowView)CustomerGrid.SelectedItem);
             int idSelected = 0;
-            Item item = new Item();
+            item = new Item();
+            items = new Items();
 
             try
             {
                 idSelected = int.Parse(selectedItem.Row.ItemArray[0].ToString());
+
+                items.Show();
 
                 item.ItemId = idSelected;
                 item.Name = NewName;
