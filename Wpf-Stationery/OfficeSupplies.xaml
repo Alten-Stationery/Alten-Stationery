@@ -4,13 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
        xmlns:local="clr-namespace:Wpf_Stationery"
-      
-  
-     
-      
       mc:Ignorable="d"
-      Title="OfficeSupplies" Height="700" Width="1350"   WindowStartupLocation="CenterScreen"  WindowStyle="None"
-        ResizeMode="CanResize" >
+      Title="OfficeSupplies" Height="700" Width="1350" >
 
     <!--<Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>

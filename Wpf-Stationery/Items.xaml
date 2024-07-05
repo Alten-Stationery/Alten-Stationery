@@ -1,4 +1,4 @@
-﻿<Window x:Class="Wpf_Stationery.UserPage"
+﻿<Window x:Class="Wpf_Stationery.Items"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,8 +9,8 @@
      
       
       mc:Ignorable="d"
-      Title="UserPage" Height="700" Width="1350" MinWidth="428"  
-        >
+      Title="BaseLayout" Height="700" Width="1350" MinWidth="428" >
+
 
 
 
@@ -27,7 +27,7 @@
             <ColumnDefinition Width="103*"/>
             <ColumnDefinition Width="37*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.ColumnSpan="4" Margin="178,2,4,472" Grid.RowSpan="2">
+        <Grid Grid.ColumnSpan="4" Margin="178,2,4,400" Grid.RowSpan="2">
             <TextBlock  FontWeight="Bold" FontFamily="Bahnschrift" Foreground="#275879" FontSize="14" Height="28" VerticalAlignment="Top" Margin="996,17,-25,0" >Smith, John</TextBlock>
         </Grid>
         <Border BorderThickness="1" CornerRadius="8" Background="#003d63" Margin="-1,0,614,0" Grid.RowSpan="3">
@@ -57,14 +57,14 @@
                     </StackPanel>
                 </Button>
 
-                <Button BorderThickness="0" Background="Transparent" Margin="0,210,0,34">
+                <Button BorderThickness="0" Background="Transparent" Margin="0,210,0,34" Click="Button_Click">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  FontSize="15" VerticalAlignment="Center" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="White"><Run Text="&#xf2bd;"/></TextBlock>
                         <TextBlock FontSize="15" FontFamily="Bahnschrift" Foreground="White" Width="82" Padding="10"><Run Text="Users"/></TextBlock>
                     </StackPanel>
                 </Button>
 
-                <Button BorderThickness="0" Background="Transparent" Margin="0,260,0,388" Grid.RowSpan="2" Click="Button_Click_4">
+                <Button BorderThickness="0" Background="Transparent" Margin="0,260,0,388" Grid.RowSpan="2" Click="Button_Click_1">
                     <StackPanel Orientation="Horizontal" Width="168" RenderTransformOrigin="0.5,0.5">
                         <StackPanel.RenderTransform>
                             <TransformGroup>
@@ -88,21 +88,21 @@
                     </StackPanel>
                 </Button>
 
-                <Button Margin="0,16,0,337" Background="Transparent"  Grid.Row="1" BorderThickness="0">
+                <Button Margin="0,16,0,337" Background="Transparent"  Grid.Row="1" BorderThickness="0" Click="Button_Click_2">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  FontSize="15" VerticalAlignment="Center" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="White"><Run Text="dolly"/></TextBlock>
                         <TextBlock FontSize="15" FontFamily="Bahnschrift" Foreground="White" Width="82" Padding="10"><Run Text="Orders"/></TextBlock>
                     </StackPanel>
                 </Button>
 
-                <Button Margin="0,67,0,286" Grid.Row="1" Background="Transparent" BorderThickness="0">
+                <Button Margin="0,67,0,286" Grid.Row="1" Background="Transparent" BorderThickness="0" Click="Button_Click_4">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  FontSize="15" VerticalAlignment="Center" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="White"><Run Text="&#xf071;"/></TextBlock>
                         <TextBlock FontSize="15" FontFamily="Bahnschrift" Foreground="White" Width="82" Padding="10"><Run Text="Alerts"/></TextBlock>
                     </StackPanel>
                 </Button>
 
-                <Button Margin="0,118,0,235" Grid.Row="1" Background="Transparent" BorderThickness="0">
+                <Button Margin="0,118,0,235" Grid.Row="1" Background="Transparent" BorderThickness="0" Click="Button_Click_5">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  FontSize="15" VerticalAlignment="Center" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="White"><Run Text="&#xf055;"/></TextBlock>
                         <TextBlock FontSize="15" FontFamily="Bahnschrift" Foreground="White" Width="82" Padding="10"><Run Text="Refill"/></TextBlock>
@@ -121,15 +121,40 @@
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <TextBlock Margin="104,59,451,370"  FontFamily="Bahnschrift" Foreground="#275879" FontSize="23" Grid.ColumnSpan="2"><Run Language="it-it" Text="Personal Information"/></TextBlock>
+            <TextBlock Margin="104,59,495,525"  FontFamily="Bahnschrift" Foreground="#275879" FontSize="23" Grid.ColumnSpan="2"><Run Language="it-it" Text="Item Description"/></TextBlock>
             <Canvas Margin="58,91,204,347" Grid.ColumnSpan="2">
                 <Line X1="1000" Y1="0" Stroke="LightGray" StrokeThickness="2" HorizontalAlignment="Left" Height="20" VerticalAlignment="Center" Canvas.Left="48" Width="950"></Line>
             </Canvas>
-            <TextBlock Margin="120,196,54,240" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17">FirstName</TextBlock>
-            <TextBlock Margin="123,266,53,165" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17"><Run Language="it-it" Text="Email"/></TextBlock>
-            <TextBlock Margin="364,196,82,249" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="1"><Run Language="it-it" Text="LastName"/></TextBlock>
-            <TextBlock Margin="366,266,85,177" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="1"><Run Language="it-it" Text="Password"/></TextBlock>
-            <Border Margin="242,256,426,176" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="2">
+            <TextBlock Margin="120,196,54,370" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17">Name</TextBlock>
+            <TextBlock Margin="123,266,14,300" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17"><Run Language="it-it" Text="Description"/></TextBlock>
+            <TextBlock Margin="123,336,53,242" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17"><Run Language="it-it" Text="Threshold"/></TextBlock>
+            <TextBlock Margin="123,400,53,193" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17"><Run Language="it-it" Text="Location"/></TextBlock>
+            <TextBlock Margin="364,196,82,370" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="1"><Run Language="it-it" Text="Quantity"/></TextBlock>
+            <TextBlock Margin="366,266,30,320" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="1"><Run Language="it-it" Text="Expiration Date"/></TextBlock>
+            <TextBlock Margin="366,336,40,260" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="1"><Run Language="it-it" Text="Expire FE Date"/></TextBlock>
+            <Border Margin="243,256,368,317" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="2">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.582"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.305"/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <TextBox Margin="7,0,7,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />
+            </Border>
+            <Border Margin="243,324,370,249" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="2">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.582"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.305"/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <TextBox Margin="7,0,7,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />
+            </Border>
+            <Border Margin="243,382,371,191" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="2">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -150,7 +175,7 @@
                     </Button.Resources>
                 </Button>
             </Grid>
-            <Border Margin="243,191,425,241" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="2">
+            <Border Margin="244,196,365,379" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="2">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -161,7 +186,7 @@
                 </Border.RenderTransform>
                 <TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />
             </Border>
-            <Border Margin="509,191,277,241" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.Column="1" Grid.ColumnSpan="3">
+            <Border Margin="511,191,231,379" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.Column="1" Grid.ColumnSpan="3">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -170,9 +195,9 @@
                         <TranslateTransform X="-0.305"/>
                     </TransformGroup>
                 </Border.RenderTransform>
-                <TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />
+               <TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />
             </Border>
-            <Border Margin="509,258,277,174" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.Column="1" Grid.ColumnSpan="3">
+            <Border Margin="510,258,230,316" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.Column="1" Grid.ColumnSpan="3">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -181,27 +206,40 @@
                         <TranslateTransform X="-0.305"/>
                     </TransformGroup>
                 </Border.RenderTransform>
-                <TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />
+                <DatePicker Width="140" Style="{StaticResource MaterialDesignOutlinedDatePicker}" Text="ExpirationDate"/>
+                <!--<DatePicker Width="140" materialDesign:HintAssist.HelperText="Helper text" materialDesign:HintAssist.Hint="Pick Date" Style="{StaticResource MaterialDesignOutlinedDatePicker}" />-->
+                <!--<TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />-->
             </Border>
-
+            <Border Margin="510,316,231,258" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.Column="1" Grid.ColumnSpan="3">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.582"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.305"/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <DatePicker Width="140" Style="{StaticResource MaterialDesignOutlinedDatePicker}" Text="Expire FE Date"/>
+                <!--<TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />-->
+            </Border>
 
         </Grid>
         <Grid Grid.ColumnSpan="4" Margin="181,10,8,15" Grid.Row="2">
-            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="#275879" BorderThickness="0" Background="#E9EAEC" Height="50" VerticalAlignment="Top" Margin="746,19,303,0">Cancel
+            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="#275879" BorderThickness="0" Background="#E9EAEC" Height="50" VerticalAlignment="Top" Margin="746,19,303,0" Click="ButtonCancel_Click">Cancel
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="6" />
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#003d63" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="882,19,167,0" Content="Save">
+            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#003d63" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="882,19,167,0" Content="Save" Click="Button_Save">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="6" />
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#3F9469" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="1019,19,30,0" Content="Modify" Click="Button_Click_2">
+            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#3F9469" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="1019,19,30,0" Content="Save e Submit" Click="Button_SaveESubmit">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="6" />
@@ -211,3 +249,4 @@
         </Grid>
     </Grid>
 </Window>
+ 

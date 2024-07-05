@@ -44,25 +44,25 @@ namespace Alten_Stationery
 
             try
             {
-                var user = await _userManager.FindByEmailAsync(email.Text);
-                if (user == null)
-                {
-                    MessageBox.Show("User not found.");
-                    return;
-                }
+                //var user = await _userManager.FindByEmailAsync(email.Text);
+                //if (user == null)
+                //{
+                //    MessageBox.Show("User not found.");
+                //    return;
+                //}
 
                 //var check = await _signInManager.PasswordSignInAsync(user, password.Text, false, false);
-                var check = await _userManager.CheckPasswordAsync(user,password.Text);
-                if (check==true)
-                {
+                //var check = await _userManager.CheckPasswordAsync(user,password.Text);
+                //if (check==true)
+                //{
                     var newWindow = new UserPage(_service);
                     this.Close();
                     newWindow.Show();   
-                }
-                else
-                {
-                    MessageBox.Show("Invalid login attempt.");
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Invalid login attempt.");
+                //}
             }
             catch (Exception ex)
             {
@@ -71,6 +71,9 @@ namespace Alten_Stationery
 
 
 
+            //main.Show();
+            //main.Hide();
+            //main.Close();
         }
 
         private void password_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)

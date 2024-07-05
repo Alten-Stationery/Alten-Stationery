@@ -26,6 +26,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static DBLayer.Models.Item;
 
 namespace Wpf_Stationery
 {
@@ -36,15 +37,25 @@ namespace Wpf_Stationery
     {
         public ICommand YourCommand { get; set; }
         //public IItemsService _service { get; set; }
-
-        DataTable dataTable = new DataTable();
-        DataRow dr = null;
-        // Declare the array variable.
-        object[] rowArray = new object[8];
-
+        private object[] rowArray;
+        DataTable dataTable;
+        DataRow dr;
         private IItemsService _serviceItem;
+
+        public string NewName;
+        public int NewThreshold;
+        public string NewDescription;
+        public string NewLocation;
+        public ItemType NewType;
+        public int NewQuantity;
+        public DateTime NewExpirationDate;
+        public DateTime? NewExpireFEDate;
+
         public OfficeSupplies()
         {
+            dataTable = new DataTable();
+            // Declare the array variable.
+            rowArray = new object[8];
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
             InitializeComponent();
@@ -72,6 +83,9 @@ namespace Wpf_Stationery
 
         private void Button_AddItem(object sender, RoutedEventArgs e)
         {
+            Items items = new Items();
+            items.Show();
+
 
         }
 
@@ -187,20 +201,53 @@ namespace Wpf_Stationery
 
         private void ButtonModify_Click(object sender, RoutedEventArgs e)
         {
+            //Modificol'Item
+            var selectedItem = ((System.Data.DataRowView)CustomerGrid.SelectedItem);
+            int idSelected = 0;
+            Item item = new Item();
+
+            try
+            {
+                idSelected = int.Parse(selectedItem.Row.ItemArray[0].ToString());
+
+                item.ItemId = idSelected;
+                item.Name = NewName;
+                item.Description = NewDescription;
+                item.Threshold = NewThreshold;
+                item.Location = NewLocation;
+                item.Quantity = NewQuantity;
+                item.ExpirationDate = NewExpirationDate;
+                item.ExpireFEDate = NewExpireFEDate;
+
+                _serviceItem.UpdateAsync(item);
+
+            }
+            catch (Exception ex)
+            {
+                idSelected = -1;
+                MessageBox.Show("Impossibile visializzare l'Item");
+            }
 
         }
 
         private void ButtonDeleted_Click(object sender, RoutedEventArgs e)
         {
-            //Selezionare e cancellare l'Item in corso
+            //Seleziono e cancello l'Item
             var selectedItem = ((System.Data.DataRowView)CustomerGrid.SelectedItem);
-            selectedItem.Delete();
+            int idSelected = 0;
 
-            //int idSelected = selectedItem.id;
-            //var index = selectedItem.Row.Table.Rows.Count;
-            var index = selectedItem.Row.Table.Rows.Count;
-            //int idSelected = 0;
-            _serviceItem.DeleteAsync(index);
+            try
+            {
+                idSelected = int.Parse(selectedItem.Row.ItemArray[0].ToString());
+                _serviceItem.DeleteAsync(idSelected);
+                selectedItem.Delete();
+            }
+            catch (Exception ex)
+            {
+                idSelected = -1;
+                MessageBox.Show("Errore nell'eliminzione!!!");
+            }
+            
         }
 
         private void CustomerGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
