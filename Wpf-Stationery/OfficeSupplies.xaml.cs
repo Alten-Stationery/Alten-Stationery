@@ -6,6 +6,8 @@ using DBLayer.Repositories;
 using DBLayer.UOW;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using OfficeOpenXml;
 using ServiceLayer.IServices;
 using ServiceLayer.Services.Classes;
 using System;
@@ -14,6 +16,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,8 +44,9 @@ namespace Wpf_Stationery
         DataTable dataTable;
         DataRow dr;
         private IItemsService _serviceItem;
-        Items items;
+        ItemsWindows itemsWindows;
         Item item;
+        IEnumerable<Item> lstItems;
 
         public string NewName;
         public int NewThreshold;
@@ -52,17 +56,26 @@ namespace Wpf_Stationery
         public int NewQuantity;
         public DateTime NewExpirationDate;
         public DateTime? NewExpireFEDate;
+        ItemType type;
+        bool boolFilter = false;
+        string filterName = string.Empty;
+        private IUsersService _service;
 
         public OfficeSupplies()
         {
             dataTable = new DataTable();
             // Declare the array variable.
             rowArray = new object[8];
-            items = new Items();
+            itemsWindows = new ItemsWindows();
+            _service = App.ServiceProvider.GetService<IUsersService>();
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
             InitializeComponent();
-            LoadData();
+            //type = "FirePreventionSupplies";
+
+            LoadData(boolFilter, ItemType.OfficeSupplies, filterName);
+
+            //GetAlls();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -81,20 +94,31 @@ namespace Wpf_Stationery
 
         private void Button_BackToHome(object sender, RoutedEventArgs e)
         {
-
+            var userPage = new UserPage(_service);
+            this.Close();
+            userPage.Show();
         }
 
         private void Button_AddItem(object sender, RoutedEventArgs e)
         {
-            items = new Items();
-            items.Show();
+            itemsWindows = new ItemsWindows();
+            itemsWindows.Show();
+
+            Item item = new Item();
 
 
         }
 
-        public async Task<IEnumerable<Item>> LoadData()
+        public async Task<IEnumerable<Item>> LoadData(bool boolFilter, ItemType type, string filterName)
         {
-            IEnumerable<Item> items;
+            //IEnumerable<Item> lstItems;
+            bool boolFilterName = false;
+
+            filterName = textBoxName.Text;
+            if (!filterName.IsNullOrEmpty())
+            {
+                boolFilterName = true;
+            }
 
             try
             {
@@ -103,10 +127,24 @@ namespace Wpf_Stationery
                 dataTable = MakeTableWithAutoIncrement();
                 dr = null;
 
-                items = await _serviceItem.GetAllAsync();
+                #region Filter
+                if (boolFilter)
+                {
+                    lstItems = await _serviceItem.GetAllAsyncByType(type);
+                }
+                //else if (boolFilterName)
+                //{
+                //    lstItems = await _serviceItem.GetAllAsyncByName(filterName);
+                //}
+                else
+                {
+                    lstItems = await _serviceItem.GetAllAsync();
+                }
+
+                #endregion
 
                 #region GetAllDB
-                foreach (var item in items)
+                foreach (var item in lstItems)
                 {
 
                     #region mapping data table visivo
@@ -141,7 +179,7 @@ namespace Wpf_Stationery
                 throw;
             }
 
-            return items;
+            return lstItems;
         }
 
         private void Resetta()
@@ -182,50 +220,56 @@ namespace Wpf_Stationery
 
             return table;
         }
-
-        private void Find_Click(object sender, RoutedEventArgs e)
+        private void ButtonFind_Click(object sender, RoutedEventArgs e)
         {
-
+            LoadData(boolFilter, ItemType.OfficeSupplies, filterName);
         }
-
         private void ButtonFilter_Click(object sender, RoutedEventArgs e)
         {
+            boolFilter = true;
 
+            LoadData(boolFilter, ItemType.OfficeSupplies, filterName);
         }
 
         private void ButtonRefresh_Click(object sender, RoutedEventArgs e)
         {
-
+            boolFilter = false;
+            LoadData(boolFilter, ItemType.OfficeSupplies, filterName);
         }
         private void ButtonDownload_Click(object sender, RoutedEventArgs e)
         {
+            //Download dati
+            DownloadExcel();
 
         }
 
-        private void ButtonModify_Click(object sender, RoutedEventArgs e)
+        private async Task DataTable()
         {
             //Modificol'Item
             var selectedItem = ((System.Data.DataRowView)CustomerGrid.SelectedItem);
             int idSelected = 0;
             item = new Item();
-            items = new Items();
+            itemsWindows = new ItemsWindows();
 
             try
             {
                 idSelected = int.Parse(selectedItem.Row.ItemArray[0].ToString());
+                itemsWindows.Show();
+                Item item = await _serviceItem.GetById(idSelected);
 
-                items.Show();
+                //item.ItemId = idSelected;
+                //item.Name = NewName;
+                //item.Description = NewDescription;
+                //item.Threshold = NewThreshold;
+                //item.Location = NewLocation;
+                //item.Quantity = NewQuantity;
+                //item.ExpirationDate = NewExpirationDate;
+                //item.ExpireFEDate = NewExpireFEDate;
 
-                item.ItemId = idSelected;
-                item.Name = NewName;
-                item.Description = NewDescription;
-                item.Threshold = NewThreshold;
-                item.Location = NewLocation;
-                item.Quantity = NewQuantity;
-                item.ExpirationDate = NewExpirationDate;
-                item.ExpireFEDate = NewExpireFEDate;
+                //_serviceItem.UpdateAsync(item);
 
-                _serviceItem.UpdateAsync(item);
+                //itemsWindows = new ItemsWindows();
+                itemsWindows = new ItemsWindows(item);
 
             }
             catch (Exception ex)
@@ -234,6 +278,10 @@ namespace Wpf_Stationery
                 MessageBox.Show("Impossibile visializzare l'Item");
             }
 
+        }
+        private async Task GetAlls()
+        {
+            lstItems = await _serviceItem.GetAllAsync();
         }
 
         private void ButtonDeleted_Click(object sender, RoutedEventArgs e)
@@ -253,13 +301,108 @@ namespace Wpf_Stationery
                 idSelected = -1;
                 MessageBox.Show("Errore nell'eliminzione!!!");
             }
-            
+
         }
 
         private void CustomerGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
+
+        private void ButtonModify_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable();
+        }
+        public string DownloadExcel()
+        {
+            #region MyRegion
+            // If you are a commercial business and have
+            // purchased commercial licenses use the static property
+            // LicenseContext of the ExcelPackage class:
+            //ExcelPackage.LicenseContext = LicenseContext.Commercial;
+
+            // If you use EPPlus in a noncommercial context
+            // according to the Polyform Noncommercial license:
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            #endregion
+
+            string filePath = string.Empty;
+
+            string fileName = "Lista_items" + ".xlsx";
+            int year = DateTime.Now.Year;
+            //string userName = Environment.UserName;
+            //string pathFolderForDay = "C:\\Users\\" + userName + "\\Downloads\\" + appConfig.Where(x => x.Field == "PathReport").SingleOrDefault().Value;
+            string pathFolderForDay = "C:" + "\\Downloads" + "\\Items";
+
+            //Creo la cartella per le transazioni in base al giorno
+            if (!Directory.Exists(pathFolderForDay))
+            {
+                Directory.CreateDirectory(pathFolderForDay);
+            }
+            filePath = pathFolderForDay + "\\" + fileName;
+
+            try
+            {
+                DataSet ds = new DataSet("New_DataSet");
+                DataTable dt = new DataTable("New_DataTable");
+
+                //Set the locale for each
+                ds.Locale = System.Threading.Thread.CurrentThread.CurrentCulture;
+                dt.Locale = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+                if (lstItems != null && lstItems.Count() > 0)
+                {
+                    dt.Columns.Add("Name");
+                    dt.Columns.Add("Threshold");
+                    dt.Columns.Add("Description");
+                    dt.Columns.Add("Location");
+                    //dt.Columns.Add("Type");
+                    dt.Columns.Add("Quantity");
+                    dt.Columns.Add("ExpirationDate");
+                    dt.Columns.Add("ExpireFEDate");
+
+                    foreach (var item in lstItems)
+                    {
+                        DataRow dr = dt.NewRow();
+
+                        dr["Name"] = item.Name;
+                        dr["Threshold"] = item.Threshold;
+                        dr["Description"] = item.Description;
+                        dr["Location"] = item.Location;
+                        //dr["Type"] = item.Type;
+                        dr["Quantity"] = item.Quantity;
+                        dr["ExpirationDate"] = item.ExpirationDate;
+                        dr["ExpireFEDate"] = item.ExpireFEDate;
+
+                        dt.Rows.Add(dr);
+                    }
+                    //Add the table to the data set
+                    ds.Tables.Add(dt);
+
+                    using (var excel = new ExcelPackage())
+                    {
+                        var worksheet = excel.Workbook.Worksheets.Add("Items");
+
+                        //Riga 1, Colonna 1
+                        worksheet.Cells[1, 1].LoadFromDataTable(dt, true);
+                        FileInfo excelFile = new FileInfo(filePath);
+                        excel.SaveAs(excelFile);
+                    };
+                }
+                else
+                {
+                    //items not found
+                    filePath = string.Empty;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //log.Error("DownloadExcel: ", ex);
+            }
+            return filePath;
+        }
+
 
 
     }

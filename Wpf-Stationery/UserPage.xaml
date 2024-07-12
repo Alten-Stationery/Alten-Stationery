@@ -141,7 +141,7 @@
                 <TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />
             </Border>
 
-            <Grid Margin="2,483,2,-157" Grid.ColumnSpan="4">
+            <!--<Grid Margin="2,483,2,-157" Grid.ColumnSpan="4">
                 <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="#275879" BorderThickness="0" Background="#E9EAEC" Height="56" VerticalAlignment="Top" Margin="667,34,376,0">Cancel
                     <Button.Resources>
                         <Style TargetType="Border">
@@ -149,7 +149,7 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-            </Grid>
+            </Grid>-->
             <Border Margin="243,191,425,241" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="2">
                 <Border.RenderTransform>
                     <TransformGroup>

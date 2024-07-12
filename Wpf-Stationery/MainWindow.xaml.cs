@@ -38,8 +38,6 @@ namespace Alten_Stationery
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-
-
             Settings.Default.Save();
 
             try

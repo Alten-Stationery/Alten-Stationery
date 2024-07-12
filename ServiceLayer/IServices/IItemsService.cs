@@ -10,6 +10,7 @@ namespace ServiceLayer.IServices
 {
     public interface IItemsService:IService<Item>
     {
-        Task<IEnumerable<Item>> GetAllAsyncByType(ItemType category);
+        Task<IEnumerable<Item>> GetAllAsyncByType(ItemType type);
+        //Task<IEnumerable<Item>> GetAllAsyncByName(string name);
     }
 }

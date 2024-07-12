@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,17 +12,39 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Wpf_Stationery
 {
     /// <summary>
-    /// Interaction logic for Items.xaml
+    /// Interaction logic for ItemsWindows.xaml
     /// </summary>
-    public partial class Items : Window
+    public partial class ItemsWindows : Window
     {
-        public Items()
+        public ItemsWindows()
         {
             InitializeComponent();
+
+            nameText.Text = "test";
+            descriptionText.Text = "description";
+            thresholdText.Text = "thresholdText";
+            locationText.Text = " location";
+            quantityText.Text = "quantity";
+            expirationDateText.Text = "expirationDate";
+            expireFEDateText.Text = "expireFEDate";
+        }
+
+        public ItemsWindows(Item item)
+        {
+            InitializeComponent();
+
+            nameText.Text = item.Name;
+            descriptionText.Text = item.Description;
+            thresholdText.Text = item.Threshold.ToString();
+            locationText.Text = item.Location;
+            quantityText.Text = item.Quantity.ToString();
+            expirationDateText.Text = item.ExpirationDate.ToString();
+            expireFEDateText.Text = item.ExpireFEDate.ToString();
         }
 
         private void Button_Save(object sender, RoutedEventArgs e)
