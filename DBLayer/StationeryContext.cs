@@ -83,6 +83,8 @@ namespace DBLayer
                 i.HasKey(c => c.Id);
                 i.Property(c => c.UserName).HasColumnType("nvarchar").HasMaxLength(50);
                 i.Property(c => c.Email).HasColumnType("nvarchar").HasMaxLength(50);
+                i.Property(c => c.FirstName).HasColumnType("nvarchar").HasMaxLength(50);
+                i.Property(c => c.LastName).HasColumnType("nvarchar").HasMaxLength(50);
                 i.ToTable("Users");
             });
             #endregion

@@ -3,20 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\officesupplies.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\officesupplies.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\passwordmodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\passwordmodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\officesupplies.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\officesupplies.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\servicelayer\\services\\validations\\uservalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\services\\validations\\uservalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\dblayer\\stationerycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{330A403A-FAEF-4CCC-A331-CEB2C94B555E}|DBLayer\\DBLayer.csproj|solutionrelative:dblayer\\stationerycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\passwordmodal.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\passwordmodal.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\passwordmodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|solutionrelative:wpf-stationery\\passwordmodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\servicelayer\\obj\\debug\\net8.0\\servicelayer.assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76237A00-4DB5-4503-954E-CD4CE7E39A9E}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\obj\\debug\\net8.0\\servicelayer.assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{74A8BB6E-33DA-47EE-95CE-5F6442B2575B}|Wpf-Stationery\\Wpf-Stationery.csproj|c:\\users\\afanelli\\source\\repos\\alten-stationery\\wpf-stationery\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 22,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,32 +134,122 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OfficeSupplies.xaml",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\OfficeSupplies.xaml",
-              "RelativeDocumentMoniker": "Wpf-Stationery\\OfficeSupplies.xaml",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\OfficeSupplies.xaml*",
-              "RelativeToolTip": "Wpf-Stationery\\OfficeSupplies.xaml*",
+              "DocumentIndex": 3,
+              "Title": "PasswordModal.xaml",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\PasswordModal.xaml",
+              "RelativeDocumentMoniker": "Wpf-Stationery\\PasswordModal.xaml",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\PasswordModal.xaml",
+              "RelativeToolTip": "Wpf-Stationery\\PasswordModal.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-04T10:10:57.272Z",
+              "WhenOpened": "2024-07-12T09:55:28.145Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Wpf-Stationery\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\MainWindow.xaml",
+              "RelativeToolTip": "Wpf-Stationery\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-12T09:36:05.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Wpf-Stationery\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Wpf-Stationery\\MainWindow.xaml.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAmwDUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T09:09:00.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "UserPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\UserPage.xaml.cs",
               "RelativeDocumentMoniker": "Wpf-Stationery\\UserPage.xaml.cs",
               "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\UserPage.xaml.cs",
               "RelativeToolTip": "Wpf-Stationery\\UserPage.xaml.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAA6wDYAAAAJAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAE4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T09:54:58.629Z",
+              "WhenOpened": "2024-07-12T08:28:35.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StationeryContext.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\StationeryContext.cs",
+              "RelativeDocumentMoniker": "DBLayer\\StationeryContext.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\StationeryContext.cs",
+              "RelativeToolTip": "DBLayer\\StationeryContext.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAADwv1YAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T08:31:35.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserValidator.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Validations\\UserValidator.cs",
+              "RelativeDocumentMoniker": "ServiceLayer\\Services\\Validations\\UserValidator.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\Services\\Validations\\UserValidator.cs",
+              "RelativeToolTip": "ServiceLayer\\Services\\Validations\\UserValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T08:58:02.809Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\User.cs",
+              "RelativeDocumentMoniker": "DBLayer\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\Models\\User.cs",
+              "RelativeToolTip": "DBLayer\\Models\\User.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T08:32:35.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OfficeSupplies.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\OfficeSupplies.xaml.cs",
+              "RelativeDocumentMoniker": "Wpf-Stationery\\OfficeSupplies.xaml.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\OfficeSupplies.xaml.cs",
+              "RelativeToolTip": "Wpf-Stationery\\OfficeSupplies.xaml.cs",
+              "ViewState": "AQIAALYAAAAAAAAAAAAiwMMAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T08:28:11.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ServiceLayer.AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\obj\\Debug\\net8.0\\ServiceLayer.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "ServiceLayer\\obj\\Debug\\net8.0\\ServiceLayer.AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\ServiceLayer\\obj\\Debug\\net8.0\\ServiceLayer.AssemblyInfo.cs",
+              "RelativeToolTip": "ServiceLayer\\obj\\Debug\\net8.0\\ServiceLayer.AssemblyInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T08:23:27.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "IUsersRepository.cs",
               "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\DBLayer\\IRepositories\\IUsersRepository.cs",
               "RelativeDocumentMoniker": "DBLayer\\IRepositories\\IUsersRepository.cs",
@@ -143,29 +261,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\App.xaml.cs",
               "RelativeDocumentMoniker": "Wpf-Stationery\\App.xaml.cs",
               "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\App.xaml.cs",
               "RelativeToolTip": "Wpf-Stationery\\App.xaml.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAgwC4AAAAMAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAAAAhwEIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T13:45:48.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OfficeSupplies.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\OfficeSupplies.xaml.cs",
-              "RelativeDocumentMoniker": "Wpf-Stationery\\OfficeSupplies.xaml.cs",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\OfficeSupplies.xaml.cs",
-              "RelativeToolTip": "Wpf-Stationery\\OfficeSupplies.xaml.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAhwC0AAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T09:47:46.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-02T13:45:48.723Z"
             }
           ]
         },
@@ -185,12 +289,46 @@
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "FloatingWindowState": {
-        "Id": "065a576e-dbbd-40de-b0ce-ba688826f794",
+        "Id": "b54fcefe-4916-403e-98d2-bec4a3da2083",
         "Display": 0,
-        "X": 284,
-        "Y": 152,
-        "Width": 1241,
-        "Height": 633,
+        "X": 32,
+        "Y": 73,
+        "Width": 1547,
+        "Height": 829,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PasswordModal.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\PasswordModal.xaml.cs",
+              "RelativeDocumentMoniker": "Wpf-Stationery\\PasswordModal.xaml.cs",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\PasswordModal.xaml.cs",
+              "RelativeToolTip": "Wpf-Stationery\\PasswordModal.xaml.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAQwG0AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T12:48:53.843Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "603e4d5d-4af0-4551-94a1-1de290891496",
+        "Display": 0,
+        "X": 388,
+        "Y": 98,
+        "Width": 800,
+        "Height": 600,
         "WindowState": 2
       },
       "DocumentGroups": [
@@ -200,15 +338,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Wpf-Stationery\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\MainWindow.xaml",
-              "RelativeToolTip": "Wpf-Stationery\\MainWindow.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAgAAAA",
+              "DocumentIndex": 8,
+              "Title": "PasswordModal.xaml",
+              "DocumentMoniker": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\PasswordModal.xaml",
+              "RelativeDocumentMoniker": "Wpf-Stationery\\PasswordModal.xaml",
+              "ToolTip": "C:\\Users\\afanelli\\source\\repos\\Alten-Stationery\\Wpf-Stationery\\PasswordModal.xaml",
+              "RelativeToolTip": "Wpf-Stationery\\PasswordModal.xaml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAADMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-04T10:06:07.127Z",
+              "WhenOpened": "2024-07-12T09:59:29.508Z",
               "EditorCaption": ""
             }
           ]
