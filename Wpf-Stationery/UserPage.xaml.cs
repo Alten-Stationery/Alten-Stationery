@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using DBLayer.Models;
+using Microsoft.Extensions.DependencyInjection;
 using ServiceLayer.IServices;
 using System;
 using System.Collections.Generic;
@@ -22,12 +23,19 @@ namespace Wpf_Stationery
     public partial class UserPage : Window
     {
         private IUsersService _service;
-        public UserPage(IUsersService service)
+        private User _user;
+        public UserPage( User user)
         {
             InitializeComponent();
             _service = App.ServiceProvider.GetService<IUsersService>();
+            _user = user;
+            this.DataContext = _user;
 
         }
+
+
+
+
 
 
 
@@ -60,6 +68,13 @@ namespace Wpf_Stationery
         {
             var newWindow = new OfficeSupplies();
             this.Close();
+            newWindow.Show();
+        }
+
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new PasswordModal(_user);
             newWindow.Show();
         }
     }
