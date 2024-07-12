@@ -141,18 +141,18 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        //public async Task<IEnumerable<Item>> GetAllAsyncByName(string name);
-        //{
-        //    try
-        //    {
-        //        IEnumerable<Item> items = await _unitOfWork.Items.GetAllAsyncByName(name);
-        //        return items;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return null;
-        //    }
-        //}
+        public async Task<IEnumerable<Item>> GetAllAsyncByName(string name)
+        {
+            try
+            {
+                IEnumerable<Item> items = await _unitOfWork.Items.GetAllAsyncByName(name);
+                return items;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
 
 

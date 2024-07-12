@@ -132,10 +132,11 @@ namespace Wpf_Stationery
                 {
                     lstItems = await _serviceItem.GetAllAsyncByType(type);
                 }
-                //else if (boolFilterName)
-                //{
-                //    lstItems = await _serviceItem.GetAllAsyncByName(filterName);
-                //}
+                else if (boolFilterName)
+                {
+                    lstItems = await _serviceItem.GetAllAsyncByName(filterName);
+                    //FIND
+                }
                 else
                 {
                     lstItems = await _serviceItem.GetAllAsync();

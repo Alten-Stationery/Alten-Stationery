@@ -1,4 +1,5 @@
 ﻿using DBLayer.IRepositories;
+using DBLayer.Models;
 using DBLayer.UOW;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -43,5 +44,10 @@ namespace DBLayer.Repositories
         {
             _context.Set<T>().Update(entity);
         }
+        public async Task<IEnumerable<Item>> GetAllAsyncByName(string name)
+        {
+            return await _context.Items.Where(t => t.Name == name).ToListAsync();
+        }
+
     }
 }

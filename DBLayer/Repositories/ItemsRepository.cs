@@ -24,10 +24,10 @@ namespace DBLayer.Repositories
             return await _context.Items.Where(t=>t.Type== type).ToListAsync();
         }
 
-        //public async Task<IEnumerable<Item>> GetAllAsyncByName(string name)
-        //{
-        //    return await _context.Items.Where(t => t.Name == name).ToListAsync();
-        //}
+        public async Task<IEnumerable<Item>> GetAllAsyncByName(string name)
+        {
+            return await _context.Items.Where(t => t.Name == name).ToListAsync();
+        }
 
 
     }
