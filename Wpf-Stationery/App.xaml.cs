@@ -44,9 +44,6 @@ namespace Wpf_Stationery
             serviceCollection.AddDataProtection();
             serviceCollection.AddLogging();
 
-            
-
-
             serviceCollection.AddScoped<IItemsService, ItemsService>();
             serviceCollection.AddScoped<IAlertsService, AlertsService>();
             serviceCollection.AddScoped<IRefillsService, RefillsService>();

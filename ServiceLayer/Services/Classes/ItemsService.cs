@@ -129,7 +129,7 @@ namespace ServiceLayer.Services.Classes
                     {
                         return check;
                     }
-                    _unitOfWork.Items.Delete(entity);
+                    _unitOfWork.Items.Update(entity);
                     await _unitOfWork.SaveAsync();
                     return check = true;
                 }

@@ -114,7 +114,7 @@ namespace ServiceLayer.Services.Classes
                     {
                         return check;
                     }
-                    _unitOfWork.Alerts.Delete(entity);
+                    _unitOfWork.Alerts.Update(entity);
                     await _unitOfWork.SaveAsync();
                     return check = true;
                 }

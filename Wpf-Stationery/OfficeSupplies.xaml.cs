@@ -45,8 +45,9 @@ namespace Wpf_Stationery
         DataRow dr;
         private IItemsService _serviceItem;
         ItemsWindows itemsWindows;
-        Item item;
+        Item item = new Item();
         IEnumerable<Item> lstItems;
+        bool boolRefresh = false;
 
         public string NewName;
         public int NewThreshold;
@@ -60,20 +61,24 @@ namespace Wpf_Stationery
         bool boolFilter = false;
         string filterName = string.Empty;
         private IUsersService _service;
+        bool boolModifyItem = false;
+        bool boolAddItem = false;
+        Item itemSelected;
 
         public OfficeSupplies()
         {
             dataTable = new DataTable();
             // Declare the array variable.
             rowArray = new object[8];
-            itemsWindows = new ItemsWindows();
+            //itemsWindows = new ItemsWindows();
+            itemsWindows = new ItemsWindows(item, boolModifyItem, boolAddItem);
             _service = App.ServiceProvider.GetService<IUsersService>();
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
             InitializeComponent();
             //type = "FirePreventionSupplies";
 
-            LoadData(boolFilter, ItemType.OfficeSupplies, filterName);
+            LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
 
             //GetAlls();
         }
@@ -101,18 +106,24 @@ namespace Wpf_Stationery
 
         private void Button_AddItem(object sender, RoutedEventArgs e)
         {
-            itemsWindows = new ItemsWindows();
-            itemsWindows.Show();
+            boolAddItem = true; ;
 
+            //itemsWindows = new ItemsWindows();
             Item item = new Item();
-
+            itemsWindows = new ItemsWindows(item, boolModifyItem, boolAddItem);
+            itemsWindows.Show();
 
         }
 
-        public async Task<IEnumerable<Item>> LoadData(bool boolFilter, ItemType type, string filterName)
+        public async Task<IEnumerable<Item>> LoadData(bool boolFilter, ItemType type, string filterName, bool boolRefresh)
         {
             //IEnumerable<Item> lstItems;
             bool boolFilterName = false;
+
+            if (boolRefresh)
+            {
+                textBoxName.Text = string.Empty;
+            }
 
             filterName = textBoxName.Text;
             if (!filterName.IsNullOrEmpty())
@@ -223,19 +234,20 @@ namespace Wpf_Stationery
         }
         private void ButtonFind_Click(object sender, RoutedEventArgs e)
         {
-            LoadData(boolFilter, ItemType.OfficeSupplies, filterName);
+            LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
         }
         private void ButtonFilter_Click(object sender, RoutedEventArgs e)
         {
             boolFilter = true;
 
-            LoadData(boolFilter, ItemType.OfficeSupplies, filterName);
+            LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
         }
 
         private void ButtonRefresh_Click(object sender, RoutedEventArgs e)
         {
+            boolRefresh = true;
             boolFilter = false;
-            LoadData(boolFilter, ItemType.OfficeSupplies, filterName);
+            LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
         }
         private void ButtonDownload_Click(object sender, RoutedEventArgs e)
         {
@@ -250,16 +262,17 @@ namespace Wpf_Stationery
             var selectedItem = ((System.Data.DataRowView)CustomerGrid.SelectedItem);
             int idSelected = 0;
             item = new Item();
-            itemsWindows = new ItemsWindows();
+            //itemsWindows = new ItemsWindows();
+            itemsWindows = new ItemsWindows(item, boolModifyItem, boolAddItem);
 
             try
             {
                 idSelected = int.Parse(selectedItem.Row.ItemArray[0].ToString());
                 itemsWindows.Show();
-                Item item = await _serviceItem.GetById(idSelected);
+                itemSelected = await _serviceItem.GetById(idSelected);
 
                 //item.ItemId = idSelected;
-                //item.Name = NewName;
+                //item.Name = item;
                 //item.Description = NewDescription;
                 //item.Threshold = NewThreshold;
                 //item.Location = NewLocation;
@@ -270,7 +283,7 @@ namespace Wpf_Stationery
                 //_serviceItem.UpdateAsync(item);
 
                 //itemsWindows = new ItemsWindows();
-                itemsWindows = new ItemsWindows(item);
+                itemsWindows = new ItemsWindows(itemSelected, boolModifyItem, boolAddItem);
 
             }
             catch (Exception ex)
@@ -312,6 +325,8 @@ namespace Wpf_Stationery
 
         private void ButtonModify_Click(object sender, RoutedEventArgs e)
         {
+            boolModifyItem = true; ;
+
             DataTable();
         }
         public string DownloadExcel()
@@ -389,6 +404,9 @@ namespace Wpf_Stationery
                         FileInfo excelFile = new FileInfo(filePath);
                         excel.SaveAs(excelFile);
                     };
+
+                    MessageBox.Show("Download eseguito!!!\n" + filePath);
+
                 }
                 else
                 {
