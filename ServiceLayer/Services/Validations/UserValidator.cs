@@ -14,6 +14,8 @@ namespace ServiceLayer.Services.Validations
         public UserValidator()
         {
             RuleFor(x => x.UserName).NotEmpty();
+            RuleFor(x => x.LastName).NotEmpty();
+            RuleFor(x => x.FirstName).NotEmpty();
             RuleFor(x => x.Email).NotEmpty().EmailAddress().WithMessage("A valid Email is required!");
             RuleFor(x => x.PasswordHash).NotEmpty().WithMessage("Password cannot be empty.")
                                     .MinimumLength(8).WithMessage("Password must be at least 8 characters long.")

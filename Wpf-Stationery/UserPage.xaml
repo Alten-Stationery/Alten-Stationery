@@ -9,8 +9,8 @@
      
       
       mc:Ignorable="d"
-      Title="UserPage" Height="700" Width="1350" MinWidth="428"  
-        >
+      Title="UserPage" Height="700" Width="1350" MinWidth="428"  WindowStartupLocation="CenterScreen" WindowStyle="None"
+        ResizeMode="CanResize" >
 
 
 
@@ -28,10 +28,13 @@
             <ColumnDefinition Width="37*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.ColumnSpan="4" Margin="178,2,4,472" Grid.RowSpan="2">
-            <TextBlock  FontWeight="Bold" FontFamily="Bahnschrift" Foreground="#275879" FontSize="14" Height="28" VerticalAlignment="Top" Margin="996,17,-25,0" >Smith, John</TextBlock>
+            <TextBlock Text="{Binding UserName}" FontWeight="Bold" FontFamily="Bahnschrift" Foreground="#275879" FontSize="14" Height="28" VerticalAlignment="Top" Margin="996,17,-25,0" ></TextBlock>
         </Grid>
         <Border BorderThickness="1" CornerRadius="8" Background="#003d63" Margin="-1,0,614,0" Grid.RowSpan="3">
             <Grid>
+                <Grid.Effect>
+                    <DropShadowEffect Opacity="0.8" Direction="0" BlurRadius="10"/>
+                </Grid.Effect>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="46*"/>
                     <RowDefinition Height="63*"/>
@@ -48,6 +51,9 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Image.RenderTransform>
+                    <Image.Effect>
+                        <DropShadowEffect Opacity="0.5" Direction="0" BlurRadius="20"></DropShadowEffect>
+                    </Image.Effect>
                 </Image>
 
                 <Button BorderThickness="0" Background="Transparent"  Margin="0,159,0,85" Click="Button_Click_3">
@@ -121,15 +127,32 @@
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <TextBlock Margin="104,59,451,370"  FontFamily="Bahnschrift" Foreground="#275879" FontSize="23" Grid.ColumnSpan="2"><Run Language="it-it" Text="Personal Information"/></TextBlock>
+
+            <TextBlock Margin="104,59,451,370"  FontFamily="Bahnschrift" Foreground="#275879" FontSize="23" Grid.ColumnSpan="2"><Run Language="it-it" Text="Personal Information"/>
+            </TextBlock>
             <Canvas Margin="58,91,204,347" Grid.ColumnSpan="2">
                 <Line X1="1000" Y1="0" Stroke="LightGray" StrokeThickness="2" HorizontalAlignment="Left" Height="20" VerticalAlignment="Center" Canvas.Left="48" Width="950"></Line>
             </Canvas>
-            <TextBlock Margin="120,196,54,240" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17">FirstName</TextBlock>
-            <TextBlock Margin="123,266,53,165" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17"><Run Language="it-it" Text="Email"/></TextBlock>
-            <TextBlock Margin="364,196,82,249" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="1"><Run Language="it-it" Text="LastName"/></TextBlock>
-            <TextBlock Margin="366,266,85,177" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="1"><Run Language="it-it" Text="Password"/></TextBlock>
-            <Border Margin="242,256,426,176" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="2">
+
+            <TextBlock FontFamily="{StaticResource ResourceKey=FaFreeSolid}" FontSize="230" Foreground="#275879" Text="&#xf2bb;" Grid.ColumnSpan="2" Margin="114,128,395,176">
+                <TextBlock.Effect>
+                    <DropShadowEffect Opacity="0.4" BlurRadius="10" Direction="0" ShadowDepth="0"></DropShadowEffect>
+                </TextBlock.Effect></TextBlock>
+
+            <TextBlock Margin="350,160,36,353" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="1">FirstName</TextBlock>
+            <TextBlock Margin="350,205,62,306" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="1"><Run Language="it-it" Text="LastName"/></TextBlock>
+            <TextBlock Margin="350,255,90,252" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="1"><Run Language="it-it" Text="Email"/></TextBlock>
+            <TextBlock Margin="347,307,25,209" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="1"><Run Language="it-it" Text=" Reset Password"/></TextBlock>
+            <Button Margin="496,296,0,201" Grid.Column="1" Grid.ColumnSpan="2" Background="#275879" BorderThickness="0" HorizontalAlignment="Left" Width="45" Click="Button_Click_5" >
+                <TextBlock FontFamily="{StaticResource ResourceKey=FaFreeSolid}" FontSize="16" Text="key" Foreground="White"></TextBlock>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="12" />
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Border Margin="495,247,281,257" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="3" Grid.Column="1">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -138,10 +161,10 @@
                         <TranslateTransform X="-0.305"/>
                     </TransformGroup>
                 </Border.RenderTransform>
-                <TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />
+                <TextBox IsReadOnly="True" Margin="7,0,4,0" Height="14" Foreground="#003d63" VerticalAlignment="Center" BorderThickness="0" FontSize="12" FontFamily="Bahnschrift" Text="{Binding Email}"  />
             </Border>
 
-            <!--<Grid Margin="2,483,2,-157" Grid.ColumnSpan="4">
+            <Grid Margin="2,483,2,-157" Grid.ColumnSpan="4">
                 <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="#275879" BorderThickness="0" Background="#E9EAEC" Height="56" VerticalAlignment="Top" Margin="667,34,376,0">Cancel
                     <Button.Resources>
                         <Style TargetType="Border">
@@ -149,8 +172,8 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-            </Grid>-->
-            <Border Margin="243,191,425,241" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="2">
+            </Grid>
+            <Border Margin="495,154,281,350" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="3" Grid.Column="1">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -159,9 +182,9 @@
                         <TranslateTransform X="-0.305"/>
                     </TransformGroup>
                 </Border.RenderTransform>
-                <TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />
+                <TextBox  IsReadOnly="True" Margin="7,0,4,0" Height="14" Foreground="#003d63" VerticalAlignment="Center" BorderThickness="0" FontSize="12" FontFamily="Bahnschrift" Text="{Binding FirstName}"/>
             </Border>
-            <Border Margin="509,191,277,241" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.Column="1" Grid.ColumnSpan="3">
+            <Border Margin="495,200,281,304" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.ColumnSpan="3" Grid.Column="1">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -170,38 +193,27 @@
                         <TranslateTransform X="-0.305"/>
                     </TransformGroup>
                 </Border.RenderTransform>
-                <TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />
-            </Border>
-            <Border Margin="509,258,277,174" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.Column="1" Grid.ColumnSpan="3">
-                <Border.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleX="-0.582"/>
-                        <RotateTransform/>
-                        <TranslateTransform X="-0.305"/>
-                    </TransformGroup>
-                </Border.RenderTransform>
-                <TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" />
+                <TextBox  IsReadOnly="True" Margin="7,0,4,0" Height="14" Foreground="#003d63" VerticalAlignment="Center" BorderThickness="0" FontSize="12" FontFamily="Bahnschrift"  Text="{Binding LastName}"/>
             </Border>
 
 
         </Grid>
         <Grid Grid.ColumnSpan="4" Margin="181,10,8,15" Grid.Row="2">
-            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="#275879" BorderThickness="0" Background="#E9EAEC" Height="50" VerticalAlignment="Top" Margin="746,19,303,0">Cancel
+            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="#275879" BorderThickness="0" Background="#E9EAEC" Height="50" VerticalAlignment="Top" Margin="670,19,379,0">Cancel
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="6" />
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#003d63" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="882,19,167,0" Content="Save">
+            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#003d63" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="801,19,248,0" Content="Save">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="6" />
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#3F9469" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="1019,19,30,0" Content="Modify" Click="Button_Click_2">
+            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#3F9469" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="935,19,114,0" Content="Modify" Click="Button_Click_2">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="6" />

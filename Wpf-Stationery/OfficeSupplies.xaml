@@ -33,6 +33,9 @@
         </Grid>
         <Border BorderThickness="1" CornerRadius="8" Background="#003d63" Margin="-1,0,614,0" Grid.RowSpan="3">
             <Grid>
+                <Grid.Effect>
+                    <DropShadowEffect Opacity="0.8" Direction="0" BlurRadius="10"/>
+                </Grid.Effect>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="46*"/>
                     <RowDefinition Height="63*"/>

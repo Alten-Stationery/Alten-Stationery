@@ -79,9 +79,9 @@
                             <TranslateTransform X="-0.305"/>
                         </TransformGroup>
                     </Border.RenderTransform>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" >
                         <TextBlock  FontSize="20" Margin="15 " FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="#275879" Width="21" ><Run Text="envelope"/></TextBlock>
-                        <TextBox x:Name="email" Text="{Binding Email}" Foreground="Gray" Margin="10" BorderThickness="0" FontSize="25" FontFamily="Bahnschrift" Width="316"  />
+                        <TextBox x:Name="email" Text="{Binding Email}" Foreground="Gray" Margin="10" BorderThickness="0" FontSize="25" FontFamily="Bahnschrift" Width="316"  Loaded="email_Loaded"  MouseLeave="email_MouseLeave"    PreviewMouseDown="email_PreviewMouseDown" PreviewKeyDown="email_PreviewKeyDown"  />
                     </StackPanel>
 
 
@@ -97,7 +97,7 @@
                     </Border.RenderTransform>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  FontSize="20" Margin="16 " FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="#275879" Width="19" ><Run Text="lock"/></TextBlock>
-                        <TextBox x:Name="password" Text="{Binding Password}" Foreground="Gray" Margin="10" BorderThickness="0" FontSize="25" FontFamily="Bahnschrift" Width="314" TextChanged="password_TextChanged" />
+                        <TextBox x:Name="password" Text="{Binding Password}" Foreground="Gray" Margin="10" BorderThickness="0" FontSize="25" FontFamily="Bahnschrift" Width="314" Loaded="password_Loaded"  MouseLeave="password_MouseLeave" PreviewMouseDown="password_PreviewMouseDown"  PreviewKeyDown="password_PreviewKeyDown"/>
                     </StackPanel>
 
 
