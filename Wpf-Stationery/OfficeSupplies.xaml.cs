@@ -61,8 +61,8 @@ namespace Wpf_Stationery
         bool boolFilter = false;
         string filterName = string.Empty;
         private IUsersService _service;
-        bool boolModifyItem = false;
-        bool boolAddItem = false;
+        bool boolCreateOrUpdate = false;
+
         Item itemSelected;
 
         public OfficeSupplies()
@@ -71,7 +71,8 @@ namespace Wpf_Stationery
             // Declare the array variable.
             rowArray = new object[8];
             //itemsWindows = new ItemsWindows();
-            itemsWindows = new ItemsWindows(item, boolModifyItem, boolAddItem);
+            //itemsWindows = new ItemsWindows(item, boolModifyItem, boolAddItem);
+            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate);
             _service = App.ServiceProvider.GetService<IUsersService>();
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
@@ -79,8 +80,6 @@ namespace Wpf_Stationery
             //type = "FirePreventionSupplies";
 
             LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
-
-            //GetAlls();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -106,11 +105,10 @@ namespace Wpf_Stationery
 
         private void Button_AddItem(object sender, RoutedEventArgs e)
         {
-            boolAddItem = true; ;
 
             //itemsWindows = new ItemsWindows();
             Item item = new Item();
-            itemsWindows = new ItemsWindows(item, boolModifyItem, boolAddItem);
+            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate);
             itemsWindows.Show();
 
         }
@@ -222,8 +220,8 @@ namespace Wpf_Stationery
 
             table.Columns.Add(itemId);
             table.Columns.Add(name);
-            table.Columns.Add(description);
             table.Columns.Add(threshold);
+            table.Columns.Add(description);
             table.Columns.Add(location);
             //table.Columns.Add(type);
             table.Columns.Add(quantity);
@@ -263,7 +261,7 @@ namespace Wpf_Stationery
             int idSelected = 0;
             item = new Item();
             //itemsWindows = new ItemsWindows();
-            itemsWindows = new ItemsWindows(item, boolModifyItem, boolAddItem);
+            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate);
 
             try
             {
@@ -271,19 +269,8 @@ namespace Wpf_Stationery
                 itemsWindows.Show();
                 itemSelected = await _serviceItem.GetById(idSelected);
 
-                //item.ItemId = idSelected;
-                //item.Name = item;
-                //item.Description = NewDescription;
-                //item.Threshold = NewThreshold;
-                //item.Location = NewLocation;
-                //item.Quantity = NewQuantity;
-                //item.ExpirationDate = NewExpirationDate;
-                //item.ExpireFEDate = NewExpireFEDate;
-
-                //_serviceItem.UpdateAsync(item);
-
                 //itemsWindows = new ItemsWindows();
-                itemsWindows = new ItemsWindows(itemSelected, boolModifyItem, boolAddItem);
+                itemsWindows = new ItemsWindows(itemSelected, boolCreateOrUpdate);
 
             }
             catch (Exception ex)
@@ -325,7 +312,7 @@ namespace Wpf_Stationery
 
         private void ButtonModify_Click(object sender, RoutedEventArgs e)
         {
-            boolModifyItem = true; ;
+            boolCreateOrUpdate = true;
 
             DataTable();
         }

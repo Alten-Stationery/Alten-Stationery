@@ -26,7 +26,7 @@ namespace DBLayer.Repositories
 
         public async Task<IEnumerable<Item>> GetAllAsyncByName(string name)
         {
-            return await _context.Items.Where(t => t.Name == name).ToListAsync();
+            return await _context.Items.Where(t => t.Name.Contains(name)).ToListAsync();
         }
 
 

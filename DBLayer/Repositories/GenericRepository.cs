@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,9 +45,13 @@ namespace DBLayer.Repositories
         {
             _context.Set<T>().Update(entity);
         }
+        //public async Task<IEnumerable<Item>> GetAllAsyncByName(string name)
+        //{
+        //    return await _context.Items.Where(t => t.Name == name).ToListAsync();
+        //}
         public async Task<IEnumerable<Item>> GetAllAsyncByName(string name)
         {
-            return await _context.Items.Where(t => t.Name == name).ToListAsync();
+            return await _context.Items.Where(t => t.Name.Contains(name)).ToListAsync();
         }
 
     }

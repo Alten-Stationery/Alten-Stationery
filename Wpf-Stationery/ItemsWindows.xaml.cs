@@ -33,6 +33,7 @@ namespace Wpf_Stationery
 
         private IItemsService _serviceItem;
         private Item _item;
+        bool boolCreateOrUpdate = false;
 
         //public ItemsWindows()
         //{
@@ -58,10 +59,10 @@ namespace Wpf_Stationery
 
         //}
 
-        public ItemsWindows(Item itemSelected, bool boolModifyItem, bool boolAddItem)
+        public ItemsWindows(Item itemSelected, bool boolCreateOrUpdate)
         {
             //_context = context;
-            _item= itemSelected;
+            _item = itemSelected;
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
             InitializeComponent();
@@ -98,9 +99,17 @@ namespace Wpf_Stationery
             try { _item.ExpirationDate = DateTime.Parse(expirationDateText.Text); } catch (Exception ex) { _item.ExpirationDate = DateTime.Now; };
             try { _item.ExpireFEDate = DateTime.Parse(expireFEDateText.Text); } catch (Exception ex) { };
 
-            //InsertItem();
-            CreateAsync(_item);
-            
+            if (boolCreateOrUpdate)
+            {
+                //InsertItem();
+                CreateAsync(_item);
+            }
+            else
+            {
+                UpdateAsync(_item);
+            }
+
+
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
@@ -178,7 +187,7 @@ namespace Wpf_Stationery
         }
 
         //Update Item
-        public void UpdateDbItem(int insertedid, string nameNew, int thresholdNew )
+        public void UpdateDbItem(int insertedid, string nameNew, int thresholdNew)
         {
             //using (var context = new Entities())
             //{
@@ -192,6 +201,11 @@ namespace Wpf_Stationery
         public async Task<Item> CreateAsync(Item item)
         {
             await _serviceItem.CreateAsync(item);
+            return item;
+        }
+        public async Task<Item> UpdateAsync(Item item)
+        {
+            await _serviceItem.UpdateAsync(item);
             return item;
         }
 
