@@ -19,11 +19,16 @@ namespace DBLayer.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Item>> GetAllAsyncByType(ItemType category)
+        public async Task<IEnumerable<Item>> GetAllAsyncByType(ItemType type)
         {
-            
-            return await _context.Items.Where(t=>t.Type==category).ToListAsync();
-
+            return await _context.Items.Where(t=>t.Type== type).ToListAsync();
         }
+
+        public async Task<IEnumerable<Item>> GetAllAsyncByName(string name)
+        {
+            return await _context.Items.Where(t => t.Name.Contains(name)).ToListAsync();
+        }
+
+
     }
 }

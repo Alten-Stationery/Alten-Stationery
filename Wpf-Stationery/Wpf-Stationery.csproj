@@ -30,6 +30,8 @@
     <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.2.1" />
+    <PackageReference Include="ExcelPackage" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="8.0.6" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">

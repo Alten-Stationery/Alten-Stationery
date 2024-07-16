@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,7 @@ namespace DBLayer.IRepositories
         public Task<T> GetByIdAsync(int id);
         public Task<IEnumerable<T>> GetAllAsync();
         public Task<IEnumerable<T>> GetAllAsyncPaginated(int page, int pageSize);
+        public Task<IEnumerable<Item>> GetAllAsyncByName(string name);
+
     }
 }

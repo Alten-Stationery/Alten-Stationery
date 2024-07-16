@@ -16,9 +16,9 @@ namespace ServiceLayer.Services.Classes
 {
     public class ItemsService : IItemsService
     {
-        private readonly ItemValidator _validator=new ItemValidator();
+        private readonly ItemValidator _validator = new ItemValidator();
         private readonly IUnitOfWork _unitOfWork;
-        public ItemsService( IUnitOfWork  unitOfWork)
+        public ItemsService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
@@ -27,15 +27,16 @@ namespace ServiceLayer.Services.Classes
         {
             try
             {
-                var validationResult= await _validator.ValidateAsync(entity);
-                if(!validationResult.IsValid)
+                var validationResult = await _validator.ValidateAsync(entity);
+                if (!validationResult.IsValid)
                 {
                     return false;
                 }
                 await _unitOfWork.Items.CreateAsync(entity);
                 await _unitOfWork.SaveAsync();
                 return true;
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return false;
             }
@@ -53,9 +54,10 @@ namespace ServiceLayer.Services.Classes
                     _unitOfWork.Items.Delete(entity);
                     await _unitOfWork.SaveAsync();
                     check = true;
-                }          
+                }
                 return check;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return false;
             }
@@ -74,11 +76,11 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async  Task<IEnumerable<Item>> GetAllAsyncByType(ItemType category)
+        public async Task<IEnumerable<Item>> GetAllAsyncByType(ItemType type)
         {
             try
             {
-                IEnumerable<Item> items = await _unitOfWork.Items.GetAllAsyncByType(category);
+                IEnumerable<Item> items = await _unitOfWork.Items.GetAllAsyncByType(type);
                 return items;
             }
             catch (Exception ex)
@@ -104,9 +106,10 @@ namespace ServiceLayer.Services.Classes
         {
             try
             {
-               Item item= await _unitOfWork.Items.GetByIdAsync(id);
+                Item item = await _unitOfWork.Items.GetByIdAsync(id);
                 return item;
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 return null;
             }
@@ -125,17 +128,33 @@ namespace ServiceLayer.Services.Classes
                     if (!validationResult.IsValid)
                     {
                         return check;
-                    }                   
-                    _unitOfWork.Items.Delete(entity);
+                    }
+                    _unitOfWork.Items.Update(entity);
                     await _unitOfWork.SaveAsync();
-                    return check= true;
+                    return check = true;
                 }
                 return check;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }
         }
+
+        public async Task<IEnumerable<Item>> GetAllAsyncByName(string name)
+        {
+            try
+            {
+                IEnumerable<Item> items = await _unitOfWork.Items.GetAllAsyncByName(name);
+                return items;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+
     }
 }

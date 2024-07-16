@@ -4,13 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
        xmlns:local="clr-namespace:Wpf_Stationery"
-      
-  
-     
-      
       mc:Ignorable="d"
-      Title="OfficeSupplies" Height="700" Width="1350"   WindowStartupLocation="CenterScreen"  WindowStyle="None"
-        ResizeMode="CanResize" >
+      Title="OfficeSupplies" Height="700" Width="1350" >
 
     <!--<Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
@@ -135,7 +130,7 @@
                 <Line X1="1000" Y1="0" Stroke="LightGray" StrokeThickness="2" HorizontalAlignment="Left" Height="20" VerticalAlignment="Center" Canvas.Left="48" Width="950"></Line>
             </Canvas>
 
-            <Button Margin="80,120,50,300" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="#275879" FontSize="17" Grid.Column="0" Content="Search" Click="Find_Click" Background="White" VerticalAlignment="Top" Width="40" Height="26"/>
+            <Button Margin="80,120,50,300" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="#275879" FontSize="17" Grid.Column="0" Content="Search" Click="ButtonFind_Click" Background="White" VerticalAlignment="Top" Width="40" Height="26"/>
             <TextBox Margin="0,120,510,300" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="#275879" Background="White" BorderThickness="2" FontSize="10" Grid.Column="0" x:Name="textBoxName" HorizontalAlignment="Right" VerticalAlignment="Top" Width="110" Grid.ColumnSpan="2" Height="26"/>
             <Button Margin="30,120,0,300" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="#275879" FontSize="17" Grid.Column="1" Content="Filter" Click="ButtonFilter_Click" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40" Height="26"/>
             <Button Margin="210,120,50,300" FontFamily="{StaticResource ResourceKey=FaFreeSolid}" Foreground="#275879" FontSize="17" Grid.Column="3" Grid.Row="0" Content="Refresh" Click="ButtonRefresh_Click" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40" Height="26"/>

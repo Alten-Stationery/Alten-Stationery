@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Alten_Stationery"
         mc:Ignorable="d"
-        Title="Login" Height="700" Width="1350" MinWidth="428"  WindowStartupLocation="CenterScreen" Background="Transparent" AllowsTransparency="True" WindowStyle="None"
-        ResizeMode="CanResize" >
+        Title="Login" Height="700" Width="1350"  Background="Transparent">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -69,8 +68,8 @@
 
             <Grid>
 
-                <TextBlock  HorizontalAlignment="Center" FontFamily="Bahnschrift" FontWeight="UltraBold" FontSize="50" Margin="0,90,0,534" Foreground="#003d63">Sign in to App</TextBlock>
-                <TextBlock FontFamily="{StaticResource FaFreeSolid}" Text="&#xf508;" Foreground="#275879" Margin="339,160,339,345" FontSize="150"></TextBlock>
+                <TextBlock  HorizontalAlignment="Center" FontFamily="Bahnschrift" FontWeight="UltraBold" FontSize="50" Margin="0,90,0,500" Foreground="#003d63">Sign in to App</TextBlock>
+                <TextBlock FontFamily="{StaticResource FaFreeSolid}" Text="&#xf508;" Foreground="#275879" Margin="0,179,0,0" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
                 <Border Margin="210,354,210,0" BorderBrush="#275879" BorderThickness="5" CornerRadius="5" RenderTransformOrigin="0.502,0.804" VerticalAlignment="Top">
                     <Border.RenderTransform>
                         <TransformGroup>
