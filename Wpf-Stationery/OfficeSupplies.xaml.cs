@@ -179,9 +179,9 @@ namespace Wpf_Stationery
                 {
                     //Ridimensiona();
 
-                    CustomerGrid.Visibility = Visibility.Visible;
                     //Set the DataGrid's DataContext to be a filled DataTable
                     CustomerGrid.DataContext = dataTable;
+                    CustomerGrid.Visibility = Visibility.Visible;
                 }
             }
             catch (Exception ex)
@@ -301,7 +301,7 @@ namespace Wpf_Stationery
             catch (Exception ex)
             {
                 idSelected = -1;
-                MessageBox.Show("Errore nell'eliminzione!!!");
+                MessageBox.Show("Errore nell'eliminzione!!!\n" + ex.Message);
             }
 
         }

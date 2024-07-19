@@ -55,6 +55,8 @@ namespace Wpf_Stationery
             SettingItemData();
             UpdateAsync(_item);
             this.Close();
+
+            OfficeSupplies officeSupplies = new OfficeSupplies();
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
@@ -69,10 +71,13 @@ namespace Wpf_Stationery
 
             CreateAsync(_item);
             this.Close();
+
+            OfficeSupplies officeSupplies = new OfficeSupplies();
         }
         public void SettingItemData()
         {
             try { _item.Name = nameText.Text; } catch (Exception ex) { _item.Name = ""; };
+            try { _item.Threshold = Int32.Parse(thresholdText.Text); } catch (Exception ex) { _item.Threshold = 0; };
             try { _item.Description = descriptionText.Text; } catch (Exception ex) { _item.Description = ""; };
             try { _item.Location = locationText.Text; } catch (Exception ex) { _item.Location = ""; };
             try { _item.Type = ItemType.OfficeSupplies; } catch (Exception ex) { _item.Type = ItemType.OfficeSupplies; };

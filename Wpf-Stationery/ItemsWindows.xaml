@@ -110,7 +110,7 @@
                 </Button>
             </Grid>
         </Border>
-        <Grid Margin="184,81,2,15" Grid.Row="1" Grid.ColumnSpan="4" >
+        <Grid Margin="184,81,2,156" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="258.4"></ColumnDefinition>
                 <ColumnDefinition Width="529.39"/>
@@ -195,7 +195,7 @@
                         <TranslateTransform X="-0.305"/>
                     </TransformGroup>
                 </Border.RenderTransform>
-               <TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" Name="quantityText"/>
+                <TextBox Margin="7,0,4,0" Height="14" Foreground="Gray" VerticalAlignment="Center" BorderThickness="0" FontSize="10" FontFamily="Bahnschrift" Name="quantityText"/>
             </Border>
             <Border Margin="510,258,230,316" BorderBrush="#275879" BorderThickness="1" CornerRadius="5" RenderTransformOrigin="0.502,0.804" Grid.Column="1" Grid.ColumnSpan="3">
                 <Border.RenderTransform>
@@ -239,7 +239,8 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button Visibility="Hidden" Name="SaveESubmit" FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#3F9469" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="1019,19,30,0" Content="Save e Submit" Click="Button_SaveESubmit">
+            <!--Margin="1019,19,30,0"-->
+            <Button Visibility="Hidden" Name="SaveESubmit" FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#3F9469" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="882,19,167,0" Content="Save e Submit" Click="Button_SaveESubmit">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="6" />
