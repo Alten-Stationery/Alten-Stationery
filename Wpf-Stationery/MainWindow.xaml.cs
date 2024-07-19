@@ -24,7 +24,7 @@ namespace Alten_Stationery
 
         private readonly UserManager<User> _userManager;
         private SignInManager<User> _signInManager;
-
+        private User user;
 
         public MainWindow()
         {
@@ -39,32 +39,30 @@ namespace Alten_Stationery
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-
-
             Settings.Default.Save();
 
             try
             {
-                var user = await _userManager.FindByEmailAsync(email.Text);
-                if (user == null)
-                {
-                    MessageBox.Show("User not found.");
-                    return;
-                }
+                //var user = await _userManager.FindByEmailAsync(email.Text);
+                //if (user == null)
+                //{
+                //    MessageBox.Show("User not found.");
+                //    return;
+                //}
 
                 //var check = await _signInManager.PasswordSignInAsync(user, password.Text, false, false);
-                var check = await _userManager.CheckPasswordAsync(user, password.Text);
+                //var check = await _userManager.CheckPasswordAsync(user, password.Text);
 
-                if (check == true)
-                {
-                    var newWindow = new UserPage( user);
+                //if (check == true)
+                //{
+                    var newWindow = new UserPage(user);
                     this.Close();
                     newWindow.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid login attempt.");
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Invalid login attempt.");
+                //}
             }
             catch (Exception ex)
             {

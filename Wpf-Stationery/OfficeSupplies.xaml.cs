@@ -62,6 +62,8 @@ namespace Wpf_Stationery
         string filterName = string.Empty;
         private IUsersService _service;
         bool boolCreateOrUpdate = false;
+        private User user;
+        int countClick = 0;
 
         Item itemSelected;
 
@@ -70,9 +72,7 @@ namespace Wpf_Stationery
             dataTable = new DataTable();
             // Declare the array variable.
             rowArray = new object[8];
-            //itemsWindows = new ItemsWindows();
-            //itemsWindows = new ItemsWindows(item, boolModifyItem, boolAddItem);
-            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate);
+            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate, countClick);
             _service = App.ServiceProvider.GetService<IUsersService>();
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
@@ -98,19 +98,16 @@ namespace Wpf_Stationery
 
         private void Button_BackToHome(object sender, RoutedEventArgs e)
         {
-            var userPage = new UserPage(_service);
+            var userPage = new UserPage(user);
             this.Close();
             userPage.Show();
         }
 
         private void Button_AddItem(object sender, RoutedEventArgs e)
         {
-
-            //itemsWindows = new ItemsWindows();
             Item item = new Item();
-            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate);
+            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate, countClick);
             itemsWindows.Show();
-
         }
 
         public async Task<IEnumerable<Item>> LoadData(bool boolFilter, ItemType type, string filterName, bool boolRefresh)
@@ -254,14 +251,12 @@ namespace Wpf_Stationery
 
         }
 
-        private async Task DataTable()
+        private async Task DataTable(int countClick)
         {
             //Modificol'Item
             var selectedItem = ((System.Data.DataRowView)CustomerGrid.SelectedItem);
             int idSelected = 0;
             item = new Item();
-            //itemsWindows = new ItemsWindows();
-            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate);
 
             try
             {
@@ -269,9 +264,7 @@ namespace Wpf_Stationery
                 itemsWindows.Show();
                 itemSelected = await _serviceItem.GetById(idSelected);
 
-                //itemsWindows = new ItemsWindows();
-                itemsWindows = new ItemsWindows(itemSelected, boolCreateOrUpdate);
-
+                itemsWindows = new ItemsWindows(itemSelected, boolCreateOrUpdate, countClick);
             }
             catch (Exception ex)
             {
@@ -313,8 +306,11 @@ namespace Wpf_Stationery
         private void ButtonModify_Click(object sender, RoutedEventArgs e)
         {
             boolCreateOrUpdate = true;
+            countClick = 0;
 
-            DataTable();
+            countClick++;
+
+            DataTable(countClick);
         }
         public string DownloadExcel()
         {

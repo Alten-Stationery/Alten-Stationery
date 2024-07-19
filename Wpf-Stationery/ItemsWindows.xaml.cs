@@ -3,6 +3,7 @@ using DBLayer.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualBasic.ApplicationServices;
 using ServiceLayer.IServices;
 using System;
 using System.Collections.Generic;
@@ -34,48 +35,26 @@ namespace Wpf_Stationery
         private IItemsService _serviceItem;
         private Item _item;
         bool boolCreateOrUpdate = false;
+        int countClick = 0;
 
-        //public ItemsWindows()
-        //{
-        //    InitializeComponent();
-
-        //    //nameText.Text = "test";
-        //    //descriptionText.Text = "description";
-        //    //thresholdText.Text = "thresholdText";
-        //    //locationText.Text = " location";
-        //    //quantityText.Text = "quantity";
-        //    //expirationDateText.Text = "expirationDate";
-        //    //expireFEDateText.Text = "expireFEDate";
-
-        //    #region Settaggio valori
-        //    nameText.Text = item.Name;
-        //    descriptionText.Text = item.Description;
-        //    thresholdText.Text = item.Threshold.ToString();
-        //    locationText.Text = item.Location;
-        //    quantityText.Text = item.Quantity.ToString();
-        //    expirationDateText.Text = item.ExpirationDate.ToString();
-        //    expireFEDateText.Text = item.ExpireFEDate.ToString();
-        //    #endregion
-
-        //}
-
-        public ItemsWindows(Item itemSelected, bool boolCreateOrUpdate)
+        public ItemsWindows(Item itemSelected, bool boolCreateOrUpdate, int countClick)
         {
-            //_context = context;
             _item = itemSelected;
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
             InitializeComponent();
 
-            nameText.Text = itemSelected.Name;
-            descriptionText.Text = itemSelected.Description;
-            thresholdText.Text = itemSelected.Threshold.ToString();
-            locationText.Text = itemSelected.Location;
-            quantityText.Text = itemSelected.Quantity.ToString();
-            expirationDateText.Text = itemSelected.ExpirationDate.ToString();
-            expireFEDateText.Text = itemSelected.ExpireFEDate.ToString();
-
-            InitializeComponent();
+            if (countClick > 0)
+            {
+                nameText.Text = itemSelected.Name;
+                descriptionText.Text = itemSelected.Description;
+                thresholdText.Text = itemSelected.Threshold.ToString();
+                locationText.Text = itemSelected.Location;
+                quantityText.Text = itemSelected.Quantity.ToString();
+                expirationDateText.Text = itemSelected.ExpirationDate.ToString();
+                expireFEDateText.Text = itemSelected.ExpireFEDate.ToString();
+            }
+           
         }
 
         private void Button_Save(object sender, RoutedEventArgs e)
@@ -85,12 +64,12 @@ namespace Wpf_Stationery
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            var officeSupplies = new OfficeSupplies();
+            this.Close();
+            officeSupplies.Show();
         }
         private void Button_SaveESubmit(object sender, RoutedEventArgs e)
         {
-            //item = new Item();
-
             try { _item.Name = nameText.Text; } catch (Exception ex) { _item.Name = ""; };
             try { _item.Description = descriptionText.Text; } catch (Exception ex) { _item.Description = ""; };
             try { _item.Location = locationText.Text; } catch (Exception ex) { _item.Location = ""; };
@@ -99,16 +78,27 @@ namespace Wpf_Stationery
             try { _item.ExpirationDate = DateTime.Parse(expirationDateText.Text); } catch (Exception ex) { _item.ExpirationDate = DateTime.Now; };
             try { _item.ExpireFEDate = DateTime.Parse(expireFEDateText.Text); } catch (Exception ex) { };
 
-            if (boolCreateOrUpdate)
+            //if (boolCreateOrUpdate)
+            //{
+                
+            //}
+            //else
+            //{
+            //    //InsertItem();
+            //    CreateAsync(_item);
+            //}
+
+            if (countClick > 0)
             {
-                //InsertItem();
-                CreateAsync(_item);
+                UpdateAsync(_item);
+                this.Close();
             }
             else
             {
-                UpdateAsync(_item);
+                //InsertItem();
+                CreateAsync(_item);
+                this.Close();
             }
-
 
         }
 
