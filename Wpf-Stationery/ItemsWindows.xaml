@@ -232,15 +232,14 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <!--<Button  FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#003d63" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="882,19,167,0" Content="Save" Click="Button_Save">
+            <Button Visibility="Hidden" Name="Save" FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#003d63" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="882,19,167,0" Content="Save" Click="Button_Save">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="6" />
                     </Style>
                 </Button.Resources>
-            </Button>-->
-            <!--Margin="1019,19,30,0"-->
-            <Button  FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#3F9469" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="882,19,167,0" Content="Save e Submit" Click="Button_SaveESubmit">
+            </Button>
+            <Button Visibility="Hidden" Name="SaveESubmit" FontSize="17" FontFamily="Bahnschrift" Foreground="White" Background="#3F9469" Height="50" BorderThickness="0" VerticalAlignment="Top" Margin="1019,19,30,0" Content="Save e Submit" Click="Button_SaveESubmit">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="6" />

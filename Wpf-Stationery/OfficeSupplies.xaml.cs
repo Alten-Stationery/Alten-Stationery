@@ -61,9 +61,8 @@ namespace Wpf_Stationery
         bool boolFilter = false;
         string filterName = string.Empty;
         private IUsersService _service;
-        bool boolCreateOrUpdate = false;
+        bool boolUpdateOrCreate = false;
         private User user;
-        int countClick = 0;
 
         Item itemSelected;
 
@@ -72,7 +71,6 @@ namespace Wpf_Stationery
             dataTable = new DataTable();
             // Declare the array variable.
             rowArray = new object[8];
-            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate, countClick);
             _service = App.ServiceProvider.GetService<IUsersService>();
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
@@ -80,6 +78,11 @@ namespace Wpf_Stationery
             //type = "FirePreventionSupplies";
 
             LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
+        }
+
+        public OfficeSupplies(bool boolUpdateOrCreate)
+        {
+            boolUpdateOrCreate = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -106,13 +109,13 @@ namespace Wpf_Stationery
         private void Button_AddItem(object sender, RoutedEventArgs e)
         {
             Item item = new Item();
-            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate, countClick);
+            itemsWindows = new ItemsWindows(item);
+            itemsWindows.SaveESubmit.Visibility = Visibility.Visible;
             itemsWindows.Show();
         }
 
         public async Task<IEnumerable<Item>> LoadData(bool boolFilter, ItemType type, string filterName, bool boolRefresh)
         {
-            //IEnumerable<Item> lstItems;
             bool boolFilterName = false;
 
             if (boolRefresh)
@@ -236,6 +239,7 @@ namespace Wpf_Stationery
             boolFilter = true;
 
             LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
+
         }
 
         private void ButtonRefresh_Click(object sender, RoutedEventArgs e)
@@ -243,6 +247,8 @@ namespace Wpf_Stationery
             boolRefresh = true;
             boolFilter = false;
             LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
+
+            boolRefresh = false;
         }
         private void ButtonDownload_Click(object sender, RoutedEventArgs e)
         {
@@ -251,7 +257,7 @@ namespace Wpf_Stationery
 
         }
 
-        private async Task DataTable(int countClick)
+        private async Task DataTable()
         {
             //Modificol'Item
             var selectedItem = ((System.Data.DataRowView)CustomerGrid.SelectedItem);
@@ -261,10 +267,12 @@ namespace Wpf_Stationery
             try
             {
                 idSelected = int.Parse(selectedItem.Row.ItemArray[0].ToString());
-                itemsWindows.Show();
                 itemSelected = await _serviceItem.GetById(idSelected);
 
-                itemsWindows = new ItemsWindows(itemSelected, boolCreateOrUpdate, countClick);
+                itemsWindows = new ItemsWindows(itemSelected);
+                itemsWindows.Save.Visibility = Visibility.Visible;
+                itemsWindows.Show();
+
             }
             catch (Exception ex)
             {
@@ -305,12 +313,9 @@ namespace Wpf_Stationery
 
         private void ButtonModify_Click(object sender, RoutedEventArgs e)
         {
-            boolCreateOrUpdate = true;
-            countClick = 0;
-
-            countClick++;
-
-            DataTable(countClick);
+            itemsWindows = new ItemsWindows(item);
+            itemsWindows.Save.Visibility = Visibility.Visible;
+            DataTable();
         }
         public string DownloadExcel()
         {

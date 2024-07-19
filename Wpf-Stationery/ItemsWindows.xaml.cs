@@ -31,35 +31,30 @@ namespace Wpf_Stationery
     /// </summary>
     public partial class ItemsWindows : Window
     {
-
         private IItemsService _serviceItem;
         private Item _item;
-        bool boolCreateOrUpdate = false;
-        int countClick = 0;
 
-        public ItemsWindows(Item itemSelected, bool boolCreateOrUpdate, int countClick)
+        public ItemsWindows(Item itemSelected)
         {
             _item = itemSelected;
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
             InitializeComponent();
 
-            if (countClick > 0)
-            {
-                nameText.Text = itemSelected.Name;
-                descriptionText.Text = itemSelected.Description;
-                thresholdText.Text = itemSelected.Threshold.ToString();
-                locationText.Text = itemSelected.Location;
-                quantityText.Text = itemSelected.Quantity.ToString();
-                expirationDateText.Text = itemSelected.ExpirationDate.ToString();
-                expireFEDateText.Text = itemSelected.ExpireFEDate.ToString();
-            }
-           
+            nameText.Text = itemSelected.Name;
+            descriptionText.Text = itemSelected.Description;
+            thresholdText.Text = itemSelected.Threshold.ToString();
+            locationText.Text = itemSelected.Location;
+            quantityText.Text = itemSelected.Quantity.ToString();
+            expirationDateText.Text = itemSelected.ExpirationDate.ToString();
+            expireFEDateText.Text = itemSelected.ExpireFEDate.ToString();
         }
 
         private void Button_Save(object sender, RoutedEventArgs e)
         {
-
+            SettingItemData();
+            UpdateAsync(_item);
+            this.Close();
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
@@ -70,6 +65,13 @@ namespace Wpf_Stationery
         }
         private void Button_SaveESubmit(object sender, RoutedEventArgs e)
         {
+            SettingItemData();
+
+            CreateAsync(_item);
+            this.Close();
+        }
+        public void SettingItemData()
+        {
             try { _item.Name = nameText.Text; } catch (Exception ex) { _item.Name = ""; };
             try { _item.Description = descriptionText.Text; } catch (Exception ex) { _item.Description = ""; };
             try { _item.Location = locationText.Text; } catch (Exception ex) { _item.Location = ""; };
@@ -77,62 +79,31 @@ namespace Wpf_Stationery
             try { _item.Quantity = Int32.Parse(quantityText.Text); } catch (Exception ex) { _item.Quantity = 0; };
             try { _item.ExpirationDate = DateTime.Parse(expirationDateText.Text); } catch (Exception ex) { _item.ExpirationDate = DateTime.Now; };
             try { _item.ExpireFEDate = DateTime.Parse(expireFEDateText.Text); } catch (Exception ex) { };
-
-            //if (boolCreateOrUpdate)
-            //{
-                
-            //}
-            //else
-            //{
-            //    //InsertItem();
-            //    CreateAsync(_item);
-            //}
-
-            if (countClick > 0)
-            {
-                UpdateAsync(_item);
-                this.Close();
-            }
-            else
-            {
-                //InsertItem();
-                CreateAsync(_item);
-                this.Close();
-            }
-
         }
-
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
-
         private void InsertItem()
         {
             var connectionString = App.Configuration.GetConnectionString("StationeryDB");
@@ -175,19 +146,6 @@ namespace Wpf_Stationery
                 sqlBulk.WriteToServer(dt);
             }
         }
-
-        //Update Item
-        public void UpdateDbItem(int insertedid, string nameNew, int thresholdNew)
-        {
-            //using (var context = new Entities())
-            //{
-            //    Item item = context.Item.SingleOrDefault(x => x.PIDailyChargesID == insertedid);
-            //    item.Name = nameNew;
-            //    item.Threshold = thresholdNew;
-            //    context.SaveChanges();
-            //}
-        }
-
         public async Task<Item> CreateAsync(Item item)
         {
             await _serviceItem.CreateAsync(item);
