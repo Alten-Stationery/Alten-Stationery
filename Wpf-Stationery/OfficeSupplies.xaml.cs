@@ -61,7 +61,8 @@ namespace Wpf_Stationery
         bool boolFilter = false;
         string filterName = string.Empty;
         private IUsersService _service;
-        bool boolCreateOrUpdate = false;
+        bool boolUpdateOrCreate = false;
+        private User user;
 
         Item itemSelected;
 
@@ -70,9 +71,6 @@ namespace Wpf_Stationery
             dataTable = new DataTable();
             // Declare the array variable.
             rowArray = new object[8];
-            //itemsWindows = new ItemsWindows();
-            //itemsWindows = new ItemsWindows(item, boolModifyItem, boolAddItem);
-            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate);
             _service = App.ServiceProvider.GetService<IUsersService>();
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
@@ -80,6 +78,11 @@ namespace Wpf_Stationery
             //type = "FirePreventionSupplies";
 
             LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
+        }
+
+        public OfficeSupplies(bool boolUpdateOrCreate)
+        {
+            boolUpdateOrCreate = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -98,24 +101,21 @@ namespace Wpf_Stationery
 
         private void Button_BackToHome(object sender, RoutedEventArgs e)
         {
-            var userPage = new UserPage(_service);
+            var userPage = new UserPage(user);
             this.Close();
             userPage.Show();
         }
 
         private void Button_AddItem(object sender, RoutedEventArgs e)
         {
-
-            //itemsWindows = new ItemsWindows();
             Item item = new Item();
-            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate);
+            itemsWindows = new ItemsWindows(item);
+            itemsWindows.SaveESubmit.Visibility = Visibility.Visible;
             itemsWindows.Show();
-
         }
 
         public async Task<IEnumerable<Item>> LoadData(bool boolFilter, ItemType type, string filterName, bool boolRefresh)
         {
-            //IEnumerable<Item> lstItems;
             bool boolFilterName = false;
 
             if (boolRefresh)
@@ -179,9 +179,9 @@ namespace Wpf_Stationery
                 {
                     //Ridimensiona();
 
-                    CustomerGrid.Visibility = Visibility.Visible;
                     //Set the DataGrid's DataContext to be a filled DataTable
                     CustomerGrid.DataContext = dataTable;
+                    CustomerGrid.Visibility = Visibility.Visible;
                 }
             }
             catch (Exception ex)
@@ -239,13 +239,20 @@ namespace Wpf_Stationery
             boolFilter = true;
 
             LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
+
         }
 
         private void ButtonRefresh_Click(object sender, RoutedEventArgs e)
         {
+            RefreshWindows();
+        }
+        public void RefreshWindows()
+        {
             boolRefresh = true;
             boolFilter = false;
             LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
+
+            boolRefresh = false;
         }
         private void ButtonDownload_Click(object sender, RoutedEventArgs e)
         {
@@ -260,17 +267,15 @@ namespace Wpf_Stationery
             var selectedItem = ((System.Data.DataRowView)CustomerGrid.SelectedItem);
             int idSelected = 0;
             item = new Item();
-            //itemsWindows = new ItemsWindows();
-            itemsWindows = new ItemsWindows(item, boolCreateOrUpdate);
 
             try
             {
                 idSelected = int.Parse(selectedItem.Row.ItemArray[0].ToString());
-                itemsWindows.Show();
                 itemSelected = await _serviceItem.GetById(idSelected);
 
-                //itemsWindows = new ItemsWindows();
-                itemsWindows = new ItemsWindows(itemSelected, boolCreateOrUpdate);
+                itemsWindows = new ItemsWindows(itemSelected);
+                itemsWindows.Save.Visibility = Visibility.Visible;
+                itemsWindows.Show();
 
             }
             catch (Exception ex)
@@ -300,7 +305,7 @@ namespace Wpf_Stationery
             catch (Exception ex)
             {
                 idSelected = -1;
-                MessageBox.Show("Errore nell'eliminzione!!!");
+                MessageBox.Show("Errore nell'eliminzione!!!\n" + ex.Message);
             }
 
         }
@@ -312,8 +317,8 @@ namespace Wpf_Stationery
 
         private void ButtonModify_Click(object sender, RoutedEventArgs e)
         {
-            boolCreateOrUpdate = true;
-
+            itemsWindows = new ItemsWindows(item);
+            itemsWindows.Save.Visibility = Visibility.Visible;
             DataTable();
         }
         public string DownloadExcel()

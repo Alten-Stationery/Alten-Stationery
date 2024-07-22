@@ -2,6 +2,7 @@
 using DBLayer.IRepositories;
 using DBLayer.Models;
 using DBLayer.UOW;
+using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using ServiceLayer.IServices;
 using ServiceLayer.Services.Validations;
@@ -18,16 +19,24 @@ namespace ServiceLayer.Services.Classes
     {
         private readonly ItemValidator _validator = new ItemValidator();
         private readonly IUnitOfWork _unitOfWork;
+        public List<ValidationFailure> lstValidationResult = new List<ValidationFailure>();
+
         public ItemsService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+        }
+
+        public ItemsService()
+        {
+            //lstValidationResult = new List<ValidationFailure>();
         }
 
         public async Task<bool> CreateAsync(Item entity)
         {
             try
             {
-                var validationResult = await _validator.ValidateAsync(entity);
+                ValidationResult validationResult = await _validator.ValidateAsync(entity);
+                lstValidationResult = validationResult.Errors;
                 if (!validationResult.IsValid)
                 {
                     return false;

@@ -1,9 +1,13 @@
 ﻿using DBLayer;
 using DBLayer.Models;
+using DBLayer.UOW;
+using FluentValidation.TestHelper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualBasic.ApplicationServices;
 using ServiceLayer.IServices;
+using ServiceLayer.Services.Classes;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -30,38 +34,11 @@ namespace Wpf_Stationery
     /// </summary>
     public partial class ItemsWindows : Window
     {
-
         private IItemsService _serviceItem;
         private Item _item;
-        bool boolCreateOrUpdate = false;
 
-        //public ItemsWindows()
-        //{
-        //    InitializeComponent();
-
-        //    //nameText.Text = "test";
-        //    //descriptionText.Text = "description";
-        //    //thresholdText.Text = "thresholdText";
-        //    //locationText.Text = " location";
-        //    //quantityText.Text = "quantity";
-        //    //expirationDateText.Text = "expirationDate";
-        //    //expireFEDateText.Text = "expireFEDate";
-
-        //    #region Settaggio valori
-        //    nameText.Text = item.Name;
-        //    descriptionText.Text = item.Description;
-        //    thresholdText.Text = item.Threshold.ToString();
-        //    locationText.Text = item.Location;
-        //    quantityText.Text = item.Quantity.ToString();
-        //    expirationDateText.Text = item.ExpirationDate.ToString();
-        //    expireFEDateText.Text = item.ExpireFEDate.ToString();
-        //    #endregion
-
-        //}
-
-        public ItemsWindows(Item itemSelected, bool boolCreateOrUpdate)
+        public ItemsWindows(Item itemSelected)
         {
-            //_context = context;
             _item = itemSelected;
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
@@ -74,75 +51,73 @@ namespace Wpf_Stationery
             quantityText.Text = itemSelected.Quantity.ToString();
             expirationDateText.Text = itemSelected.ExpirationDate.ToString();
             expireFEDateText.Text = itemSelected.ExpireFEDate.ToString();
-
-            InitializeComponent();
         }
 
         private void Button_Save(object sender, RoutedEventArgs e)
         {
+            SettingItemData();
+            UpdateAsync(_item);
+            this.Close();
 
+            //OfficeSupplies officeSupplies = new OfficeSupplies();
+            //officeSupplies.RefreshWindows();
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            var officeSupplies = new OfficeSupplies();
+            this.Close();
+            officeSupplies.Show();
         }
         private void Button_SaveESubmit(object sender, RoutedEventArgs e)
         {
-            //item = new Item();
+            SettingItemData();
+            CreateAsync(_item);
 
+            ItemsService itemService = new ItemsService();
+
+            //lstValidationResult svuoto la lista nel costruttore!!!
+            var lstValidationResult = itemService.lstValidationResult;
+
+            this.Close();
+
+            OfficeSupplies officeSupplies = new OfficeSupplies();
+        }
+        public void SettingItemData()
+        {
             try { _item.Name = nameText.Text; } catch (Exception ex) { _item.Name = ""; };
+            try { _item.Threshold = Int32.Parse(thresholdText.Text); } catch (Exception ex) { _item.Threshold = 0; };
             try { _item.Description = descriptionText.Text; } catch (Exception ex) { _item.Description = ""; };
             try { _item.Location = locationText.Text; } catch (Exception ex) { _item.Location = ""; };
             try { _item.Type = ItemType.OfficeSupplies; } catch (Exception ex) { _item.Type = ItemType.OfficeSupplies; };
             try { _item.Quantity = Int32.Parse(quantityText.Text); } catch (Exception ex) { _item.Quantity = 0; };
             try { _item.ExpirationDate = DateTime.Parse(expirationDateText.Text); } catch (Exception ex) { _item.ExpirationDate = DateTime.Now; };
             try { _item.ExpireFEDate = DateTime.Parse(expireFEDateText.Text); } catch (Exception ex) { };
-
-            if (boolCreateOrUpdate)
-            {
-                //InsertItem();
-                CreateAsync(_item);
-            }
-            else
-            {
-                UpdateAsync(_item);
-            }
-
-
         }
-
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
-
         private void InsertItem()
         {
             var connectionString = App.Configuration.GetConnectionString("StationeryDB");
@@ -185,19 +160,6 @@ namespace Wpf_Stationery
                 sqlBulk.WriteToServer(dt);
             }
         }
-
-        //Update Item
-        public void UpdateDbItem(int insertedid, string nameNew, int thresholdNew)
-        {
-            //using (var context = new Entities())
-            //{
-            //    Item item = context.Item.SingleOrDefault(x => x.PIDailyChargesID == insertedid);
-            //    item.Name = nameNew;
-            //    item.Threshold = thresholdNew;
-            //    context.SaveChanges();
-            //}
-        }
-
         public async Task<Item> CreateAsync(Item item)
         {
             await _serviceItem.CreateAsync(item);

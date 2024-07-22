@@ -138,7 +138,7 @@
 
             <!--<ScrollViewer Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" Height="450" Width="1000"  Margin="10 20 10 10" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">-->
 
-            <DataGrid Visibility="Collapsed" Margin="120,180,54,240" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="3" IsReadOnly="True" x:Name="CustomerGrid" ItemsSource="{Binding}" AlternationCount="2" Width="980" Height="220" SelectionChanged="CustomerGrid_SelectionChanged">
+            <DataGrid Visibility="Collapsed" Margin="120,180,54,240" FontFamily="Bahnschrift" Foreground="#275879" FontSize="17" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="3" IsReadOnly="True" x:Name="CustomerGrid" ItemsSource="{Binding}" AlternationCount="2" Width="Auto" MinWidth="980" MaxWidth="1320" Height="220" SelectionChanged="CustomerGrid_SelectionChanged">
                 <DataGrid.Columns>
 
                     <DataGridTemplateColumn>
