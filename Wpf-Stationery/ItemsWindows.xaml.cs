@@ -1,10 +1,13 @@
 ﻿using DBLayer;
 using DBLayer.Models;
+using DBLayer.UOW;
+using FluentValidation.TestHelper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualBasic.ApplicationServices;
 using ServiceLayer.IServices;
+using ServiceLayer.Services.Classes;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -56,7 +59,8 @@ namespace Wpf_Stationery
             UpdateAsync(_item);
             this.Close();
 
-            OfficeSupplies officeSupplies = new OfficeSupplies();
+            //OfficeSupplies officeSupplies = new OfficeSupplies();
+            //officeSupplies.RefreshWindows();
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
@@ -68,8 +72,13 @@ namespace Wpf_Stationery
         private void Button_SaveESubmit(object sender, RoutedEventArgs e)
         {
             SettingItemData();
-
             CreateAsync(_item);
+
+            ItemsService itemService = new ItemsService();
+
+            //lstValidationResult svuoto la lista nel costruttore!!!
+            var lstValidationResult = itemService.lstValidationResult;
+
             this.Close();
 
             OfficeSupplies officeSupplies = new OfficeSupplies();

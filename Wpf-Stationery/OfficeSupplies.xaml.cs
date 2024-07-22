@@ -244,6 +244,10 @@ namespace Wpf_Stationery
 
         private void ButtonRefresh_Click(object sender, RoutedEventArgs e)
         {
+            RefreshWindows();
+        }
+        public void RefreshWindows()
+        {
             boolRefresh = true;
             boolFilter = false;
             LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
