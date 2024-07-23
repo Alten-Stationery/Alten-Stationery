@@ -48,6 +48,7 @@ namespace Wpf_Stationery
             descriptionText.Text = itemSelected.Description;
             thresholdText.Text = itemSelected.Threshold.ToString();
             locationText.Text = itemSelected.Location;
+            typeText.Text = itemSelected.Type.ToString();
             quantityText.Text = itemSelected.Quantity.ToString();
             expirationDateText.Text = itemSelected.ExpirationDate.ToString();
             expireFEDateText.Text = itemSelected.ExpireFEDate.ToString();

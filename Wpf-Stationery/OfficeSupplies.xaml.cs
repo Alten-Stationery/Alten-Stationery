@@ -70,13 +70,13 @@ namespace Wpf_Stationery
         {
             dataTable = new DataTable();
             // Declare the array variable.
-            rowArray = new object[8];
+            rowArray = new object[9];
             _service = App.ServiceProvider.GetService<IUsersService>();
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
             InitializeComponent();
-            //type = "FirePreventionSupplies";
 
+            //Type
             LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
         }
 
@@ -148,7 +148,10 @@ namespace Wpf_Stationery
                 }
                 else
                 {
-                    lstItems = await _serviceItem.GetAllAsync();
+                    //GetAlls Generica
+                    //lstItems = await _serviceItem.GetAllAsync();
+                    //Filtro sulla pagina per Type OfficeSupplies
+                    lstItems = await _serviceItem.GetAllAsyncByType(type);
                 }
 
                 #endregion
@@ -163,10 +166,10 @@ namespace Wpf_Stationery
                     rowArray[2] = item.Threshold;
                     rowArray[3] = item.Description;
                     rowArray[4] = item.Location;
-                    //rowArray[4] = item.Type;
-                    rowArray[5] = item.Quantity;
-                    rowArray[6] = item.ExpirationDate;
-                    rowArray[7] = item.ExpireFEDate;
+                    rowArray[5] = item.Type;
+                    rowArray[6] = item.Quantity;
+                    rowArray[7] = item.ExpirationDate;
+                    rowArray[8] = item.ExpireFEDate;
                     #endregion
 
                     dr = dataTable.NewRow();
@@ -213,7 +216,7 @@ namespace Wpf_Stationery
             DataColumn threshold = new DataColumn("Threshold", Type.GetType("System.String"));
             DataColumn description = new DataColumn("Description", Type.GetType("System.String"));
             DataColumn location = new DataColumn("Location", Type.GetType("System.String"));
-            //DataColumn type = new DataColumn("Type", Type.GetType("System.String"));
+            DataColumn type = new DataColumn("Type", Type.GetType("System.String"));
             DataColumn quantity = new DataColumn("Quantity", Type.GetType("System.String"));
             DataColumn expirationDate = new DataColumn("ExpirationDate", Type.GetType("System.String"));
             DataColumn expireFEDate = new DataColumn("ExpireFEDate", Type.GetType("System.String"));
@@ -223,7 +226,7 @@ namespace Wpf_Stationery
             table.Columns.Add(threshold);
             table.Columns.Add(description);
             table.Columns.Add(location);
-            //table.Columns.Add(type);
+            table.Columns.Add(type);
             table.Columns.Add(quantity);
             table.Columns.Add(expirationDate);
             table.Columns.Add(expireFEDate);
