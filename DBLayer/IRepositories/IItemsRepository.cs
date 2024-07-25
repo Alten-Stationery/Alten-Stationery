@@ -11,6 +11,7 @@ namespace DBLayer.IRepositories
     public interface IItemsRepository:IRepository<Item>
     {
         public Task<IEnumerable<Item>> GetAllAsyncByType(ItemType category);
-        public Task<IEnumerable<Item>> GetAllAsyncByName(string name);
+        public Task<IEnumerable<Item>> GetAllAsyncByName(string name, ItemType itemType);
+        public Task<IEnumerable<Item>> GetAllWithFilter(int threshold, string location, ItemType type, int quantity);
     }
 }

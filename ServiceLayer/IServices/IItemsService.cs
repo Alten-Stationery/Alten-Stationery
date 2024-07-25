@@ -12,6 +12,8 @@ namespace ServiceLayer.IServices
     public interface IItemsService:IService<Item>
     {
         Task<IEnumerable<Item>> GetAllAsyncByType(ItemType type);
-        Task<IEnumerable<Item>> GetAllAsyncByName(string name);
+        Task<IEnumerable<Item>> GetAllAsyncByName(string name, ItemType type);
+        Task<IEnumerable<Item>> GetAllWithFilter(int threshold, string location, ItemType type, int quantity);
+
     }
 }

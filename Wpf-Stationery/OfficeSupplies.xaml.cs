@@ -70,7 +70,7 @@ namespace Wpf_Stationery
         {
             dataTable = new DataTable();
             // Declare the array variable.
-            rowArray = new object[9];
+            rowArray = new object[7];
             _service = App.ServiceProvider.GetService<IUsersService>();
             _serviceItem = App.ServiceProvider.GetRequiredService<IItemsService>();
 
@@ -143,7 +143,7 @@ namespace Wpf_Stationery
                 }
                 else if (boolFilterName)
                 {
-                    lstItems = await _serviceItem.GetAllAsyncByName(filterName);
+                    lstItems = await _serviceItem.GetAllAsyncByName(filterName, type);
                     //FIND
                 }
                 else
@@ -168,8 +168,8 @@ namespace Wpf_Stationery
                     rowArray[4] = item.Location;
                     rowArray[5] = item.Type;
                     rowArray[6] = item.Quantity;
-                    rowArray[7] = item.ExpirationDate;
-                    rowArray[8] = item.ExpireFEDate;
+                    //rowArray[7] = item.ExpirationDate;
+                    //rowArray[8] = item.ExpireFEDate;
                     #endregion
 
                     dr = dataTable.NewRow();
@@ -183,8 +183,8 @@ namespace Wpf_Stationery
                     //Ridimensiona();
 
                     //Set the DataGrid's DataContext to be a filled DataTable
-                    CustomerGrid.DataContext = dataTable;
-                    CustomerGrid.Visibility = Visibility.Visible;
+                    OfficeSupplicesGrid.DataContext = dataTable;
+                    OfficeSupplicesGrid.Visibility = Visibility.Visible;
                 }
             }
             catch (Exception ex)
@@ -218,8 +218,8 @@ namespace Wpf_Stationery
             DataColumn location = new DataColumn("Location", Type.GetType("System.String"));
             DataColumn type = new DataColumn("Type", Type.GetType("System.String"));
             DataColumn quantity = new DataColumn("Quantity", Type.GetType("System.String"));
-            DataColumn expirationDate = new DataColumn("ExpirationDate", Type.GetType("System.String"));
-            DataColumn expireFEDate = new DataColumn("ExpireFEDate", Type.GetType("System.String"));
+            //DataColumn expirationDate = new DataColumn("ExpirationDate", Type.GetType("System.String"));
+            //DataColumn expireFEDate = new DataColumn("ExpireFEDate", Type.GetType("System.String"));
 
             table.Columns.Add(itemId);
             table.Columns.Add(name);
@@ -228,8 +228,8 @@ namespace Wpf_Stationery
             table.Columns.Add(location);
             table.Columns.Add(type);
             table.Columns.Add(quantity);
-            table.Columns.Add(expirationDate);
-            table.Columns.Add(expireFEDate);
+            //table.Columns.Add(expirationDate);
+            //table.Columns.Add(expireFEDate);
 
             return table;
         }
@@ -242,6 +242,9 @@ namespace Wpf_Stationery
             boolFilter = true;
 
             LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
+
+            FilterWindows filterWindows = new FilterWindows();
+            filterWindows.Show();
 
         }
 
@@ -267,7 +270,7 @@ namespace Wpf_Stationery
         private async Task DataTable()
         {
             //Modificol'Item
-            var selectedItem = ((System.Data.DataRowView)CustomerGrid.SelectedItem);
+            var selectedItem = ((System.Data.DataRowView)OfficeSupplicesGrid.SelectedItem);
             int idSelected = 0;
             item = new Item();
 
@@ -296,7 +299,7 @@ namespace Wpf_Stationery
         private void ButtonDeleted_Click(object sender, RoutedEventArgs e)
         {
             //Seleziono e cancello l'Item
-            var selectedItem = ((System.Data.DataRowView)CustomerGrid.SelectedItem);
+            var selectedItem = ((System.Data.DataRowView)OfficeSupplicesGrid.SelectedItem);
             int idSelected = 0;
 
             try
@@ -310,11 +313,6 @@ namespace Wpf_Stationery
                 idSelected = -1;
                 MessageBox.Show("Errore nell'eliminzione!!!\n" + ex.Message);
             }
-
-        }
-
-        private void CustomerGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
         }
 
@@ -417,7 +415,15 @@ namespace Wpf_Stationery
             return filePath;
         }
 
+        private void OfficeSupplicesGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
 
+        public void AddFilter(int threshold, string location, ItemType type, int quantity)
+        {
+            _serviceItem.GetAllWithFilter(threshold, location, type, quantity);
+
+        }
     }
 }

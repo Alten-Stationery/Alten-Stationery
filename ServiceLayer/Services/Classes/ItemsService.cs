@@ -150,11 +150,11 @@ namespace ServiceLayer.Services.Classes
             }
         }
 
-        public async Task<IEnumerable<Item>> GetAllAsyncByName(string name)
+        public async Task<IEnumerable<Item>> GetAllAsyncByName(string name, ItemType type)
         {
             try
             {
-                IEnumerable<Item> items = await _unitOfWork.Items.GetAllAsyncByName(name);
+                IEnumerable<Item> items = await _unitOfWork.Items.GetAllAsyncByName(name, type);
                 return items;
             }
             catch (Exception ex)
@@ -162,8 +162,19 @@ namespace ServiceLayer.Services.Classes
                 return null;
             }
         }
-
-
+        public async Task<IEnumerable<Item>> GetAllWithFilter(int threshold, string location, ItemType type, int quantity)
+        {
+            try
+            {
+                IEnumerable<Item> items = await _unitOfWork.Items.GetAllWithFilter(threshold, location, type, quantity);
+                return items;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        
 
     }
 }

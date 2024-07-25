@@ -21,12 +21,17 @@ namespace DBLayer.Repositories
 
         public async Task<IEnumerable<Item>> GetAllAsyncByType(ItemType type)
         {
-            return await _context.Items.Where(t=>t.Type== type).ToListAsync();
+            return await _context.Items.Where(t => t.Type == type).ToListAsync();
         }
 
-        public async Task<IEnumerable<Item>> GetAllAsyncByName(string name)
+        public async Task<IEnumerable<Item>> GetAllAsyncByName(string name, ItemType type)
         {
-            return await _context.Items.Where(t => t.Name.Contains(name)).ToListAsync();
+            return await _context.Items.Where(t => t.Name.Contains(name) && t.Type == type).ToListAsync();
+        }
+        public async Task<IEnumerable<Item>> GetAllWithFilter(int threshold, string location, ItemType type, int quantity)
+        {
+            return await _context.Items.Where(t => t.Threshold > threshold && t.Location.Equals(location) &&
+                                              t.Type == type && t.Quantity > quantity).ToListAsync();
         }
 
 
