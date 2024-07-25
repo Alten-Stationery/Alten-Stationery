@@ -66,6 +66,11 @@ namespace Wpf_Stationery
 
         Item itemSelected;
 
+        int threshold = 0;
+        string location = string.Empty;
+        int quantity = 0;
+        bool boolfilterGeneric = false;
+
         public OfficeSupplies()
         {
             dataTable = new DataTable();
@@ -77,7 +82,7 @@ namespace Wpf_Stationery
             InitializeComponent();
 
             //Type
-            LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
+            LoadData(boolFilter, filterName, boolRefresh, threshold, location, type:ItemType.OfficeSupplies, quantity);
         }
 
         public OfficeSupplies(bool boolUpdateOrCreate)
@@ -114,7 +119,7 @@ namespace Wpf_Stationery
             itemsWindows.Show();
         }
 
-        public async Task<IEnumerable<Item>> LoadData(bool boolFilter, ItemType type, string filterName, bool boolRefresh)
+        public async Task<IEnumerable<Item>> LoadData(bool boolFilter, string filterName, bool boolRefresh, int threshold, string location, ItemType type, int quantity)
         {
             bool boolFilterName = false;
 
@@ -145,6 +150,10 @@ namespace Wpf_Stationery
                 {
                     lstItems = await _serviceItem.GetAllAsyncByName(filterName, type);
                     //FIND
+                }
+                else if (boolfilterGeneric)
+                {
+                    lstItems = await _serviceItem.GetAllWithFilter(threshold, location, type, quantity);
                 }
                 else
                 {
@@ -216,7 +225,7 @@ namespace Wpf_Stationery
             DataColumn threshold = new DataColumn("Threshold", Type.GetType("System.String"));
             DataColumn description = new DataColumn("Description", Type.GetType("System.String"));
             DataColumn location = new DataColumn("Location", Type.GetType("System.String"));
-            DataColumn type = new DataColumn("Type", Type.GetType("System.String"));
+            DataColumn typeDT = new DataColumn("Type", Type.GetType("System.String"));
             DataColumn quantity = new DataColumn("Quantity", Type.GetType("System.String"));
             //DataColumn expirationDate = new DataColumn("ExpirationDate", Type.GetType("System.String"));
             //DataColumn expireFEDate = new DataColumn("ExpireFEDate", Type.GetType("System.String"));
@@ -226,7 +235,7 @@ namespace Wpf_Stationery
             table.Columns.Add(threshold);
             table.Columns.Add(description);
             table.Columns.Add(location);
-            table.Columns.Add(type);
+            table.Columns.Add(typeDT);
             table.Columns.Add(quantity);
             //table.Columns.Add(expirationDate);
             //table.Columns.Add(expireFEDate);
@@ -235,28 +244,27 @@ namespace Wpf_Stationery
         }
         private void ButtonFind_Click(object sender, RoutedEventArgs e)
         {
-            LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
+            LoadData(boolFilter, filterName, boolRefresh, threshold, location, type: ItemType.OfficeSupplies, quantity);
         }
         private void ButtonFilter_Click(object sender, RoutedEventArgs e)
         {
             boolFilter = true;
 
-            LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
+            //LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
 
             FilterWindows filterWindows = new FilterWindows();
             filterWindows.Show();
-
         }
 
         private void ButtonRefresh_Click(object sender, RoutedEventArgs e)
         {
-            RefreshWindows();
+            RefreshWindows(threshold, location, type, quantity);
         }
-        public void RefreshWindows()
+        public void RefreshWindows(int threshold, string location, ItemType type, int quantity)
         {
             boolRefresh = true;
             boolFilter = false;
-            LoadData(boolFilter, ItemType.OfficeSupplies, filterName, boolRefresh);
+            LoadData(boolFilter, filterName, boolRefresh, threshold, location, type: ItemType.OfficeSupplies, quantity);
 
             boolRefresh = false;
         }
@@ -422,8 +430,11 @@ namespace Wpf_Stationery
 
         public void AddFilter(int threshold, string location, ItemType type, int quantity)
         {
-            _serviceItem.GetAllWithFilter(threshold, location, type, quantity);
+            boolfilterGeneric = true;
 
+            RefreshWindows(threshold, location, type, quantity);
+
+            boolfilterGeneric = false;
         }
     }
 }

@@ -33,6 +33,11 @@ namespace Wpf_Stationery
             locationText.Text = string.Empty;
             typeText.Text = string.Empty;
             quantityText.Text = string.Empty;
+
+            thresholdMinor.IsEnabled = true;
+            thresholdMajor.IsEnabled = true;
+            quantityMinor.IsEnabled = true;
+            quantityMajor.IsEnabled = true;
         }
 
         private void Button_Save(object sender, RoutedEventArgs e)
@@ -64,14 +69,58 @@ namespace Wpf_Stationery
             catch (Exception ex) { type = ItemType.OfficeSupplies; };
             try { quantity = Int32.Parse(quantityText.Text); } catch (Exception ex) { quantity = 0; };
 
-            if (threshold > 0)
-            {
-
-            }
             OfficeSupplies officeSupplies = new OfficeSupplies();
 
             officeSupplies.AddFilter(threshold, location, type, quantity);
 
+        }
+
+        private void ButtonMinor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonMajor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonLocationEquals_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonTypeEquals_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+      
+
+
+        private void ButtonThresholdMinor_Click(object sender, RoutedEventArgs e)
+        {
+            thresholdMinor.IsEnabled = false;
+            thresholdMajor.IsEnabled = true;
+        }
+
+        private void ButtonThresholdMajor_Click(object sender, RoutedEventArgs e)
+        {
+            thresholdMajor.IsEnabled = false;
+            thresholdMinor.IsEnabled = true;
+
+        }
+
+        private void ButtonQuantityMinor_Click(object sender, RoutedEventArgs e)
+        {
+            quantityMinor.IsEnabled = false;
+            quantityMajor.IsEnabled = true;
+        }
+
+        private void ButtonQuantityMajor_Click(object sender, RoutedEventArgs e)
+        {
+            quantityMajor.IsEnabled = false;
+            quantityMinor.IsEnabled = true;
         }
     }
 }
